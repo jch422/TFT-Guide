@@ -1,5 +1,5 @@
 ---
-name: 'kpt 회고 '
+name: 'KPT 회고 '
 about: Suggest an idea for this project
 title: "[title] kpt 회고 "
 labels: ''
