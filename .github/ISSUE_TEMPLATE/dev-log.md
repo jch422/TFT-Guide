@@ -1,7 +1,7 @@
 ---
 name: Dev Log
 about: dev log
-title: "[title] dev log"
+title: "[ :writing_hand: Dev Log] 홍길동 / 2021-XX-XX"
 labels: ":memo: dev log"
 assignees: ''
 
