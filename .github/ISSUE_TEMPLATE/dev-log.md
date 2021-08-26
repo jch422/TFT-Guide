@@ -1,8 +1,8 @@
 ---
-name: dev log
+name: Dev Log
 about: dev log
 title: "[title] dev log"
-labels: ''
+labels: ":memo: dev log"
 assignees: ''
 
 ---
