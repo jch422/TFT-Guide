@@ -4,7 +4,7 @@ exports.verifyAccessToken = async (req, res, next) => {
   try {
     const {
       data: { email, verified_email, picture },
-    } = await axios.get('https://www.googleapis.com/oauth2/v2/userinfo', {
+    } = await axios.get(process.env.OAUTH_REQUEST_URI, {
       headers: {
         Authorization: req.headers.authorization,
       },
@@ -18,6 +18,6 @@ exports.verifyAccessToken = async (req, res, next) => {
       throw Error('invalid accessToken');
     }
   } catch (err) {
-    res.status(401).json({ data: null, message: 'unauthorized' });
+    res.status(401).json({ data: null, message: `unauthorized: ${err.message}` });
   }
 };
