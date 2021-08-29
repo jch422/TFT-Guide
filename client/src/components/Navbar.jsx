@@ -24,27 +24,19 @@ function Navbar(props) {
       cursor: pointer;
     }
   `;
-  const goToMain = () => {
-    props.setCurrent('main');
-    console.log(props.current);
-  };
-  const goToMypage = () => {
-    props.setCurrent('mypage');
-    console.log(props.current);
-  };
-  const goToSearch = () => {
-    props.setCurrent('search');
+  const goToPage = pageName => {
+    props.setCurrent(pageName);
     console.log(props.current);
   };
   return (
     <Header>
-      <Span className="toMain" onClick={() => goToMain()}>
+      <Span className="toMain" onClick={() => goToPage('main')}>
         Main
       </Span>
-      <Span className="toMypage" onClick={() => goToMypage()}>
+      <Span className="toMypage" onClick={() => goToPage('mypage')}>
         Mypage
       </Span>
-      <Span className="toSearch" onClick={() => goToSearch()}>
+      <Span className="toSearch" onClick={() => goToPage('search')}>
         Search
       </Span>
     </Header>
