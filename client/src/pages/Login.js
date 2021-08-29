@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import AuthButton from '../components/Login/AuthButton';
 import Modal from '../components/Login/Modal';
+import { makeGoogleOAuthRequestURL } from '../utils/url';
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState(null);
@@ -31,25 +32,30 @@ const Login = () => {
 
   const getUserInfo = async accessToken => {
     try {
-      const { data } = await axios.get(`${process.env.REACT_APP_SERVER_URI}/user`, {
+      const {
+        data: {
+          data: { email, picture, riotId, isRegistered },
+          message,
+        },
+      } = await axios.get(`${process.env.REACT_APP_SERVER_URI}/users/login`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
       });
-      setUserInfo(data);
-      setModalShow(true);
-    } catch (err) {
-      //TODO: userInfo 불러오기 오류 --> 페이지 라우터 적용 후, 메인 페이지로 이동하도록 구현할 예정
-    }
-  };
 
-  const makeGoogleOAuthRequestURL = () => {
-    let requestURL = `${process.env.REACT_APP_OAUTH2ENDPOINT}?`;
-    requestURL += `client_id=${process.env.REACT_APP_CLIENT_ID}&`;
-    requestURL += `redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&`;
-    requestURL += `response_type=token&`;
-    requestURL += `scope=${process.env.REACT_APP_SCOPE}`;
-    return requestURL;
+      if (message !== 'ok') {
+        throw Error('invalid acessToken');
+      }
+
+      setUserInfo({ email, picture, riotId });
+      if (!isRegistered) {
+        setModalShow(true);
+      } else {
+        console.log('go to main page');
+      }
+    } catch (err) {
+      console.log('reload login page');
+    }
   };
 
   const authHandler = async () => {
@@ -57,12 +63,28 @@ const Login = () => {
     window.location.assign(requestURL);
   };
 
-  const submitHandler = riotId => {
+  const submitHandler = async riotId => {
     if (riotId.length < 2) {
       return alert('소환사명을 입력해주세요🧐');
     }
-    setModalShow(false);
-    setUserInfo(userInfo => ({ ...userInfo, riot_id: riotId }));
+
+    try {
+      const {
+        data: { message },
+      } = await axios.post(`${process.env.REACT_APP_SERVER_URI}/users`, {
+        email: userInfo.email,
+        riotId,
+      });
+
+      if (message !== 'ok') {
+        throw Error('register failed');
+      }
+
+      setModalShow(false);
+      setUserInfo(userInfo => ({ ...userInfo, riotId }));
+    } catch (err) {
+      console.log('redirect to main page');
+    }
   };
 
   const authMethods = [
