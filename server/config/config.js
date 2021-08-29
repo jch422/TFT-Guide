@@ -5,8 +5,8 @@ module.exports = {
   development: {
     username: env.DATABASE_USERNAME,
     password: env.DATABASE_PASSWORD,
-    database: env.DATABASE_NAME_DEV,
-    host: env.DATABASE_HOST_DEV,
+    database: env.DATABASE_NAME,
+    host: env.DATABASE_HOST,
     dialect: 'mysql',
   },
   test: {
@@ -19,8 +19,8 @@ module.exports = {
   production: {
     username: env.DATABASE_USERNAME,
     password: env.DATABASE_PASSWORD,
-    database: env.DATABASE_NAME_PROD,
-    host: env.DATABASE_HOST_PROD,
+    database: env.DATABASE_NAME,
+    host: env.DATABASE_HOST,
     dialect: 'mysql',
   },
 };
