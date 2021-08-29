@@ -13,6 +13,7 @@ const Login = () => {
   useEffect(() => {
     const accessToken = extractAccessTokenFromURL();
     if (accessToken) {
+      setUserInfo(userInfo => ({ ...userInfo, accessToken }));
       getUserInfo(accessToken);
     }
   }, []);
@@ -47,7 +48,7 @@ const Login = () => {
         throw Error('invalid acessToken');
       }
 
-      setUserInfo({ email, picture, riotId });
+      setUserInfo(userInfo => ({ ...userInfo, email, picture, riotId }));
       if (!isRegistered) {
         setModalShow(true);
       } else {
@@ -71,10 +72,17 @@ const Login = () => {
     try {
       const {
         data: { message },
-      } = await axios.post(`${process.env.REACT_APP_SERVER_URI}/users`, {
-        email: userInfo.email,
-        riotId,
-      });
+      } = await axios.post(
+        `${process.env.REACT_APP_SERVER_URI}/users`,
+        {
+          riotId,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${userInfo.accessToken}`,
+          },
+        },
+      );
 
       if (message !== 'ok') {
         throw Error('register failed');
