@@ -35,7 +35,7 @@ const Login = () => {
     try {
       const {
         data: {
-          data: { email, picture, riotId, isRegistered },
+          data: { id, email, picture, riotId, isRegistered },
           message,
         },
       } = await axios.get(`${process.env.REACT_APP_SERVER_URI}/users/login`, {
@@ -48,8 +48,8 @@ const Login = () => {
         throw Error('invalid acessToken');
       }
 
-      setUserInfo(userInfo => ({ ...userInfo, email, picture, riotId }));
-      if (!isRegistered) {
+      setUserInfo(userInfo => ({ ...userInfo, id, email, picture, riotId }));
+      if (!isRegistered || !riotId) {
         setModalShow(true);
       } else {
         console.log('go to main page');
@@ -71,7 +71,10 @@ const Login = () => {
 
     try {
       const {
-        data: { message },
+        data: {
+          data: { id },
+          message,
+        },
       } = await axios.post(
         `${process.env.REACT_APP_SERVER_URI}/users`,
         {
@@ -89,7 +92,7 @@ const Login = () => {
       }
 
       setModalShow(false);
-      setUserInfo(userInfo => ({ ...userInfo, riotId }));
+      setUserInfo(userInfo => ({ ...userInfo, id, riotId }));
     } catch (err) {
       console.log('redirect to main page');
     }
