@@ -1,36 +1,34 @@
-const { default: axios } = require("axios");
-const api = "RGAPI-3f915173-8775-43e3-8690-5a2609ab494f";
+const { default: axios } = require('axios');
+const api = 'RGAPI-7f1b7844-47de-4534-9fd7-b226fb2c2301';
 module.exports = async (req, res) => {
-  const { summoner_name } = req.params;
-  const puuid = axios
+  const { summoner_name } = req.query;
+  const puuid = await axios
     .get(
-      `https://kr.api.riotgames.com/tft/summoner/v1/summoners/
-    by-name/${summoner_name}
-    ?api_key=${api}`
+      `https://kr.api.riotgames.com/tft/summoner/v1/summoners/by-name/${summoner_name}?api_key=${api}`,
     )
-    .then((res) => res.body.puuid);
+    .then(res => res.data.puuid);
+  const gameData = await axios
+    .get(
+      `
+    https://asia.api.riotgames.com/tft/match/v1/matches/by-puuid/${puuid}/ids?count=10&api_key=${api}`,
+    )
+    .then(res => res.data);
 
-  const gameData = await axios.get(`
-    https://asia.api.riotgames.com/tft/match/v1/matches/by-puuid/${puuid}/ids?
-    count=20&
-    api_key=${api}`);
+  function getMatchHistroy(gameData) {
+    return Promise.all(
+      gameData.map((x, idx) => {
+        return axios.get(`https://asia.api.riotgames.com/tft/match/v1/matches/${x}?api_key=${api}`);
+      }),
+    ).then(res => {
+      const gameDataArray = [];
+      for (let i = 0; i < res.length; i++) {
+        gameDataArray.push(res[i].data);
+      }
+      return gameDataArray;
+    });
+  }
 
-  // primise all
-  const matchHistory = gameData.map((x) =>
-    axios
-      .get(
-        `https://asia.api.riotgames.com/tft/match/v1/matches/
-        ${x}?api_key=${api}`
-      )
-      .then(
-        (res) => {
-          const { game_datatime, game_length } = res.info;
-          const info = res.info.participants;
-          const myMatch = info.filter((x) => x.puuid == puuid);
-          return myMatch, game_datatime, game_length;
-        }
-        // 챔피언, 시너지, 아이템, 1성 2성
-      )
-  );
-  res.status(200).send({ game_datatime, game_length, data: matchHistory });
+  const matchHistory = await getMatchHistroy(gameData);
+
+  await res.status(200).json({ data: matchHistory });
 };
