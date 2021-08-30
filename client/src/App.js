@@ -5,6 +5,7 @@ import { useState } from 'react';
 import MainPage from './pages/MainPage';
 import MyPage from './pages/MyPage';
 import HistorySearch from './pages/HistorySearch';
+import Login from './pages/Login';
 
 function App() {
   const [current, setCurrent] = useState('main');
@@ -14,7 +15,7 @@ function App() {
       <Navbar setCurrent={setCurrent} current={current} />
       <GlobalStyle />
       {current === 'main' && 'main'}
-      {current === 'mypage' && 'mypage'}
+      {current === 'mypage' && <MyPage />}
       {current === 'search' && 'search'}
     </>
   );
