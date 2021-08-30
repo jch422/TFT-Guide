@@ -13,6 +13,7 @@ const Login = () => {
   useEffect(() => {
     const accessToken = extractAccessTokenFromURL();
     if (accessToken) {
+      setUserInfo(userInfo => ({ ...userInfo, accessToken }));
       getUserInfo(accessToken);
     }
   }, []);
@@ -34,7 +35,7 @@ const Login = () => {
     try {
       const {
         data: {
-          data: { email, picture, riotId, isRegistered },
+          data: { id, email, picture, riotId, isRegistered },
           message,
         },
       } = await axios.get(`${process.env.REACT_APP_SERVER_URI}/users/login`, {
@@ -47,8 +48,8 @@ const Login = () => {
         throw Error('invalid acessToken');
       }
 
-      setUserInfo({ email, picture, riotId });
-      if (!isRegistered) {
+      setUserInfo(userInfo => ({ ...userInfo, id, email, picture, riotId }));
+      if (!isRegistered || !riotId) {
         setModalShow(true);
       } else {
         console.log('go to main page');
@@ -70,18 +71,28 @@ const Login = () => {
 
     try {
       const {
-        data: { message },
-      } = await axios.post(`${process.env.REACT_APP_SERVER_URI}/users`, {
-        email: userInfo.email,
-        riotId,
-      });
+        data: {
+          data: { id },
+          message,
+        },
+      } = await axios.post(
+        `${process.env.REACT_APP_SERVER_URI}/users`,
+        {
+          riotId,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${userInfo.accessToken}`,
+          },
+        },
+      );
 
       if (message !== 'ok') {
         throw Error('register failed');
       }
 
       setModalShow(false);
-      setUserInfo(userInfo => ({ ...userInfo, riotId }));
+      setUserInfo(userInfo => ({ ...userInfo, id, riotId }));
     } catch (err) {
       console.log('redirect to main page');
     }
