@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import svgToComponent from '../../utils/svgs';
+import styled from "styled-components";
+import svgToComponent from "../../utils/svgs";
 
 const AuthButton = ({ name, authHandler }) => {
   const props = { width: 30, height: 30 };
