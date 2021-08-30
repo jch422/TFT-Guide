@@ -12,6 +12,7 @@ dotenv.config({
 const app = express();
 const usersRouter = require('./routes/user');
 const decksRouter = require('./routes/deck');
+const matchesRouter = require('./routes/matches');
 const { verifyAccessToken } = require('./middelware/access-token');
 
 app.use(express.json());
@@ -24,6 +25,7 @@ app.use(
 );
 app.use('/users', verifyAccessToken, usersRouter);
 app.use('/decks', decksRouter);
+app.use('/matches', matchesRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`listening on port ${process.env.PORT}`);
