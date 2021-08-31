@@ -12,11 +12,6 @@ module.exports = (sequelize, DataTypes) => {
   }
   Champion.init(
     {
-      id: {
-        allowNull: false,
-        type: DataTypes.STRING,
-        primaryKey: true,
-      },
       name: DataTypes.STRING,
     },
     {
