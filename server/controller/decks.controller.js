@@ -53,15 +53,14 @@ module.exports = {
           id,
         },
       });
-      res.status(200).json({ data, message: 'okay' });
+      res.status(200).json({ data, message: 'ok' });
     } catch (err) {
       res.status(400).json({ data: null, message: 'invalid request' });
     }
   },
   put: async (req, res) => {
     try {
-      const { id } = req.params;
-      const { champions } = req.body;
+      const { id, champions } = req.body;
       const data = await Deck.findOne({
         where: { id: id },
       });
@@ -80,7 +79,7 @@ module.exports = {
           });
         }),
       );
-      res.status(200).json({ data: result, message: 'okay' });
+      res.status(200).json({ data: result, message: 'ok' });
     } catch (err) {
       res.status(400).json({ data: null, message: 'invalid request' });
     }

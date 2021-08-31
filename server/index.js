@@ -27,7 +27,7 @@ app.use(
 app.use('/users', verifyAccessToken, usersRouter);
 app.use('/decks', decksRouter);
 app.use('/matches', matchesRouter);
-app.use('/champion', championRouter);
+app.use('/recommend', championRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`listening on port ${process.env.PORT}`);

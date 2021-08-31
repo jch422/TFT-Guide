@@ -3,7 +3,6 @@ const router = express.Router();
 
 const championController = require('../controller/champion.controller');
 
-router.get('/', championController.getTraits);
-router.post('/recommend', championController.getRecommend);
+router.post('/', championController.postRecommend);
 
 module.exports = router;
