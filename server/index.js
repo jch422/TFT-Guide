@@ -15,7 +15,6 @@ const decksRouter = require('./routes/deck');
 const matchesRouter = require('./routes/matches');
 const championRouter = require('./routes/champion');
 const { verifyAccessToken } = require('./middelware/access-token');
-const initialController = require('./routes/initial');
 
 app.use(express.json());
 app.use(
@@ -26,13 +25,12 @@ app.use(
   }),
 );
 app.use('/users', verifyAccessToken, usersRouter);
-app.use('/deck', decksRouter);
+app.use('/decks', decksRouter);
 app.use('/matches', matchesRouter);
 app.use('/champion', championRouter);
-app.use('/initial', initialController);
 
-app.listen(8080, () => {
-  console.log(`listening on port ${8080}`);
+app.listen(process.env.PORT, () => {
+  console.log(`listening on port ${process.env.PORT}`);
 });
 
 module.exports = app;
