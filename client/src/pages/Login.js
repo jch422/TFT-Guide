@@ -1,19 +1,24 @@
 import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 
+import { updateUserInfo } from '../actions';
 import AuthButton from '../components/Login/AuthButton';
 import Modal from '../components/Login/Modal';
 import { makeGoogleOAuthRequestURL } from '../utils/url';
 
 const Login = () => {
-  const [userInfo, setUserInfo] = useState(null);
+  const userInfo = useSelector(state => state.userInfoReducer);
   const [modalShow, setModalShow] = useState(false);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     const accessToken = extractAccessTokenFromURL();
     if (accessToken) {
-      setUserInfo(userInfo => ({ ...userInfo, accessToken }));
+      dispatch(updateUserInfo({ accessToken }));
       getUserInfo(accessToken);
     }
   }, []);
@@ -48,14 +53,14 @@ const Login = () => {
         throw Error('invalid acessToken');
       }
 
-      setUserInfo(userInfo => ({ ...userInfo, id, email, picture, riotId }));
+      dispatch(updateUserInfo({ id, email, picture, riotId }));
       if (!isRegistered || !riotId) {
         setModalShow(true);
       } else {
-        console.log('go to main page');
+        history.push('/');
       }
     } catch (err) {
-      console.log('reload login page');
+      history.push('/login');
     }
   };
 
@@ -64,11 +69,12 @@ const Login = () => {
     window.location.assign(requestURL);
   };
 
-  const submitHandler = async riotId => {
-    if (riotId.length < 2) {
-      return alert('소환사명을 입력해주세요🧐');
-    }
+  const closeModalHandler = () => {
+    const EMPTY_RIOT_ID = '';
+    submitHandler(EMPTY_RIOT_ID);
+  };
 
+  const submitHandler = async riotId => {
     try {
       const {
         data: {
@@ -92,9 +98,11 @@ const Login = () => {
       }
 
       setModalShow(false);
-      setUserInfo(userInfo => ({ ...userInfo, id, riotId }));
+      dispatch(updateUserInfo({ id, riotId }));
+      history.push('/');
     } catch (err) {
-      console.log('redirect to main page');
+      alert('소환사명 등록 중 오류 발생!');
+      history.push('/');
     }
   };
 
@@ -120,11 +128,7 @@ const Login = () => {
       {authMethods.map(authMethod => (
         <AuthButton key={authMethod.name} {...authMethod} />
       ))}
-      <Modal
-        show={modalShow}
-        closeModal={() => setModalShow(false)}
-        submitHandler={submitHandler}
-      />
+      <Modal show={modalShow} closeModal={closeModalHandler} submitHandler={submitHandler} />
     </LoginContainer>
   );
 };
