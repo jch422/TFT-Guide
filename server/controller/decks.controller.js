@@ -1,4 +1,4 @@
-const { Deck, Champion, Deck_Champion } = require('../models/');
+const { Deck, Champion, Deck_Champion } = require('../models');
 
 module.exports = {
   get: async (req, res) => {
@@ -35,6 +35,51 @@ module.exports = {
       );
 
       res.status(201).json({ data: result, message: 'ok' });
+    } catch (err) {
+      res.status(400).json({ data: null, message: 'invalid request' });
+    }
+  },
+  delete: async (req, res) => {
+    try {
+      const { id } = req.params;
+
+      let data = await Deck_Champion.destroy({
+        where: {
+          deckId: id,
+        },
+      });
+      await Deck.destroy({
+        where: {
+          id,
+        },
+      });
+      res.status(200).json({ data, message: 'ok' });
+    } catch (err) {
+      res.status(400).json({ data: null, message: 'invalid request' });
+    }
+  },
+  put: async (req, res) => {
+    try {
+      const { id, champions } = req.body;
+      const data = await Deck.findOne({
+        where: { id: id },
+      });
+
+      await Deck_Champion.destroy({
+        where: {
+          deckId: id,
+        },
+      });
+
+      const result = await Promise.all(
+        champions.map(({ championId }) => {
+          return Deck_Champion.create({
+            deckId: data.id,
+            championId,
+          });
+        }),
+      );
+      res.status(200).json({ data: result, message: 'ok' });
     } catch (err) {
       res.status(400).json({ data: null, message: 'invalid request' });
     }
