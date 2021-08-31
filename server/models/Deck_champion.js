@@ -4,7 +4,7 @@ const {
 } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class decks_champions extends Model {
+  class Deck_Champion extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -12,10 +12,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association heres
-  
+      this.belongsTo(models.Deck, {
+        foreignKey: 'deckId',
+        as: 'decks',
+      });
+      this.belongsTo(models.Champion, {
+        foreignKey: 'championId',
+        as: 'champion',
+      });
     }
   };
-  decks_champions.init({
+  Deck_Champion.init({
     deck_id: {
       allowNull: false,
       type: DataTypes.INTEGER
@@ -26,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'decks_champions',
+    modelName: 'Deck_Champion',
   });
-  return decks_champions;
+  return Deck_Champion;
 };
