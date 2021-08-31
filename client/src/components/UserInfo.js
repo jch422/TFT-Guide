@@ -34,7 +34,7 @@ const UserInfo = () => {
               </UserInfoWrapper>
               <Hr />
               <LogoutBtnWrapper>
-                <LogoutBtn onClick={handleLogout}>로그아웃</LogoutBtn>
+                <LogoutBtn onClick={handleLogout}>Logout</LogoutBtn>
               </LogoutBtnWrapper>
             </LogoutModal>
           )}
@@ -78,7 +78,7 @@ const Email = styled.div`
 
 const StyledLink = styled(Link)`
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   &:hover {
     color: yellow;
   }
