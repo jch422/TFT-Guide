@@ -5,16 +5,16 @@ import Unit from './Unit/Unit';
 
 function History({ data, puuid }) {
   const matchDate = new Date(data.info.game_datetime);
-  let year = matchDate.getFullYear(); // 년도
-  let month = matchDate.getMonth() + 1; // 월
-  let date = matchDate.getDate(); // 날짜
+  const year = matchDate.getFullYear(); // 년도
+  const month = matchDate.getMonth() + 1; // 월
+  const date = matchDate.getDate(); // 날짜
   const matchTime = new Date(data.info.game_length);
-  let minute = parseInt(matchTime / 60);
-  let second = parseInt((matchTime - minute) / 60);
+  const minute = parseInt(matchTime / 60);
+  const second = parseInt((matchTime - minute) / 60);
   let myMatch = {};
-  for (let i of data.info.participants) {
-    if (i.puuid === puuid) {
-      myMatch = i;
+  for (let participant of data.info.participants) {
+    if (participant.puuid === puuid) {
+      myMatch = participant;
     }
   }
   function compare(a, b) {
