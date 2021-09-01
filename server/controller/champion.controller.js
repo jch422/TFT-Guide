@@ -7,7 +7,7 @@ module.exports = {
       const { champions: champion, level } = req.body;
       const data = {};
       const recommend = [];
-      const championTraits = champion.map(({ kr_name }) => {
+      const championTraits = champion.map(kr_name  => {
         const championData = champions.filter(x => x.kr_name === kr_name);
         return championData[0].traits;
       });
