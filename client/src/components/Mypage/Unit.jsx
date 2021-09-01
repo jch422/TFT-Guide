@@ -64,4 +64,5 @@ const ChampionImg = styled.img`
 `;
 const UnitContainer = styled.div`
   margin-right: 5px;
+  width: 50px;
 `;
