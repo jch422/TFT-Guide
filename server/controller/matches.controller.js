@@ -39,7 +39,7 @@ module.exports = {
         return acc;
       }, []);
 
-      res.status(200).json({ data: { matchesData, puuid }, message: 'ok' });
+      res.status(200).json({ data: matchesData, message: 'ok' });
     } catch (err) {
       res.status(400).json({ data: null, message: 'invalid request' });
     }

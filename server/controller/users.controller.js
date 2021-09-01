@@ -28,19 +28,7 @@ module.exports = {
         defaults: { riotId: req.body.riotId },
       });
 
-      if (!created) {
-        const updatedUser = await User.update(
-          { riotId: req.body.riotId },
-          {
-            where: {
-              email: req.email,
-            },
-          },
-        );
-        res.status(201).json({ data: updatedUser, message: 'ok' });
-      } else {
-        res.status(201).json({ data: user, message: 'ok' });
-      }
+      res.status(201).json({ data: user, message: 'ok' });
     } catch (err) {
       res.status(500).json({ data: null, message: 'server error' });
     }
