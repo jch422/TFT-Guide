@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SearchJSONData } from '../SearchJSONData';
 
 function Trait({ data }) {
   let dataStr = data.split('+');
-  let name = dataStr[0].split('_')[1];
+  let name = dataStr[0];
+  const jsonData = SearchJSONData('traits', name);
   let color = dataStr[1];
   let kr_name = dataStr[2];
 
   return (
     <TraitsContainer>
       <TraitContent style={{ backgroundImage: `url('../TFTData/traits/${color}.png')` }}>
-        <TraitImage src={`../TFTData/traits/${name}.svg`}></TraitImage>
+        <TraitImage src={`../TFTData/traits/${jsonData['name'].toLowerCase()}.svg`}></TraitImage>
         <TooltipText>{kr_name}</TooltipText>
       </TraitContent>
     </TraitsContainer>

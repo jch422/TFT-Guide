@@ -7,7 +7,6 @@ import styled from 'styled-components';
 function HistorySearch() {
   const [Name, setIsName] = useState('');
   const [Data, setIsData] = useState(null);
-  // const [puuid, setPuuid] = useState('');
 
   const onKeyPress = e => {
     if (e.key === 'Enter') {
@@ -18,7 +17,6 @@ function HistorySearch() {
     setIsName(e.target.value);
   };
   const getData = async () => {
-    console.log(Name);
     const res = await axios.get(`http://localhost:8000/matches/${Name}`);
     let matchesData = res.data.data.matchesData;
     for (let i = 0; i < matchesData.length; i++) {
@@ -35,9 +33,11 @@ function HistorySearch() {
       <Search onKeyPress={onKeyPress} searchButtonClick={searchButtonClick} />
       {Data?.data?.length > 0 ? (
         <div id="history-summary-body">
-          {Data.data.map((data, index) => (
-            <History data={data} key={index} puuid={Data.puuid} />
-          ))}
+          {Data.data.map((data, index) => {
+            if (data.info.game_datetime > 1626923221434) {
+              return <History data={data} key={index} puuid={Data.puuid} />;
+            }
+          })}
         </div>
       ) : null}
     </Div>
@@ -46,4 +46,8 @@ function HistorySearch() {
 
 export default HistorySearch;
 
-const Div = styled.div``;
+const Div = styled.div`
+  margin: 0;
+  background-color: #fbed0b;
+  height: 120vh;
+`;

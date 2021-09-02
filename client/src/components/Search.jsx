@@ -10,7 +10,6 @@ function Search({ onChange, onKeyPress, searchButtonClick }) {
   };
   return (
     <Div>
-      <div>소환사 전적 검색</div>
       <input
         id="search-id"
         type="text"
@@ -18,9 +17,9 @@ function Search({ onChange, onKeyPress, searchButtonClick }) {
         placeholder="소환사명"
         onKeyPress={OnKeyPressSearch}
       ></input>
-      <button onClick={searchButtonClickSearch}>
-        <i className="fas fa-search"></i>
-      </button>
+      <Button onClick={searchButtonClickSearch}>
+        <Img src={'https://svgsilh.com/svg/1093183.svg'}></Img>
+      </Button>
     </Div>
   );
 }
@@ -31,15 +30,32 @@ const Div = styled.div`
   padding: 0.5rem;
   margin-bottom: 1rem;
   width: 100%;
+  height: 65px;
   margin: 0 auto;
   list-style-type: none;
-  background: #ffffff;
-  border: solid rgb(238, 238, 238) 0.2rem;
+  background: #fbed0b;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   max-width: 800px;
   min-width: 500px;
   input {
     width: 100%;
-    margin: 0 auto;
+    height: 100%;
+    border-radius: 25px;
+    text-align: center;
   }
+  input::placeholder {
+    text-align: center;
+  }
+`;
+
+const Button = styled.button`
+  width: 30px;
+  height: 30px;
+`;
+
+const Img = styled.img`
+  width: 15px;
+  height: 15px;
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import ChampionBox from './ChampionBox';
+import ChampionBox from './ChampionBox.jsx';
 
 const ChampionList = ({ champions, handleDragStart, handleDragEnd }) => {
   const COL_NUM = 10;

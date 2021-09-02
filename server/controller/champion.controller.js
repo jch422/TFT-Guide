@@ -7,7 +7,7 @@ module.exports = {
       const { champions: champion, level } = req.body;
       const data = {};
       const recommend = [];
-      const championTraits = champion.map(kr_name  => {
+      const championTraits = champion.map(kr_name => {
         const championData = champions.filter(x => x.kr_name === kr_name);
         return championData[0].traits;
       });
@@ -50,7 +50,6 @@ module.exports = {
               if (!champion.find(name => name === x.kr_name)) {
                 let score = getScore(recommend[i][1]);
                 if (score >= 4) {
-                  console.log(x.kr_name);
                 }
                 if (
                   x.kr_name === '가렌' ||
