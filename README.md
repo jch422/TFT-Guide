@@ -27,7 +27,7 @@ TFT를 시작하고 싶은데 어떻게 할지 모를 때.
 |[윤현섭](https://github.com/hyeon3051)|Back_End, 팀장|
 |[김호진](https://github.com/Alamarama)|Front_End|
 |[민병대](https://github.com/minbyoungdae)|Front_End|
-|[정지찬](https://github.com/jch422)|Front_End|
+|[정지찬](https://github.com/jch422)|full_stack|
 
 # Project details
 
