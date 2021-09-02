@@ -1,0 +1,662 @@
+[
+  {
+    "key": "Set5_Abomination",
+    "name": "Abomination",
+    "kr_name": "괴생명체",
+    "description": "When allied champions have died, the Monstrosity will rise from its grave. The Monstrosity receives bonus Health and Attack Damage based on allied Abomination champions' star levels. The 3 Abomination champions nearest the grave will also grant the Monstrosity a random copy of one of their items when combat starts.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "silver",
+        "min": 3,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 4
+      },
+      {
+        "style": "chromatic",
+        "min": 5
+      }
+    ]
+  },
+  {
+    "key": "Set5_Assassin",
+    "name": "Assassin",
+    "kr_name": "암살자",
+    "innate": "When combat starts, Assassins leap to the enemy backline.",
+    "description": "Assassins’ Abilities can critically strike and they gain bonus Critical Strike Chance and bonus Critical Strike Damage.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set5_Brawler",
+    "name": "Brawler",
+    "kr_name": "싸움꾼",
+    "description": "Brawlers gain additional maximum Health.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "chromatic",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set5_Caretaker",
+    "name": "Caretaker",
+    "kr_name": "용 사육사",
+    "description": "Caretakers deploy with a Baby Dragon that can be placed anywhere on the battlefield. The Baby Dragon gains a percentage of its Caretaker's Attack Speed, and restores Mana to the Caretaker upon death.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 1
+      }
+    ]
+  },
+  {
+    "key": "Set5_Cavalier",
+    "name": "Cavalier",
+    "kr_name": "기병대",
+    "innate": "Cavaliers charge quickly towards their target whenever they move.",
+    "description": "Cavaliers take reduced damage. At the start of combat and after each charge, this effect is doubled for several seconds.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 2
+      },
+      {
+        "style": "silver",
+        "min": 3,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4
+      }
+    ]
+  },
+  {
+    "key": "Set5_Cannoneer",
+    "name": "Cannoneers",
+    "kr_name": "포병대",
+    "description": "Every 5th Cannoneer attack is replaced with a cannon shot that deals a percent of that attack's damage in an explosion around the target as physical damage.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "chromatic",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set5_Cruel",
+    "name": "Cruel",
+    "kr_name": "극악무도",
+    "description": "A Cruel champion hungers to be alone against exactly 1 enemy left standing. Cruel champions are purchased with Little Legend Health instead of gold. They can be sold for gold, but not Health. You're welcome.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 1
+      }
+    ]
+  },
+  {
+    "key": "Set5_Dawnbringer",
+    "name": "Dawnbringer",
+    "kr_name": "빛의 인도자",
+    "description": "Dawnbringers rapidly heal some of their maximum Health the first time they drop below a percentage of their Health. When this occurs, all allied Dawnbringers gain bonus damage.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 7
+      },
+      {
+        "style": "chromatic",
+        "min": 8
+      }
+    ]
+  },
+  {
+    "key": "Set5_Draconic",
+    "name": "Draconic",
+    "kr_name": "용족",
+    "description": "At the end of each player combat, gain a dragon egg on your bench. The bigger the egg, the longer it takes to hatch, and the rarer the reward. Golden eggs hatch into even rarer loot. In Hyper Roll, dragon eggs hatch a lot faster!",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 3,
+        "max": 4
+      },
+      {
+        "style": "gold",
+        "min": 5
+      }
+    ]
+  },
+  {
+    "key": "Set5_Forgotten",
+    "name": "Forgotten",
+    "kr_name": "망각",
+    "description": "Forgotten champions have bonus Attack Damage and Ability Power. Each Shadow item held by a Forgotten champion increases these bonuses by a percentage on all Forgotten champions, stacking up several times.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 7
+      },
+      {
+        "style": "chromatic",
+        "min": 8
+      }
+    ]
+  },
+  {
+    "key": "Set5_Hellion",
+    "name": "Hellion",
+    "kr_name": "악동",
+    "description": "Hellions gain Attack Speed. Whenever a Hellion dies, a Doppelhellion (a one less star copy) will leap from the Hellion portal and join the fight!",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 7
+      },
+      {
+        "style": "chromatic",
+        "min": 8
+      }
+    ]
+  },
+  {
+    "key": "Set5_Inanimate",
+    "name": "Inanimate",
+    "kr_name": "무생물",
+    "description": "At the start of combat, Inanimate champions summon Harrowing Mist in all adjacent hexes surrounding them for several seconds, granting all allies within damage reduction while they remain within the mist.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 1
+      }
+    ]
+  },
+  {
+    "key": "Set5_Invoker",
+    "name": "Invoker",
+    "kr_name": "기원자",
+    "description": "All allies gain extra Mana from their attacks.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4
+      }
+    ]
+  },
+  {
+    "key": "Set5_Ironclad",
+    "name": "Ironclad",
+    "kr_name": "철갑",
+    "description": "All allies gain Armor.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 2
+      },
+      {
+        "style": "gold",
+        "min": 3,
+        "max": 3
+      },
+      {
+        "style": "chromatic",
+        "min": 4
+      }
+    ]
+  },
+  {
+    "key": "Set5_Knight",
+    "name": "Knight",
+    "kr_name": "기사",
+    "description": "All allies block a flat amount of damage from all sources.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set5_Legionnaire",
+    "name": "Legionnaire",
+    "kr_name": "군단",
+    "description": "Legionnaires gain bonus Attack Speed, and their first attack after casting an Ability heals them for a percentage of the damage dealt.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 7
+      },
+      {
+        "style": "chromatic",
+        "min": 8
+      }
+    ]
+  },
+  {
+    "key": "Set5_Mystic",
+    "name": "Mystic",
+    "kr_name": "신비술사",
+    "description": "All allies gain Magic Resist.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 2
+      },
+      {
+        "style": "silver",
+        "min": 3,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 4
+      },
+      {
+        "style": "chromatic",
+        "min": 5
+      }
+    ]
+  },
+  {
+    "key": "Set5_Nightbringer",
+    "name": "Nightbringer",
+    "kr_name": "어둠의 인도자",
+    "description": "Nightbringers gain a shield for several seconds equal to a percent of their maximum Health the first time they drop below a percentage of their maximum Health. When this occurs, that Nightbringer gains bonus damage.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "silver",
+        "min": 6,
+        "max": 7
+      },
+      {
+        "style": "gold",
+        "min": 8
+      }
+    ]
+  },
+  {
+    "key": "Set5_Ranger",
+    "name": "Ranger",
+    "kr_name": "정찰대",
+    "description": "Rangers gain and lose bonus Attack Speed periodically. This effect begins after a delay after combat starts.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "chromatic",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set5_Redeemed",
+    "name": "Redeemed",
+    "kr_name": "구원받은 자",
+    "description": "Redeemed champions have increased Armor, Magic Resist, and Ability Power. When they die, their bonus is split among remaining Redeemed allies.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 3,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 8
+      },
+      {
+        "style": "chromatic",
+        "min": 9
+      }
+    ]
+  },
+  {
+    "key": "Set5_Renewer",
+    "name": "Renewer",
+    "kr_name": "재생술사",
+    "description": "Renewers heal for a percent of their maximum Health each second. If they're full Health, they restore Mana instead.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "chromatic",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set5_Revenant",
+    "name": "Revenant",
+    "kr_name": "망령",
+    "description": "Revenants revive after their first death each combat. Once revived, they take and deal increased damage.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 2
+      },
+      {
+        "style": "silver",
+        "min": 3,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 4
+      },
+      {
+        "style": "chromatic",
+        "min": 5
+      }
+    ]
+  },
+  {
+    "key": "Set5_Sentinel",
+    "name": "Sentinel",
+    "kr_name": "감시자",
+    "description": "At start of combat, the Sentinel with the highest Health gains a shield that grants Attack Speed each time it is applied. When the shield is destroyed or expires it will pass to the ally with the lowest percent Health.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 3,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 8
+      },
+      {
+        "style": "chromatic",
+        "min": 9
+      }
+    ]
+  },
+  {
+    "key": "Set5_Skirmisher",
+    "name": "Skirmisher",
+    "kr_name": "척후병",
+    "description": "Skirmishers gain a shield at the start of combat, and bonus Attack Damage each second.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 3,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 8
+      },
+      {
+        "style": "chromatic",
+        "min": 9
+      }
+    ]
+  },
+  {
+    "key": "Set5_Spellweaver",
+    "name": "Spellweaver",
+    "kr_name": "주문술사",
+    "description": "Spellweavers have bonus Ability Power, which increases whenever any champion uses an ability stacking up several times.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "chromatic",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set5_Victorious",
+    "name": "Victorious",
+    "kr_name": "승리자",
+    "description": "When Victorious champions score a kill, their next attack is empowered to deal a percentage of the target's missing Health as bonus magic damage.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 1
+      }
+    ]
+  },
+  {
+    "key": "Set5_Coven",
+    "name": "Coven",
+    "description": "At the start of combat, the champion nearest to the center of your Coven champions is chosen as the Coven Leader, gaining bonus Ability Power. Each time a Coven champion casts, a percentage of the cost is bestowed upon the Coven Leader as Mana.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 3
+      }
+    ]
+  },
+  {
+    "key": "Set5_Dragonslayer",
+    "name": "Dragonslayer",
+    "description": "Dragonslayers always gain bonus Ability Power. After the first Dragonslayer ally scores a takedown on an enemy with certain amount of Health, all allies gain additional Ability Power for the rest of combat.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "chromatic",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set5_Eternal",
+    "name": "Eternal",
+    "description": "Wolf separates from Lamb, and can be placed anywhere on the battlefield. Wolf does not count toward your team size, and receives all of Lamb's stat bonuses.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 1
+      }
+    ]
+  },
+  {
+    "key": "Set5_GodKing",
+    "name": "God-Kings",
+    "description": "God-Kings deal bonus damage to enemies who have at least one of their Rival Traits. This effect is only active when you have exactly 1 unique God-King. Garen's Rivals: Forgotten, Nightbringer, Coven, Hellion, Dragonslayer, Abomination, Revenant. Darius' Rivals: Redeemed, Dawnbringer, Verdant, Draconic, Ironclad.",
+    "type": "class",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 1
+      }
+    ]
+  },
+  {
+    "key": "Set5_Verdant",
+    "name": "Verdant",
+    "description": "Champions that start combat adjacent to at least one Verdant ally are immune to crowd control for a duration.",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 2
+      },
+      {
+        "style": "gold",
+        "min": 3
+      }
+    ]
+  }
+]

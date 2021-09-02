@@ -1,0 +1,435 @@
+[
+  {
+    "name": "Target Dummy",
+    "championId": "TFT_TrainingDummy",
+    "cost": 2,
+    "traits": []
+  },
+  {
+    "name": "Aatrox",
+    "kr_name": "아트록스",
+    "championId": "TFT5_Aatrox",
+    "cost": 1,
+    "traits": ["Set5_Redeemed", "Set5_Legionnaire"]
+  },
+  {
+    "name": "Akshan",
+    "kr_name": "아크샨",
+    "championId": "TFT5_Akshan",
+    "cost": 5,
+    "traits": ["Set5_Sentinel", "Set5_Ranger"]
+  },
+  {
+    "name": "Aphelios",
+    "kr_name": "아펠리오스",
+    "championId": "TFT5_Aphelios",
+    "cost": 4,
+    "traits": ["Set5_Nightbringer", "Set5_Ranger"]
+  },
+  {
+    "name": "Ashe",
+    "kr_name": "애쉬",
+    "championId": "TFT5_Ashe",
+    "cost": 3,
+    "traits": ["Set5_Draconic", "Set5_Ranger"]
+  },
+  {
+    "name": "Brand",
+    "kr_name": "브랜드",
+    "championId": "TFT5_Brand",
+    "cost": 2,
+    "traits": ["Set5_Abomination", "Set5_Spellweaver"]
+  },
+  {
+    "name": "Diana",
+    "kr_name": "다이애나",
+    "championId": "TFT5_Diana",
+    "cost": 4,
+    "traits": ["Set5_Nightbringer", "Set5_Assassin"]
+  },
+  {
+    "name": "Draven",
+    "kr_name": "드레이븐",
+    "championId": "TFT5_Draven",
+    "cost": 4,
+    "traits": ["Set5_Forgotten", "Set5_Legionnaire"]
+  },
+  {
+    "name": "Fiddlesticks",
+    "kr_name": "피들스틱",
+    "championId": "TFT5_Fiddlesticks",
+    "cost": 4,
+    "traits": ["Set5_Abomination", "Set5_Revenant", "Set5_Mystic"]
+  },
+  {
+    "name": "Galio",
+    "kr_name": "갈리오",
+    "championId": "TFT5_Galio",
+    "cost": 4,
+    "traits": ["Set5_Draconic", "Set5_Sentinel", "Set5_Knight"]
+  },
+  {
+    "name": "Garen",
+    "kr_name": "가렌",
+    "championId": "TFT5_Garen",
+    "cost": 5,
+    "traits": ["Set5_Victorious", "Set5_Dawnbringer", "Set5_Knight"]
+  },
+  {
+    "name": "Gragas",
+    "kr_name": "그라가스",
+    "championId": "TFT5_Gragas",
+    "cost": 1,
+    "traits": ["Set5_Dawnbringer", "Set5_Brawler"]
+  },
+  {
+    "name": "Gwen",
+    "kr_name": "그웬",
+    "championId": "TFT5_Gwen",
+    "cost": 5,
+    "traits": ["Set5_Inanimate", "Set5_Mystic"]
+  },
+  {
+    "name": "Hecarim",
+    "kr_name": "헤카림",
+    "championId": "TFT5_Hecarim",
+    "cost": 2,
+    "traits": ["Set5_Forgotten", "Set5_Cavalier"]
+  },
+  {
+    "name": "Heimerdinger",
+    "kr_name": "하이머딩거",
+    "championId": "TFT5_Heimerdinger",
+    "cost": 5,
+    "traits": ["Set5_Draconic", "Set5_Renewer", "Set5_Caretaker"]
+  },
+  {
+    "name": "Ivern",
+    "kr_name": "아이번",
+    "championId": "TFT5_Ivern",
+    "cost": 4,
+    "traits": ["Set5_Revenant", "Set5_Invoker", "Set5_Renewer"]
+  },
+  {
+    "name": "Irelia",
+    "kr_name": "이렐리아",
+    "championId": "TFT5_Irelia",
+    "cost": 2,
+    "traits": ["Set5_Sentinel", "Set5_Skirmisher", "Set5_Legionnaire"]
+  },
+  {
+    "name": "Jax",
+    "kr_name": "잭스",
+    "championId": "TFT5_Jax",
+    "cost": 4,
+    "traits": ["Set5_Ironclad", "Set5_Skirmisher"]
+  },
+  {
+    "name": "Kalista",
+    "kr_name": "칼리스타",
+    "championId": "TFT5_Kalista",
+    "cost": 1,
+    "traits": ["Set5_Abomination", "Set5_Legionnaire"]
+  },
+  {
+    "name": "Karma",
+    "kr_name": "카르마",
+    "championId": "TFT5_Karma",
+    "cost": 4,
+    "traits": ["Set5_Dawnbringer", "Set5_Invoker"]
+  },
+  {
+    "name": "Kayle",
+    "kr_name": "케일",
+    "championId": "TFT5_Kayle",
+    "cost": 5,
+    "traits": ["Set5_Redeemed", "Set5_Legionnaire"]
+  },
+  {
+    "name": "Kennen",
+    "kr_name": "케넨",
+    "championId": "TFT5_Kennen",
+    "cost": 2,
+    "traits": ["Set5_Hellion", "Set5_Skirmisher"]
+  },
+  {
+    "name": "Kha'Zix",
+    "kr_name": "카직스",
+    "championId": "TFT5_Khazix",
+    "cost": 1,
+    "traits": ["Set5_Dawnbringer", "Set5_Assassin"]
+  },
+  {
+    "name": "Kled",
+    "kr_name": "클레드",
+    "championId": "TFT5_Kled",
+    "cost": 1,
+    "traits": ["Set5_Hellion", "Set5_Cavalier"]
+  },
+  {
+    "name": "Lee Sin",
+    "kr_name": "리 신",
+    "championId": "TFT5_LeeSin",
+    "cost": 3,
+    "traits": ["Set5_Nightbringer", "Set5_Skirmisher"]
+  },
+  {
+    "name": "Leona",
+    "kr_name": "레오나",
+    "championId": "TFT5_Leona",
+    "cost": 1,
+    "traits": ["Set5_Redeemed", "Set5_Knight"]
+  },
+  {
+    "name": "Lucian",
+    "kr_name": "루시안",
+    "championId": "TFT5_Lucian",
+    "cost": 4,
+    "traits": ["Set5_Sentinel", "Set5_Cannoneer"]
+  },
+  {
+    "name": "Lulu",
+    "kr_name": "룰루",
+    "championId": "TFT5_Lulu",
+    "cost": 3,
+    "traits": ["Set5_Hellion", "Set5_Mystic"]
+  },
+  {
+    "name": "Lux",
+    "kr_name": "럭스",
+    "championId": "TFT5_Lux",
+    "cost": 3,
+    "traits": ["Set5_Redeemed", "Set5_Mystic"]
+  },
+  {
+    "name": "Miss Fortune",
+    "kr_name": "미스 포츈",
+    "championId": "TFT5_MissFortune",
+    "cost": 3,
+    "traits": ["Set5_Forgotten", "Set5_Cannoneer"]
+  },
+  {
+    "name": "Nautilus",
+    "kr_name": "노틸러스",
+    "championId": "TFT5_Nautilus",
+    "cost": 2,
+    "traits": ["Set5_Ironclad", "Set5_Knight"]
+  },
+  {
+    "name": "Nidalee",
+    "kr_name": "니달리",
+    "championId": "TFT5_Nidalee",
+    "cost": 3,
+    "traits": ["Set5_Dawnbringer", "Set5_Skirmisher"]
+  },
+  {
+    "name": "Nocturne",
+    "kr_name": "녹턴",
+    "championId": "TFT5_Nocturne",
+    "cost": 3,
+    "traits": ["Set5_Revenant", "Set5_Assassin"]
+  },
+  {
+    "name": "Nunu",
+    "kr_name": "누누",
+    "championId": "TFT5_Nunu",
+    "cost": 3,
+    "traits": ["Set5_Abomination", "Set5_Brawler"]
+  },
+  {
+    "name": "Olaf",
+    "kr_name": "올라프",
+    "championId": "TFT5_Olaf",
+    "cost": 1,
+    "traits": ["Set5_Sentinel", "Set5_Skirmisher"]
+  },
+  {
+    "name": "Poppy",
+    "kr_name": "뽀삐",
+    "championId": "TFT5_Poppy",
+    "cost": 1,
+    "traits": ["Set5_Hellion", "Set5_Knight"]
+  },
+  {
+    "name": "Pyke",
+    "kr_name": "파이크",
+    "championId": "TFT5_Pyke",
+    "cost": 2,
+    "traits": ["Set5_Sentinel", "Set5_Assassin"]
+  },
+  {
+    "name": "Rakan",
+    "kr_name": "라칸",
+    "championId": "TFT5_Rakan",
+    "cost": 3,
+    "traits": ["Set5_Sentinel", "Set5_Renewer"]
+  },
+  {
+    "name": "Rell",
+    "kr_name": "렐",
+    "championId": "TFT5_Rell",
+    "cost": 4,
+    "traits": ["Set5_Redeemed", "Set5_Ironclad", "Set5_Cavalier"]
+  },
+  {
+    "name": "Riven",
+    "kr_name": "리븐",
+    "championId": "TFT5_Riven",
+    "cost": 3,
+    "traits": ["Set5_Dawnbringer", "Set5_Legionnaire"]
+  },
+  {
+    "name": "Sejuani",
+    "kr_name": "세주아니",
+    "championId": "TFT5_Sejuani",
+    "cost": 2,
+    "traits": ["Set5_Brawler", "Set5_Nightbringer", "Set5_Cavalier"]
+  },
+  {
+    "name": "Senna",
+    "kr_name": "세나",
+    "championId": "TFT5_Senna",
+    "cost": 1,
+    "traits": ["Set5_Sentinel", "Set5_Cannoneer"]
+  },
+  {
+    "name": "Sett",
+    "kr_name": "세트",
+    "championId": "TFT5_Sett",
+    "cost": 2,
+    "traits": ["Set5_Draconic", "Set5_Brawler"]
+  },
+  {
+    "name": "Soraka",
+    "kr_name": "소라카",
+    "championId": "TFT5_Soraka",
+    "cost": 2,
+    "traits": ["Set5_Dawnbringer", "Set5_Renewer"]
+  },
+  {
+    "name": "Syndra",
+    "kr_name": "신드라",
+    "championId": "TFT5_Syndra",
+    "cost": 2,
+    "traits": ["Set5_Redeemed", "Set5_Invoker"]
+  },
+  {
+    "name": "Teemo",
+    "kr_name": "티모",
+    "championId": "TFT5_Teemo",
+    "cost": 5,
+    "traits": ["Set5_Cruel", "Set5_Hellion", "Set5_Invoker"]
+  },
+  {
+    "name": "Thresh",
+    "kr_name": "쓰레쉬",
+    "championId": "TFT5_Thresh",
+    "cost": 2,
+    "traits": ["Set5_Forgotten", "Set5_Knight"]
+  },
+  {
+    "name": "Tristana",
+    "kr_name": "트리스타나",
+    "championId": "TFT5_Tristana",
+    "cost": 2,
+    "traits": ["Set5_Hellion", "Set5_Cannoneer"]
+  },
+  {
+    "name": "Udyr",
+    "kr_name": "우디르",
+    "championId": "TFT5_Udyr",
+    "cost": 1,
+    "traits": ["Set5_Draconic", "Set5_Skirmisher"]
+  },
+  {
+    "name": "Varus",
+    "kr_name": "바루스",
+    "championId": "TFT5_Varus",
+    "cost": 2,
+    "traits": ["Set5_Redeemed", "Set5_Ranger"]
+  },
+  {
+    "name": "Vayne",
+    "kr_name": "베인",
+    "championId": "TFT5_Vayne",
+    "cost": 1,
+    "traits": ["Set5_Forgotten", "Set5_Ranger"]
+  },
+  {
+    "name": "Vel'Koz",
+    "kr_name": "벨코즈",
+    "championId": "TFT5_Velkoz",
+    "cost": 4,
+    "traits": ["Set5_Redeemed", "Set5_Spellweaver"]
+  },
+  {
+    "name": "Viego",
+    "kr_name": "비에고",
+    "championId": "TFT5_Viego",
+    "cost": 5,
+    "traits": ["Set5_Forgotten", "Set5_Skirmisher", "Set5_Assassin"]
+  },
+  {
+    "name": "Vladimir",
+    "kr_name": "블라디미르",
+    "championId": "TFT5_Vladimir",
+    "cost": 1,
+    "traits": ["Set5_Nightbringer", "Set5_Renewer"]
+  },
+  {
+    "name": "Volibear",
+    "kr_name": "볼리베어",
+    "championId": "TFT5_Volibear",
+    "cost": 5,
+    "traits": ["Set5_Revenant", "Set5_Brawler"]
+  },
+  {
+    "name": "Yasuo",
+    "kr_name": "야스오",
+    "championId": "TFT5_Yasuo",
+    "cost": 3,
+    "traits": ["Set5_Nightbringer", "Set5_Legionnaire"]
+  },
+  {
+    "name": "Ziggs",
+    "kr_name": "직스",
+    "championId": "TFT5_Ziggs",
+    "cost": 1,
+    "traits": ["Set5_Hellion", "Set5_Spellweaver"]
+  },
+  {
+    "name": "Zyra",
+    "kr_name": "자이라",
+    "championId": "TFT5_Zyra",
+    "cost": 3,
+    "traits": ["Set5_Draconic", "Set5_Spellweaver"]
+  },
+  {
+    "name": "Lissandra",
+    "kr_name": "리산드라",
+    "championId": "TFT5_Lissandra",
+    "cost": 1,
+    "traits": ["Set5_Coven", "Set5_Renewer"]
+  },
+  {
+    "name": "LeBlanc",
+    "kr_name": "르블랑",
+    "championId": "TFT5_LeBlanc",
+    "cost": 2,
+    "traits": ["Set5_Coven", "Set5_Assassin"]
+  },
+  {
+    "name": "Lee Sin",
+    "kr_name": "리 신",
+    "championId": "TFT5_LeeSin",
+    "cost": 3,
+    "traits": ["Set5_Nightbringer", "Set5_Skirmisher"]
+  },
+  {
+    "name": "Warwick",
+    "kr_name": "워윅",
+    "championId": "TFT5_Warwick",
+    "cost": 1,
+    "traits": ["Set5_Forgotten", "Set5_Brawler"]
+  }
+]

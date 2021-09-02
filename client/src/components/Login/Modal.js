@@ -7,7 +7,13 @@ const Modal = ({ show, closeModal, submitHandler }) => {
   const inputRef = useRef();
 
   const getRiotId = () => inputRef.current.value.trim();
-  const onClickSubmit = () => submitHandler(getRiotId());
+  const onClickSubmit = () => {
+    const riotId = getRiotId();
+    if (riotId.length < 2) {
+      return alert('소환사명을 입력해주세요🧐');
+    }
+    submitHandler(riotId);
+  };
   const onKeyPressEnter = ({ key }) => {
     if (key !== 'Enter') return;
     submitHandler(getRiotId());
