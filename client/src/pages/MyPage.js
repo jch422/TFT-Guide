@@ -19,7 +19,7 @@ const P = styled.p`
   font-family: Helvetica;
   color: #dc44c3;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  padding: 40px;
+  padding: 40px;-
   text-align: center;
 `;
 const DeckList = styled.div`
