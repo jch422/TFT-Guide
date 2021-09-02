@@ -287,7 +287,7 @@ const TraitsList = styled.div`
 const Guide = styled.div`
   min-width: ${({ minWidth }) => minWidth};
   height: ${({ height }) => height};
-  border: 2px solid #cccccc;
+  border: 2px solid #0c2e41;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -296,18 +296,18 @@ const Guide = styled.div`
 `;
 
 const GuideIcon = styled.div`
-  background-color: #cccccc;
+  background-color: #0c2e41;
   width: 20px;
   height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: #36393f;
+  color: #fbed0b;
 `;
 
 const Text = styled.div`
-  color: #cccccc;
+  color: #0c2e41;
   font-size: 1.2rem;
 `;
 
