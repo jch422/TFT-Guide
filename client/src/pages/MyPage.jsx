@@ -16,10 +16,10 @@ const Body = styled.body`
 
 const P = styled.p`
   padding: 40px;
-  font-size: 30px;
-  font-family: Helvetica;
-  color: #dc44c3;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 40px;
+  font-family: impact;
+  color: #f29766;
+  text-shadow: -1px -1px 0 #0c2e41, 1px -1px 0 #0c2e41, -1px 1px 0 #0c2e41, 1px 1px 0 #0c2e41;
   padding: 40px;
   text-align: center;
 `;
