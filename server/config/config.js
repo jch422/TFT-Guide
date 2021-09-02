@@ -1,4 +1,13 @@
-require('dotenv').config();
+const path = require('path');
+const dotenv = require('dotenv');
+
+dotenv.config({
+  path: path.resolve(
+    process.cwd(),
+    process.env.NODE_ENV === 'production' ? '.env' : '.env.development',
+  ),
+});
+
 const env = process.env;
 
 module.exports = {

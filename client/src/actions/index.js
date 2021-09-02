@@ -1,8 +1,8 @@
 // action types
 export const UPDATE_USERINFO = 'UPDATE_USERINFO';
 export const RESET_USERINFO = 'RESET_USERINFO';
-export const ADD_TO_DECK = 'ADD_TO_DECK';
-export const REMOVE_FROM_DECK = 'REMOVE_FROM_DECK';
+export const SAVE_DECK = 'SAVE_DECK';
+export const LOAD_DECKS = 'LOAD_DECKS';
 
 // actions creator functions - UserInfo
 export const updateUserInfo = userInfo => {
@@ -19,16 +19,17 @@ export const resetUserInfo = () => {
 };
 
 // actions creator functions - Deck
-export const addToDeck = championId => {
+export const saveDeck = deck => {
   return {
-    type: ADD_TO_DECK,
-    payload: { championId },
+    type: SAVE_DECK,
+    payload: { deck },
   };
 };
 
-export const removeFromDeck = championId => {
+// actions creator functions - Decks(서버에 저장한 Decks)
+export const loadDecks = decks => {
   return {
-    type: REMOVE_FROM_DECK,
-    payload: { championId },
+    type: LOAD_DECKS,
+    payload: { decks },
   };
 };
