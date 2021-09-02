@@ -10,10 +10,11 @@ function Trait({ data }) {
       style = i.style;
     }
   }
+
   return (
     <TraitsContainer>
       <TraitContent style={{ backgroundImage: `url('../TFTData/traits/${style}.png')` }}>
-        <TraitImage src={`../TFTData/traits/${jsonData['name']}.svg`}></TraitImage>
+        <TraitImage src={`../TFTData/traits/${jsonData['name'].toLowerCase()}.svg`}></TraitImage>
         <TooltipText>{data.num_units + jsonData['kr_name']}</TooltipText>
       </TraitContent>
     </TraitsContainer>
