@@ -10,7 +10,6 @@ function Search({ onChange, onKeyPress, searchButtonClick }) {
   };
   return (
     <Div>
-      {/* <Span>소환사 전적 검색</Span> */}
       <input
         id="search-id"
         type="text"
@@ -54,13 +53,6 @@ const Div = styled.div`
 const Button = styled.button`
   width: 30px;
   height: 30px;
-`;
-
-const Span = styled.span`
-  color: black;
-  display: flex;
-  font-size: 13px;
-  flex: 0 1 130px;
 `;
 
 const Img = styled.img`
