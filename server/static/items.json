@@ -1,0 +1,960 @@
+[
+  {
+    "id": 1,
+    "name": "B.F. Sword",
+    "kr_name": "B.F. 대검",
+    "description": "Gain Attack Damage.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 2,
+    "name": "Recurve Bow",
+    "kr_name": "곡궁",
+    "description": "Gain Attack Speed.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 3,
+    "name": "Needlessly Large Rod",
+    "kr_name": "쓸데없이 큰 지팡이",
+    "description": "Gain Ability Power.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 4,
+    "name": "Tear of the Goddess",
+    "kr_name": "여신의 눈물",
+    "description": "Gain Mana.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 5,
+    "name": "Chain Vest",
+    "kr_name": "쇠사슬 조끼",
+    "description": "Gain Armor.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 6,
+    "name": "Negatron Cloak",
+    "kr_name": "음전자 망토",
+    "description": "Gain Magic Resist.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 7,
+    "name": "Giant's Belt",
+    "kr_name": "거인의 허리띠",
+    "description": "Gain Health.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 8,
+    "name": "Spatula",
+    "kr_name": "뒤집개",
+    "description": "It must do something...",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 9,
+    "name": "Sparring Gloves",
+    "kr_name": "연습용 장갑",
+    "description": "Gain Critical Strike Chance and Dodge Chance.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 11,
+    "name": "Deathblade",
+    "kr_name": "죽음의 검",
+    "description": "Contributing to a kill grants the holder additional Attack Damage for the rest of combat. This effect can stack any number of times.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 12,
+    "name": "Giant Slayer",
+    "kr_name": "거인 학살자",
+    "description": "The holder's Abilities and attacks do bonus damage. If the target has more health, the bonus damage increases.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 13,
+    "name": "Hextech Gunblade",
+    "kr_name": "마법공학 총검",
+    "description": "The holder's magic and true damage from Abilities heal them for a percentage of the damage dealt. Excess healing fuels a shield that protects the holder.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 14,
+    "name": "Spear of Shojin",
+    "kr_name": "쇼진의 창",
+    "description": "The holder's Basic Attacks restore additional Mana.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 15,
+    "name": "Guardian Angel",
+    "kr_name": "수호 천사",
+    "description": "Prevents the holder's first death, placing them in stasis instead. After a short delay, they return with restored Health and shed all negative effects.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 16,
+    "name": "Bloodthirster",
+    "kr_name": "피바라기",
+    "description": "Physical damage heals the holder for a percentage of the damage dealt. Upon falling below a percentage Health, the holder gains a shield based on their max Health that lasts several seconds.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 17,
+    "name": "Zeke's Herald",
+    "kr_name": "지크의 전령",
+    "description": "When combat begins, the holder and all nearby allies in the same row gain Attack Speed for the rest of combat.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 18,
+    "name": "Skirmisher Emblem",
+    "kr_name": "척후병 상징",
+    "description": "The holder gains the Skirmisher trait.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 19,
+    "name": "Infinity Edge",
+    "kr_name": "무한의 대검",
+    "description": "Grants Critical Strike Chance (including components) and Critical Strike damage. Each point of Critical Strike Chance above 100% becomes bonus Critical Strike Damage.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 22,
+    "name": "Rapid Firecannon",
+    "kr_name": "고속 연사포",
+    "description": "Increases the holder's Attack Range and grants bonus Attack Speed (including components). The holder's attacks can no longer miss.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 23,
+    "name": "Guinsoo's Rageblade",
+    "kr_name": "구인수의 격노검",
+    "description": "Attacks grant bonus Attack Speed for the rest of combat. This bonus Attack Speed can stack any number of times.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 24,
+    "name": "Statikk Shiv",
+    "kr_name": "스태틱의 단검",
+    "description": "Every third attack from the holder unleashes a chain lightning that bounces to nearby enemies, dealing magic damage and reducing their Magic Resist for several seconds.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 25,
+    "name": "Titan's Resolve",
+    "kr_name": "거인의 결의",
+    "description": "When the holder takes damage or inflicts a critical strike, they gain a stacking Attack Damage and Ability Power bonus.  This stacks up to a limit, at which point the holder gains Armor and Magic Resistance.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 26,
+    "name": "Runaan's Hurricane",
+    "kr_name": "루난의 허리케인",
+    "description": "The holder's attacks fire a bolt at another nearby enemy, dealing a percentage of the holder's Attack Damage and applying on-hit effects. These bolts can critically strike.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 27,
+    "name": "Zz'Rot Portal",
+    "kr_name": "즈롯 차원문",
+    "description": "At the start of combat, the holder taunts nearby enemies. When the holder dies, a Voidspawn arises taunting nearby enemies. Voidspawns that arise from summoned units are only partially effective.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 28,
+    "name": "Legionnaire Emblem",
+    "kr_name": "군단 상징",
+    "description": "The holder gains the Legionnaire trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 29,
+    "name": "Last Whisper",
+    "kr_name": "최후의 속삭임",
+    "description": "When the holder inflicts a critical hit, the target's Armor is reduced for several seconds. This effect does not stack.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 33,
+    "name": "Rabadon's Deathcap",
+    "kr_name": "라바돈의 죽음모자",
+    "description": "Grants bonus Ability Power (including components).",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 34,
+    "name": "Archangel's Staff",
+    "kr_name": "대천사의 지팡이",
+    "description": "Each time the holder casts their Ability, they gain Ability Power equal to a percentage of their maximum Mana (this bonus applies to that Ability cast).",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 35,
+    "name": "Locket of the Iron Solari",
+    "kr_name": "강철의 솔라리 펜던트",
+    "description": "When combat begins, the holder and nearby allies in the same row gain a shield that blocks damage for several seconds.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 36,
+    "name": "Ionic Spark",
+    "kr_name": "이온 충격기",
+    "description": "Nearby enemies have their Magic Resist reduced (does not stack). When they cast a spell, they are zapped taking magic damage equal to a percentage of their max Mana.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 37,
+    "name": "Morellonomicon",
+    "kr_name": "모렐로노미콘",
+    "description": "When the holder deals magic or true damage with their Ability, they burn the target, dealing a percentage of the target's maximum Health as true damage over several seconds, and reducing healing for the duration of the burn.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 38,
+    "name": "Spellweaver Emblem",
+    "kr_name": "주문술사 상징",
+    "description": "The holder gains the Spellweaver trait.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 39,
+    "name": "Jeweled Gauntlet",
+    "kr_name": "보석 건틀릿",
+    "description": "The holder's magic and true damage from their Ability can critically strike. The holder gains bonus Critical Strike Damage.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 44,
+    "name": "Blue Buff",
+    "kr_name": "푸른 파수꾼",
+    "description": "After casting their Ability, the holder gains Mana.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 45,
+    "name": "Frozen Heart",
+    "kr_name": "얼어붙은 심장",
+    "description": "Reduces the Attack Speed of nearby enemies.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 46,
+    "name": "Chalice of Power",
+    "kr_name": "힘의 성배",
+    "description": "When combat begins, the holder and all nearby allies in the same row gain Ability Power for the rest of combat.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 47,
+    "name": "Redemption",
+    "kr_name": "구원",
+    "description": "Periodically, the holder radiates an aura to nearby allies, healing them a percentage of their missing Health. Affected allies take reduced damage from multi-target abilities and attacks for several seconds.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 48,
+    "name": "Renewer Emblem",
+    "kr_name": "재생술사 상징",
+    "description": "The holder gains the Renewer trait.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 49,
+    "name": "Hand Of Justice",
+    "kr_name": "정의의 손길",
+    "description": "At the beginning of each planning phase, the holder's basic attacks and spells deal additional damage and heal for a percentage of damage dealt. At the beginning of each planning phase, one of these buffs is increased.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 55,
+    "name": "Bramble Vest",
+    "kr_name": "덤불 조끼",
+    "description": "Negates bonus damage from incoming critical hits. On being hit by a Basic Attack, deal magic damage to all nearby enemies every couple seconds.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 56,
+    "name": "Gargoyle Stoneplate",
+    "kr_name": "가고일 돌갑옷",
+    "description": "The holder gains Armor and Magic Resist for each enemy targeting them.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 57,
+    "name": "Sunfire Cape",
+    "kr_name": "태양불꽃 망토",
+    "description": "Periodically, a random nearby enemy is burned a percentage of their maximum Health over several seconds. Any healing they receive is reduced.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 58,
+    "name": "Ironclad Emblem",
+    "kr_name": "철갑 상징",
+    "description": "The holder gains the Ironclad trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 59,
+    "name": "Shroud of Stillness",
+    "kr_name": "침묵의 장막",
+    "description": "When combat begins, the holder shoots a beam straight ahead that delays affected enemies' first spellcast, increasing their max Mana until they cast.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 66,
+    "name": "Dragon's Claw",
+    "kr_name": "용의 발톱",
+    "description": "Grants bonus Magic Resist (including components). On being hit by magic or true damage from an Ability, launch a fireball at the Ability's caster that deals magic damage equal to a percentage of their max Health.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 67,
+    "name": "Zephyr",
+    "kr_name": "서풍",
+    "description": "When combat begins, the holder summons a whirlwind on the opposite side of the arena that removes the closest enemy from combat for several seconds. Ignores CC immunity.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 68,
+    "name": "Redeemed Emblem",
+    "kr_name": "구원받은 자 상징",
+    "description": "The holder gains the Redeemed trait.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 69,
+    "name": "Quicksilver",
+    "kr_name": "수은",
+    "description": "The holder gains immunity to crowd control in combat for several seconds.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 77,
+    "name": "Warmog's Armor",
+    "kr_name": "워모그의 갑옷",
+    "description": "Grants bonus Health (including components).",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 78,
+    "name": "Dawnbringer Emblem",
+    "kr_name": "빛의 인도자 상징",
+    "description": "The holder gains the Dawnbringer trait.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 79,
+    "name": "Banshee's Claw",
+    "kr_name": "밴시의 발톱",
+    "description": "When combat begins, the holder and all nearby allies in the same row gain a shield that blocks the first enemy Ability.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 88,
+    "name": "Force of Nature",
+    "kr_name": "대자연의 힘",
+    "description": "The holder's maximum team size is incrased.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 89,
+    "name": "Assassin Emblem",
+    "kr_name": "암살자 상징",
+    "description": "The holder gains the Assassin trait.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 99,
+    "name": "Thief's Gloves",
+    "kr_name": "도적의 장갑",
+    "description": "At the beginning of each planning phase, the holder equips 2 temporary items. Temporary items increase in power based on your player level. [Consumes Three Item Slots]",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 1118,
+    "name": "Forgotten Emblem",
+    "kr_name": "망각 상징",
+    "description": "The holder gains the Forgotten trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 1128,
+    "name": "Hellion Emblem",
+    "kr_name": "악동 상징",
+    "description": "The holder gains the Hellion trait.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 1158,
+    "name": "Cavalier Emblem",
+    "kr_name": "기병대 상징",
+    "description": "The holder gains the Cavalier trait.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": false
+  },
+  {
+    "id": 1168,
+    "name": "Revenant Emblem",
+    "kr_name": "망령 상징",
+    "description": "The holder gains the Revenant trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 1178,
+    "name": "Nightbringer Emblem",
+    "kr_name": "어둠의 인도자 상징",
+    "description": "The holder gains the Nightbringer trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 1189,
+    "name": "Abomination Emblem",
+    "kr_name": "괴생명체 상징",
+    "description": "The holder gains the Abomination trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 1190,
+    "name": "Ranger Emblem",
+    "kr_name": "정찰대 상징",
+    "description": "The holder gains the Ranger trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 1191,
+    "name": "Draconic Emblem",
+    "kr_name": "용족 상징",
+    "description": "The holder gains the Draconic trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 1192,
+    "name": "Invoker Emblem",
+    "kr_name": "기원자 상징",
+    "description": "The holder gains the Invoker trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 1193,
+    "name": "Brawler Emblem",
+    "kr_name": "싸움꾼 상징",
+    "description": "The holder gains the Brawler trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 1194,
+    "name": "Sentinel Emblem",
+    "kr_name": "감시자 상징",
+    "description": "The holder gains the Sentinel trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 1195,
+    "name": "Cannoneer Emblem",
+    "kr_name": "포병대 상징",
+    "description": "The holder gains the Cannoneer trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 1196,
+    "name": "Knight Emblem",
+    "kr_name": "기사 상징",
+    "description": "The holder gains the Knight trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 1197,
+    "name": "Mystic Emblem",
+    "kr_name": "신비술사 상징",
+    "description": "The holder gains the Mystic trait.",
+    "isUnique": true,
+    "isElusive": true,
+    "isRadiant": false
+  },
+  {
+    "id": 2034,
+    "name": "Urf-Angel's Staff",
+    "kr_name": "우르프 천사의 지팡이",
+    "description": "Each time the holder casts their Ability, they gain Ability Power equal to a percentage of their maximum Mana (this bonus applies to that Ability cast).",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Starting Mana"
+  },
+  {
+    "id": 2016,
+    "name": "Blessed Bloodthirster",
+    "kr_name": "축북받은 피바라기",
+    "description": "Physical damage heals the holder for a percentage of the damage dealt. Upon falling below a percentage Health, the holder gains a shield based on their max Health that lasts several seconds.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Attack Damage"
+  },
+  {
+    "id": 2044,
+    "name": "Blue Blessing",
+    "kr_name": "푸른 축복",
+    "description": "After casting their Ability, the holder gains Mana.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Ability Power"
+  },
+  {
+    "id": 2055,
+    "name": "Rosethorn Vest",
+    "kr_name": "장미가시 조끼",
+    "description": "Negates bonus damage from incoming critical hits. On being hit by a Basic Attack, deal magic damage to all nearby enemies every couple seconds.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Regenerate percentage max Health per second"
+  },
+  {
+    "id": 2046,
+    "name": "Chalice of Charity",
+    "kr_name": "선의의 성배",
+    "description": "When combat begins, the holder and all nearby allies in the same row gain Ability Power and Spellvamp for the rest of combat.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2011,
+    "name": "Luminous Deathblade",
+    "kr_name": "빛나는 죽음의 검",
+    "description": "Contributing to a kill grants the holder additional Attack Damage for the rest of combat. This effect can stack any number of times.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2066,
+    "name": "Dragon's Will",
+    "kr_name": "용의 의지",
+    "description": "Grants bonus Magic Resist (including components). On being hit by magic or true damage from an Ability, launch a fireball at the Ability's caster that deals magic damage equal to a percentage of their max Health.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Regenerate percentage max Health per second"
+  },
+  {
+    "id": 2045,
+    "name": "Frozen Heart of Gold",
+    "kr_name": "얼어붙은 황금 심장",
+    "description": "Reduces the Attack Speed of nearby enemies.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Starting Mana"
+  },
+  {
+    "id": 2056,
+    "name": "Dvarapala Stoneplate",
+    "kr_name": "수호상 돌갑옷",
+    "description": "The holder gains Armor and Magic Resist for each enemy targeting them.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Regenerate percentage max Health per second"
+  },
+  {
+    "id": 2012,
+    "name": "Demonslayer",
+    "kr_name": "악마 학살자",
+    "description": "The holder's Abilities and attacks do bonus damage. If the target has more health, the bonus damage increases.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2015,
+    "name": "Guardian Archangel",
+    "kr_name": "수호 대천사",
+    "description": "Prevents the holder's first death, placing them in stasis instead. After a short delay, they return with restored Health and shed all negative effects.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Attack Speed"
+  },
+  {
+    "id": 2023,
+    "name": "Guinsoo's Reckoning",
+    "kr_name": "구인수의 심판",
+    "description": "Attacks grant bonus Attack Speed for the rest of combat. This bonus Attack Speed can stack any number of times.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2049,
+    "name": "Fist of Fairness",
+    "kr_name": "공정의 주먹",
+    "description": "At the beginning of each planning phase, the holder's basic attacks and spells deal additional damage and heals for a percentage of damage dealt.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2013,
+    "name": "Hextech Lifeblade",
+    "kr_name": "마법공학 생명검",
+    "description": "The holder's magic and true damage from Abilities heal them for a percentage of the damage dealt. Excess healing fuels a shield that protects the holder.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Ability Power"
+  },
+  {
+    "id": 2019,
+    "name": "Zenith Edge",
+    "kr_name": "천공의 대검",
+    "description": "Grants Critical Strike Chance (including components) and Critical Strike damage. Each point of Critical Strike Chance above 100% becomes bonus Critical Strike Damage.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Critical Strike Damage"
+  },
+  {
+    "id": 2036,
+    "name": "Covalent Spark",
+    "kr_name": "집단 충격기",
+    "description": "Nearby enemies have their Magic Resist reduced (does not stack). When they cast a spell, they are zapped taking magic damage equal to a percentage of their max Mana.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Regenerate percentage max Health per second"
+  },
+  {
+    "id": 2039,
+    "name": "Glamorous Gauntlet",
+    "kr_name": "눈부신 건틀릿",
+    "description": "The holder's magic and true damage from their Ability can critically strike. The holder gains bonus Critical Strike Damage.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2029,
+    "name": "Eternal Whisper",
+    "kr_name": "영겁의 속삭임",
+    "description": "When the holder inflicts a critical hit, the target's Armor is reduced for several seconds. This effect does not stack.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Critical Strike Chance"
+  },
+  {
+    "id": 2035,
+    "name": "Locket of the Targon Prime",
+    "kr_name": "타곤 정상의 펜던트",
+    "description": "When combat begins, the holder and nearby allies in the same row gain a shield that blocks damage for several seconds.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2037,
+    "name": "More More-ellonomicon",
+    "kr_name": "엔젤로노미콘",
+    "description": "When the holder deals magic or true damage with their Ability, they burn the target, dealing a percentage of the target's maximum Health as true damage over several seconds, and reducing healing for the duration of the burn.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Starting Mana"
+  },
+  {
+    "id": 2069,
+    "name": "Quickestsilver",
+    "kr_name": "반짝이는 수은",
+    "description": "The holder gains immunity to crowd control in combat for several seconds.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Attack Speed"
+  },
+  {
+    "id": 2033,
+    "name": "Rabadon's Ascended Deathcap",
+    "kr_name": "라바돈의 초월한 죽음모자",
+    "description": "Grants bonus Ability Power (including components).",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2022,
+    "name": "Rapid Lightcannon",
+    "kr_name": "고속 광자포",
+    "description": "Increases the holder's Attack Range and grants bonus Attack Speed (including components). The holder's attacks can no longer miss.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Attack Speed"
+  },
+  {
+    "id": 2047,
+    "name": "Radiant Redemption",
+    "kr_name": "찬란한 구원",
+    "description": "Periodically, the holder radiates an aura to nearby allies, healing them a percentage of their missing Health. Affected allies take reduced damage from multi-target abilities and attacks for several seconds.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Health"
+  },
+  {
+    "id": 2026,
+    "name": "Runaan's Tempest",
+    "kr_name": "루난의 폭풍",
+    "description": "The holder's attacks fire a bolt at another nearby enemy, dealing a percentage of the holder's Attack Damage and applying on-hit effects. These bolts can critically strike.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Attack Speed"
+  },
+  {
+    "id": 2059,
+    "name": "Shroud of Reverence",
+    "kr_name": "경외의 장막",
+    "description": "When combat begins, the holder shoots a beam straight ahead that delays affected enemies' first spellcast, increasing their max Mana until they cast.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Starting Mana for all allies at the start of combat"
+  },
+  {
+    "id": 2014,
+    "name": "Spear of Hirana",
+    "kr_name": "히라나의 창",
+    "description": "The holder's Basic Attacks restore additional Mana.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2024,
+    "name": "Statikk Favor",
+    "kr_name": "스태틱의 호의",
+    "description": "Every third attack from the holder unleashes a chain lightning that bounces to nearby enemies, dealing magic damage and reducing their Magic Resist for several seconds.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2057,
+    "name": "Sunlight Cape",
+    "kr_name": "태양빛 망토",
+    "description": "Periodically, a random nearby enemy is burned a percentage of their maximum Health over several seconds. Any healing they receive is reduced.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Regenerate percentage max Health per second"
+  },
+  {
+    "id": 2099,
+    "name": "Rascal's Gloves",
+    "kr_name": "장난꾸러기의 장갑",
+    "description": "At the beginning of each planning phase, the holder equips 2 temporary Radiant items. [Consumes Three Item Slots]",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2025,
+    "name": "Titan's Vow",
+    "kr_name": "거인의 맹세",
+    "description": "When the holder takes damage or inflicts a critical strike, they gain a stacking Attack Damage and Ability Power bonus.  This stacks up to a limit, at which point the holder gains Armor and Magic Resistance.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2079,
+    "name": "Banshee's Silence",
+    "kr_name": "밴시의 침묵",
+    "description": "When combat begins, the holder and all nearby allies in the same row gain a shield that blocks the first enemy Ability.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Health for all allies at the start of combat"
+  },
+  {
+    "id": 2077,
+    "name": "Warmog's Pride",
+    "kr_name": "워모그의 자부심",
+    "description": "Grants bonus Health (including components).",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Regenerate percentage max Health per second"
+  },
+  {
+    "id": 2017,
+    "name": "Zeke's Harmony",
+    "kr_name": "지크의 조화",
+    "description": "When combat begins, the holder and all nearby allies in the same row gain Attack Speed and Lifesteal for the rest of combat.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  },
+  {
+    "id": 2067,
+    "name": "Mistral",
+    "kr_name": "겨울바람",
+    "description": "When combat begins, the holder summons a whirlwind on the opposite side of the arena that removes the closest enemy from combat for several seconds. Ignores CC immunity.",
+    "isUnique": true,
+    "isElusive": false,
+    "isRadiant": true,
+    "radiantBonus": "Attack Speed for all allies at the start of combat"
+  },
+  {
+    "id": 2027,
+    "name": "Zz'Rot Invitation",
+    "kr_name": "즈롯 소환문",
+    "description": "At the start of combat, a Radiant Voidmother with bonus Health and Attack Damage aries and taunts nearby enemies. Radiant Voidmothers that arise from summoned units are only partially effective.",
+    "isUnique": false,
+    "isElusive": false,
+    "isRadiant": true
+  }
+]
