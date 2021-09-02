@@ -18,7 +18,6 @@ function HistorySearch() {
     setIsName(e.target.value);
   };
   const getData = async () => {
-    console.log(Name);
     const res = await axios.get(`http://localhost:8000/matches/${Name}`);
     let matchesData = res.data.data.matchesData;
     for (let i = 0; i < matchesData.length; i++) {

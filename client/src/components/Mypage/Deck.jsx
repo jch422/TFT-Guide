@@ -55,12 +55,10 @@ function DeckBox({ data, index }) {
       }
     }
   }
-  console.log(traitsAll);
   // 이차원배열 풀기
   let traitsAllList = traitsAll.reduce(function (acc, cur) {
     return acc.concat(cur);
   });
-  console.log(traitsAllList);
   let traitsObj = {};
   // 중첩 카운트 객체로 만들기
   for (let i = 0; i < traitsAllList.length; i++) {
@@ -70,7 +68,6 @@ function DeckBox({ data, index }) {
       traitsObj[traitsAllList[i]]++;
     }
   }
-  console.log(traitsObj);
   // 트레잇 색깔 찾기
   let finalTraitsList = [];
   for (let i in traitsObj) {
@@ -93,7 +90,6 @@ function DeckBox({ data, index }) {
       finalTraitsList.push(str);
     }
   }
-  console.log(finalTraitsList);
 
   return (
     <Deck>
