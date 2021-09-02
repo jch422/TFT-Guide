@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import RecommendItem from './RecommendItem';
+import RecommendItem from './RecommendItem.jsx';
 
 const RecommendList = ({ champions, handleRecommendItemClick }) => {
   const recommendItems = champions.map((champion, idx) => (

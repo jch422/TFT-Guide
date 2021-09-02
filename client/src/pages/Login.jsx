@@ -137,10 +137,10 @@ export default Login;
 
 const LoginContainer = styled.div`
   width: 600px;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
-  margin: 0 auto;
-  padding: 0 2rem;
+  margin: 2rem auto;
+  padding: 0 2rem 6rem;
   border: 1px solid #b5b5b5;
   border-radius: 10px;
   background-color: #fefefe;

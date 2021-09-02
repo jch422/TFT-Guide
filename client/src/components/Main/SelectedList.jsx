@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Slot from './Slot';
+import Slot from './Slot.jsx';
 
 const SelectedList = ({ slots, handleDragEnter, handleSlotDragStart, handleSlotDragEnd }) => {
   const mappedSlots = slots.map((champion, idx) => (
