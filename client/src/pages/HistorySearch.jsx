@@ -18,7 +18,7 @@ function HistorySearch() {
   };
   const getData = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/matches/${Name}`);
+      const res = await axios.get(`${process.env.REACT_APP_SERVER_URI}/matches/${Name}`);
       let matchesData = res.data.data.matchesData;
       for (let i = 0; i < matchesData.length; i++) {
         delete matchesData[i].metadata;
