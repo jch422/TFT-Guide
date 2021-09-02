@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import DeckBox from '../components/Mypage/Deck';
 
@@ -29,12 +30,18 @@ const DeckList = styled.div`
 `;
 
 function MyPage() {
+  const storedMyDeck = useSelector(state => state.decksReducer);
+  let storedMyDeckName = [];
+  for (let i = 0; i < storedMyDeck.length; i++) {
+    storedMyDeckName.push(storedMyDeck[i]['championId']);
+  }
+
   return (
     <Body>
       <P>My Deck</P>
       <div>
         <DeckList>
-          {storedDeck.map((data, index) => (
+          {storedMyDeckName.map((data, index) => (
             <DeckBox data={data} index={index} />
           ))}
         </DeckList>

@@ -274,7 +274,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: #36393f;
+  background-color: #fbed0b;
   & > * {
     margin-top: 5rem;
   }
