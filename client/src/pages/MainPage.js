@@ -140,7 +140,6 @@ const MainPage = () => {
 
   return (
     <Container onDragEnter={e => handleDragEnter(e, REMOVE_ZONE)}>
-      <div onClick={() => console.log(buildingDeck)}>여기야</div>
       {!!curTraits.length && <TraitsList>{traitItems}</TraitsList>}
       {!curTraits.length && (
         <TraitsGuide>
