@@ -17,15 +17,24 @@ function HistorySearch() {
     setIsName(e.target.value);
   };
   const getData = async () => {
-    const res = await axios.get(`http://localhost:8000/matches/${Name}`);
-    let matchesData = res.data.data.matchesData;
-    for (let i = 0; i < matchesData.length; i++) {
-      delete matchesData[i].metadata;
+    try {
+      const res = await axios.get(`http://localhost:8000/matches/${Name}`);
+      let matchesData = res.data.data.matchesData;
+      for (let i = 0; i < matchesData.length; i++) {
+        delete matchesData[i].metadata;
+      }
+      setIsData({ data: matchesData, puuid: res.data.data.puuid });
+    } catch (error) {
+      if (error.response) {
+        alert('존재하지 않는 소환사명입니다.');
+      }
     }
-    setIsData({ data: matchesData, puuid: res.data.data.puuid });
   };
+
   useEffect(() => {
-    getData();
+    if (Name) {
+      getData();
+    }
   }, [Name]);
 
   return (
