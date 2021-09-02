@@ -81,7 +81,7 @@ const MainPage = () => {
     }
     const {
       data: { data },
-    } = await axios.post('http://localhost:8000/recommend', {
+    } = await axios.post(`${process.env.REACT_APP_SERVER_URI}/recommend`, {
       champions,
       level: champions.length,
     });
