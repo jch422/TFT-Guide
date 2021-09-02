@@ -58,8 +58,9 @@ const Div = styled.div`
   width: 100%;
   margin: 0 auto;
   list-style-type: none;
-  background: #ffffff;
-  border: solid rgb(238, 238, 238) 0.2rem;
+  background: #17394f;
+  border: solid #131414 0.5rem;
+  border-bottom: none;
   display: flex;
   max-width: 800px;
   min-width: 500px;
@@ -70,6 +71,8 @@ const Summary = styled.div`
   justify-content: center;
   flex-direction: column;
   height: auto;
+  color: white;
+  font-size: 12px;
   flex: 0 1 90px;
 `;
 const TraitsContainer = styled.div`
