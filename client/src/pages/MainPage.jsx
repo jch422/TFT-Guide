@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 
@@ -8,10 +9,10 @@ import ChampionList from '../components/Main/ChampionList';
 import RecommendList from '../components/Main/RecommendList';
 import Trait from '../components/Main/Trait';
 import { loadDecks, saveDeck } from '../actions';
+import { resetUserInfo } from '../actions';
 import champions from '../JSON/set5_champions.json';
 import traits from '../JSON/traits.json';
 
-const SLOT_NUM = 10;
 const REMOVE_ZONE = -1;
 const emptySlot = {
   name: '',
@@ -20,7 +21,6 @@ const emptySlot = {
   cost: 0,
   traits: [],
 };
-const initialSlots = Array.from({ length: SLOT_NUM }, () => ({ ...emptySlot }));
 
 const filterRedundantChampions = slots => {
   return slots
@@ -55,13 +55,14 @@ const getTraitDetails = target => {
 
 const MainPage = () => {
   const dispatch = useDispatch();
-  const [slots, setSlots] = useState(initialSlots);
+  const userInfo = useSelector(state => state.userInfoReducer);
+  const buildingDeck = useSelector(state => state.deckReducer.deck);
+
+  const [slots, setSlots] = useState([...buildingDeck]);
   const [curTraits, setCurTraits] = useState([]);
   const [recommendations, setRecommendations] = useState([]);
 
-  const userInfo = useSelector(state => state.userInfoReducer);
-  const buildingDeck = useSelector(state => state.deckReducer);
-
+  const history = useHistory();
   const draggingChamp = useRef();
   const dragOverSlot = useRef();
   const draggingSlot = useRef();
@@ -74,7 +75,10 @@ const MainPage = () => {
   };
 
   const getRecommendations = async champions => {
-    if (!champions.length) return;
+    if (!champions.length) {
+      setRecommendations([]);
+      return;
+    }
     const {
       data: { data },
     } = await axios.post('http://localhost:8000/recommend', {
@@ -93,6 +97,10 @@ const MainPage = () => {
   useEffect(() => {
     if (userInfo.id) {
       getDecks();
+    }
+    const filteredChampions = filterRedundantChampions(buildingDeck);
+    if (filteredChampions.length) {
+      setSlots(buildingDeck);
     }
   }, []);
 
@@ -179,6 +187,33 @@ const MainPage = () => {
     }
   };
 
+  const handleSaveDeck = async () => {
+    if (!curTraits.length) {
+      alert('한 개 이상의 챔피언을 덱에 올려놓아 주세요!');
+      return;
+    }
+    if (!userInfo?.id) {
+      return history.push('/login');
+    }
+    try {
+      const {
+        data: { message },
+      } = await axios.post(`${process.env.REACT_APP_SERVER_URI}/decks`, {
+        id: userInfo.id,
+        champions: slots.filter(slot => !!slot.championId),
+      });
+
+      if (message === 'ok') {
+        getDecks();
+        alert('저장 완료');
+      }
+    } catch (err) {
+      alert('정상적이지 않은 접근입니다');
+      dispatch(resetUserInfo());
+      history.push('/login');
+    }
+  };
+
   const traitCntSortOption = (a, b) => {
     const [aTrait, aCount] = a;
     const [bTrait, bCount] = b;
@@ -196,13 +231,14 @@ const MainPage = () => {
     <Container onDragEnter={e => handleDragEnter(e, REMOVE_ZONE)}>
       {!!curTraits.length && <TraitsList>{traitItems}</TraitsList>}
       {!curTraits.length && (
-        <Guide minWidth="15rem">
+        <Guide minWidth="15rem" height="9rem">
           <GuideIcon>ℹ</GuideIcon>
           <Text>챔피언을 배치하면</Text>
           <Text>시너지가 활성화됩니다</Text>
         </Guide>
       )}
       <Draggables>
+        <SaveBtn onClick={handleSaveDeck}>저장</SaveBtn>
         <SelectedList
           slots={slots}
           handleDragEnter={handleDragEnter}
@@ -222,7 +258,7 @@ const MainPage = () => {
         />
       )}
       {!recommendations.length && (
-        <Guide minWidth="12rem">
+        <Guide minWidth="12rem" height="10rem">
           <GuideIcon>ℹ</GuideIcon>
           <Text>챔피언을 배치하면</Text>
           <Text>추천목록이</Text>
@@ -240,7 +276,7 @@ const Container = styled.div`
   align-items: flex-start;
   background-color: #36393f;
   & > * {
-    margin-top: 3rem;
+    margin-top: 5rem;
   }
 `;
 
@@ -250,7 +286,7 @@ const TraitsList = styled.div`
 
 const Guide = styled.div`
   min-width: ${({ minWidth }) => minWidth};
-  height: 9rem;
+  height: ${({ height }) => height};
   border: 2px solid #cccccc;
   display: flex;
   flex-direction: column;
@@ -276,11 +312,34 @@ const Text = styled.div`
 `;
 
 const Draggables = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: 4rem;
   margin-right: 4rem;
+`;
+
+const SaveBtn = styled.div`
+  position: absolute;
+  top: -3.5rem;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: salmon;
+  width: 70px;
+  height: 40px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 1px black;
+  transition: background-color 200ms linear;
+  &:hover {
+    cursor: pointer;
+    background-color: #68cc66;
+    transition: background-color 200ms linear;
+  }
 `;
 
 export default MainPage;

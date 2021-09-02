@@ -53,7 +53,7 @@ const Login = () => {
         throw Error('invalid acessToken');
       }
 
-      dispatch(updateUserInfo({ id, email, picture, riotId }));
+      dispatch(updateUserInfo({ id, email, picture, riotId, isRegistered }));
       if (!isRegistered || !riotId) {
         setModalShow(true);
       } else {

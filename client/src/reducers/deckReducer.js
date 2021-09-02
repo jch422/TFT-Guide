@@ -1,7 +1,16 @@
 import { SAVE_DECK } from '../actions/index';
 
+const SLOT_NUM = 10;
+const emptySlot = {
+  name: '',
+  kr_name: '',
+  championId: '',
+  cost: 0,
+  traits: [],
+};
+const initialSlots = Array.from({ length: SLOT_NUM }, () => ({ ...emptySlot }));
 const initialState = {
-  deck: [],
+  deck: initialSlots,
 };
 
 const deckReducer = (state = initialState, action) => {
