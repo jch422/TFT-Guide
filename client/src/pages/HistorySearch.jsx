@@ -7,7 +7,6 @@ import styled from 'styled-components';
 function HistorySearch() {
   const [Name, setIsName] = useState('');
   const [Data, setIsData] = useState(null);
-  // const [puuid, setPuuid] = useState('');
 
   const onKeyPress = e => {
     if (e.key === 'Enter') {
@@ -47,4 +46,8 @@ function HistorySearch() {
 
 export default HistorySearch;
 
-const Div = styled.div``;
+const Div = styled.div`
+  margin: 0;
+  background-color: #fbed0b;
+  height: 120vh;
+`;
