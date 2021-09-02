@@ -120,7 +120,7 @@ const HexagonEmpty = styled.div`
   position: relative;
   width: 100px;
   height: 57.74px;
-  background-color: #ccc;
+  background-color: #1b374a;
   margin: 28.87px 0;
   &:before,
   &:after {
@@ -132,12 +132,12 @@ const HexagonEmpty = styled.div`
   }
   &:before {
     bottom: 100%;
-    border-bottom: 28.87px solid #ccc;
+    border-bottom: 28.87px solid #1b374a;
   }
   &:after {
     top: 100%;
     width: 0;
-    border-top: 28.87px solid #ccc;
+    border-top: 28.87px solid #1b374a;
   }
   & {
     cursor: pointer;
