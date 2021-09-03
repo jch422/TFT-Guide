@@ -75,9 +75,6 @@ const StarCotainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  i {
-    font-size: 12px;
-  }
   padding-right: 3px;
 `;
 const ChampionImg = styled.img`
