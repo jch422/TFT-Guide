@@ -32,6 +32,20 @@ TFT를 시작하고 싶은데 어떻게 할지 모를 때.
 |[민병대](https://github.com/minbyoungdae)|Front_End|
 |[정지찬](https://github.com/jch422)|Full_stack|
 
+## 화면
+Login  |  Main
+--- | ---
+![Login](https://user-images.githubusercontent.com/38288479/131941338-a8f2f7d0-8e49-4d38-880e-8ed6bd947cdf.gif) | ![Main](https://user-images.githubusercontent.com/38288479/131941340-abf725bf-84f4-4575-bf97-c30d645834e8.gif)
+
+
+MyDeck  |  Search
+--- | ---
+![MyDeck](https://user-images.githubusercontent.com/38288479/131941339-e9e74c29-f03f-46cf-9a76-0980b2ebab89.gif)  |  ![Search](https://user-images.githubusercontent.com/38288479/131941337-7037aa98-2442-4c3a-b8ff-ad4b3c4a27ee.gif)
+
+Darkmode  |
+--- |
+![darkmode](https://user-images.githubusercontent.com/38288479/131941331-d0ae0fc2-b495-4fe4-8fef-20a1f66596c8.gif)  |
+
 # Project details
 
 ### [Go to WIKI](https://github.com/codestates/TFT-Guide/wiki)
