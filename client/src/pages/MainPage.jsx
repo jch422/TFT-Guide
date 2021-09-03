@@ -7,9 +7,9 @@ import axios from 'axios';
 import SelectedList from '../components/Main/SelectedList';
 import ChampionList from '../components/Main/ChampionList';
 import RecommendList from '../components/Main/RecommendList';
+import Spinner from '../components/Spinner';
+import { loadDecks, saveDeck, resetUserInfo, setLoader } from '../actions';
 import Trait from '../components/Main/Trait';
-import { loadDecks, saveDeck } from '../actions';
-import { resetUserInfo } from '../actions';
 import champions from '../JSON/set5_champions.json';
 import traits from '../JSON/traits.json';
 
@@ -57,6 +57,8 @@ const MainPage = () => {
   const dispatch = useDispatch();
   const userInfo = useSelector(state => state.userInfoReducer);
   const buildingDeck = useSelector(state => state.deckReducer.deck);
+  const { isDark } = useSelector(state => state.themeReducer);
+  const { isLoading } = useSelector(state => state.loaderReducer);
 
   const [slots, setSlots] = useState([...buildingDeck]);
   const [curTraits, setCurTraits] = useState([]);
@@ -79,18 +81,18 @@ const MainPage = () => {
       setRecommendations([]);
       return;
     }
+    dispatch(setLoader(true));
     const {
       data: { data },
     } = await axios.post(`${process.env.REACT_APP_SERVER_URI}/recommend`, {
       champions,
       level: champions.length,
     });
-
+    dispatch(setLoader(false));
     const championsInfo = data.reduce((acc, [championInfo]) => {
       acc.push(championInfo);
       return acc;
     }, []);
-
     setRecommendations(championsInfo);
   };
 
@@ -228,19 +230,20 @@ const MainPage = () => {
   });
 
   return (
-    <Container onDragEnter={e => handleDragEnter(e, REMOVE_ZONE)}>
+    <Container isDark={isDark} onDragEnter={e => handleDragEnter(e, REMOVE_ZONE)}>
       {!!curTraits.length && <TraitsList>{traitItems}</TraitsList>}
       {!curTraits.length && (
-        <Guide minWidth="15rem" height="9rem">
-          <GuideIcon>ℹ</GuideIcon>
-          <Text>챔피언을 배치하면</Text>
-          <Text>시너지가 활성화됩니다</Text>
+        <Guide isDark={isDark} minWidth="15rem" height="9rem">
+          <GuideIcon isDark={isDark}>ℹ</GuideIcon>
+          <Text isDark={isDark}>챔피언을 배치하면</Text>
+          <Text isDark={isDark}>시너지가 활성화됩니다</Text>
         </Guide>
       )}
       <Draggables>
         <SaveBtn onClick={handleSaveDeck}>저장</SaveBtn>
         <SelectedList
           slots={slots}
+          isDark={isDark}
           handleDragEnter={handleDragEnter}
           handleSlotDragStart={handleSlotDragStart}
           handleSlotDragEnd={handleSlotDragEnd}
@@ -257,12 +260,17 @@ const MainPage = () => {
           handleRecommendItemClick={handleRecommendItemClick}
         />
       )}
+      {isLoading && (
+        <SpinnerContainer>
+          <Spinner />
+        </SpinnerContainer>
+      )}
       {!recommendations.length && (
-        <Guide minWidth="12rem" height="10rem">
-          <GuideIcon>ℹ</GuideIcon>
-          <Text>챔피언을 배치하면</Text>
-          <Text>추천목록이</Text>
-          <Text>활성화됩니다</Text>
+        <Guide isDark={isDark} minWidth="12rem" height="10rem">
+          <GuideIcon isDark={isDark}>ℹ</GuideIcon>
+          <Text isDark={isDark}>챔피언을 배치하면</Text>
+          <Text isDark={isDark}>추천목록이</Text>
+          <Text isDark={isDark}>활성화됩니다</Text>
         </Guide>
       )}
     </Container>
@@ -274,7 +282,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: #fbed0b;
+  background-color: ${({ isDark }) => (isDark ? '#36393f' : '#fbed0b')};
   & > * {
     margin-top: 5rem;
   }
@@ -287,7 +295,7 @@ const TraitsList = styled.div`
 const Guide = styled.div`
   min-width: ${({ minWidth }) => minWidth};
   height: ${({ height }) => height};
-  border: 2px solid #0c2e41;
+  border: 2px solid ${({ isDark }) => (isDark ? '#cccccc' : '#0c2e41')};
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -296,18 +304,18 @@ const Guide = styled.div`
 `;
 
 const GuideIcon = styled.div`
-  background-color: #0c2e41;
+  background-color: ${({ isDark }) => (isDark ? '#cccccc' : '#0c2e41')};
   width: 20px;
   height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: #fbed0b;
+  color: ${({ isDark }) => (isDark ? '#ffffff' : '#fbed0b')};
 `;
 
 const Text = styled.div`
-  color: #0c2e41;
+  color: ${({ isDark }) => (isDark ? '#cccccc' : '#0c2e41')};
   font-size: 1.2rem;
 `;
 
@@ -340,6 +348,10 @@ const SaveBtn = styled.div`
     background-color: #68cc66;
     transition: background-color 200ms linear;
   }
+`;
+
+const SpinnerContainer = styled.div`
+  position: absolute;
 `;
 
 export default MainPage;
