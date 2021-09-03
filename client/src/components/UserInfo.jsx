@@ -48,12 +48,13 @@ const UserInfo = () => {
 
 const UserInfoContainer = styled.div`
   position: absolute;
-  right: 1rem;
+  right: 0;
   display: flex;
   align-items: center;
   &:hover {
     cursor: pointer;
   }
+  max-width: 4rem;
 `;
 
 const ImgWrapper = styled.div`
@@ -95,7 +96,7 @@ const LogoutModal = styled.div`
   position: absolute;
   right: 0;
   top: 3rem;
-  width: 100%;
+  min-width: 15rem;
   background-color: #fff;
   font-size: 1rem;
   border: 1px solid #ccc;

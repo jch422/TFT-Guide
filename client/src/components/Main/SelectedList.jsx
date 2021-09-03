@@ -2,10 +2,17 @@ import styled from 'styled-components';
 
 import Slot from './Slot.jsx';
 
-const SelectedList = ({ slots, handleDragEnter, handleSlotDragStart, handleSlotDragEnd }) => {
+const SelectedList = ({
+  slots,
+  isDark,
+  handleDragEnter,
+  handleSlotDragStart,
+  handleSlotDragEnd,
+}) => {
   const mappedSlots = slots.map((champion, idx) => (
     <Slot
       key={idx}
+      isDark={isDark}
       {...champion}
       handleDragEnter={e => handleDragEnter(e, idx)}
       handleSlotDragStart={e => handleSlotDragStart(e, idx)}

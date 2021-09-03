@@ -3,6 +3,8 @@ export const UPDATE_USERINFO = 'UPDATE_USERINFO';
 export const RESET_USERINFO = 'RESET_USERINFO';
 export const SAVE_DECK = 'SAVE_DECK';
 export const LOAD_DECKS = 'LOAD_DECKS';
+export const TOGGLE_MODE = 'TOGGLE_MODE';
+export const SET_LOADER = 'SET_LOADER';
 
 // actions creator functions - UserInfo
 export const updateUserInfo = userInfo => {
@@ -31,5 +33,18 @@ export const loadDecks = decks => {
   return {
     type: LOAD_DECKS,
     payload: { decks },
+  };
+};
+
+export const toggleMode = () => {
+  return {
+    type: TOGGLE_MODE,
+  };
+};
+
+export const setLoader = isLoading => {
+  return {
+    type: SET_LOADER,
+    payload: { isLoading },
   };
 };

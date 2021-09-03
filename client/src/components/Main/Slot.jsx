@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Slot = ({
+  isDark,
   championId = null,
   kr_name,
   handleDragEnter,
@@ -22,7 +23,7 @@ const Slot = ({
       <ChampionName>{kr_name}</ChampionName>
     </Hexagon>
   ) : (
-    <HexagonEmpty onDragEnter={handleDragEnter} />
+    <HexagonEmpty isDark={isDark} onDragEnter={handleDragEnter} />
   );
 };
 
@@ -110,7 +111,6 @@ const ChampionName = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: white;
   font-weight: bold;
   text-shadow: 2px 2px 1px black;
@@ -120,7 +120,7 @@ const HexagonEmpty = styled.div`
   position: relative;
   width: 100px;
   height: 57.74px;
-  background-color: #1b374a;
+  background-color: ${({ isDark }) => (isDark ? '#cccccc' : '#1b374a')};
   margin: 28.87px 0;
   &:before,
   &:after {
@@ -132,12 +132,12 @@ const HexagonEmpty = styled.div`
   }
   &:before {
     bottom: 100%;
-    border-bottom: 28.87px solid #1b374a;
+    border-bottom: 28.87px solid ${({ isDark }) => (isDark ? '#cccccc' : '#1b374a')};
   }
   &:after {
     top: 100%;
     width: 0;
-    border-top: 28.87px solid #1b374a;
+    border-top: 28.87px solid ${({ isDark }) => (isDark ? '#cccccc' : '#1b374a')};
   }
   & {
     cursor: pointer;

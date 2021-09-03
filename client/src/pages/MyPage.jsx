@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import DeckBox from '../components/Mypage/Deck';
 
 const Body = styled.div`
-  background-color: #fbed0b;
+  background-color: ${({ isDark }) => (isDark ? '#36393f' : '#fbed0b')};
   height: 100vh;
 `;
 
@@ -24,16 +24,17 @@ const DeckList = styled.div`
 `;
 
 function MyPage() {
+  const { isDark } = useSelector(state => state.themeReducer);
   const savedDecks = useSelector(state => state.decksReducer.decks);
   const myDeck = savedDecks.map(({ Champion }) => Champion.map(({ id }) => id));
 
   return (
-    <Body>
+    <Body isDark={isDark}>
       <P>My Deck</P>
       <div>
         <DeckList>
           {myDeck.map((data, index) => (
-            <DeckBox data={data} index={index} key={index} />
+            <DeckBox data={data} index={index} key={index} isDark={isDark} />
           ))}
         </DeckList>
       </div>

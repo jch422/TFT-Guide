@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Trait from './Trait';
 import Unit from './Unit/Unit';
 
-function History({ data, puuid }) {
+function History({ data, puuid, isDark }) {
   const matchDate = new Date(data.info.game_datetime);
   const year = matchDate.getFullYear(); // 년도
   const month = matchDate.getMonth() + 1; // 월
@@ -32,7 +32,7 @@ function History({ data, puuid }) {
   let myTraits = myMatch.traits.sort(compare).filter(x => x.style > 0);
   let myUnits = myMatch.units;
   return (
-    <Div>
+    <Div isDark={isDark}>
       <Summary>
         <SummarySpan>{'#' + myMatch.placement}</SummarySpan>
         <SummarySpan>{data.tft_game_type === 'standard' ? '일반' : '랭크'}</SummarySpan>
@@ -59,12 +59,15 @@ const Div = styled.div`
   margin: 0 auto;
   list-style-type: none;
   background: #17394f;
-  border: solid #131414 0.5rem;
+  border: solid ${({ isDark }) => (isDark ? '#6a6a6a' : '#131414')} 0.5rem;
   border-bottom: none;
   display: flex;
   max-width: 800px;
   min-width: 500px;
   padding: 8px;
+  &:last-of-type {
+    border-bottom: solid ${({ isDark }) => (isDark ? '#6a6a6a' : '#131414')} 0.5rem;
+  }
 `;
 const Summary = styled.div`
   display: flex;

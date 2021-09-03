@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Search({ onChange, onKeyPress, searchButtonClick }) {
+function Search({ onChange, onKeyPress, searchButtonClick, isDark }) {
   const OnKeyPressSearch = e => {
     onKeyPress(e);
   };
@@ -9,7 +9,7 @@ function Search({ onChange, onKeyPress, searchButtonClick }) {
     searchButtonClick(e);
   };
   return (
-    <Div>
+    <Div isDark={isDark}>
       <input
         id="search-id"
         type="text"
@@ -33,7 +33,7 @@ const Div = styled.div`
   height: 65px;
   margin: 0 auto;
   list-style-type: none;
-  background: #fbed0b;
+  background-color: ${({ isDark }) => (isDark ? '#36393f' : '#fbed0b')};
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -44,6 +44,7 @@ const Div = styled.div`
     height: 100%;
     border-radius: 25px;
     text-align: center;
+    font-size: 1.6rem;
   }
   input::placeholder {
     text-align: center;
