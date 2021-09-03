@@ -17,24 +17,15 @@ function Star({ tier, rarity }) {
   }
   if (tier === 1) {
     return (
-      <div style={{ color: colorRead() }}>
-        <i className="star fas fa-star"></i>
-      </div>
+      <div style={{ color: colorRead() }}>★</div>
     );
   } else if (tier === 2) {
     return (
-      <div style={{ color: colorRead() }}>
-        <i className="star fas fa-star"></i>
-        <i className="star fas fa-star"></i>
-      </div>
+      <div style={{ color: colorRead() }}>★★</div>
     );
   } else {
     return (
-      <div style={{ color: colorRead() }}>
-        <i className="star fas fa-star"></i>
-        <i className="star fas fa-star"></i>
-        <i className="star fas fa-star"></i>
-      </div>
+      <div style={{ color: colorRead() }}>★★★</div>
     );
   }
 }
