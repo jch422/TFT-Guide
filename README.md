@@ -20,6 +20,9 @@ TFT를 시작하고 싶은데 어떻게 할지 모를 때.
 
 <img src="https://user-images.githubusercontent.com/80196999/131904609-40c33f8a-b8ae-4850-9cf3-592539e8e217.png" height="120"/>  <img src="https://user-images.githubusercontent.com/80196999/131904926-715d122b-f8ce-4671-b7d5-2a8d1831a6e3.png" height="120"/>  <img src="https://user-images.githubusercontent.com/80196999/131905124-5139632a-20bb-44cf-a238-ad7bc9e38454.png" height="120"/>  <img src="https://user-images.githubusercontent.com/80196999/131905210-bfe02f65-ac59-41e2-ac9b-b99da05ae9a7.png" height="120"/>
 
+## full_stack
+![Web App Reference Architecture (1)](https://user-images.githubusercontent.com/61625998/131931490-faafef7b-950f-452c-a2e1-273e87554b2b.png)
+
 ## 팀원 소개
 
 |이름|포지션|
