@@ -1,13 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Search({ onChange, onKeyPress, searchButtonClick, isDark }) {
-  const OnKeyPressSearch = e => {
-    onKeyPress(e);
+function Search({ handleSearch, setName, isDark }) {
+  const handleEnter = ({ key }) => {
+    if (key === 'Enter') {
+      //handleSearch();
+      alert('TFT 시즌5 전적은 현재 검색할 수 없습니다. \n업데이트를 기다려주세요!');
+    }
   };
   const searchButtonClickSearch = e => {
-    searchButtonClick(e);
+    //handleSearch();
+    alert('TFT 시즌5 전적은 현재 검색할 수 없습니다. \n업데이트를 기다려주세요!');
   };
+
   return (
     <Div isDark={isDark}>
       <input
@@ -15,7 +20,8 @@ function Search({ onChange, onKeyPress, searchButtonClick, isDark }) {
         type="text"
         name="name"
         placeholder="소환사명"
-        onKeyPress={OnKeyPressSearch}
+        onKeyDown={handleEnter}
+        onChange={e => setName(e.target.value)}
       ></input>
       <Button onClick={searchButtonClickSearch}>
         <Img src={'https://svgsilh.com/svg/1093183.svg'}></Img>

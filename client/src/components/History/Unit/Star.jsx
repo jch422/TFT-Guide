@@ -16,17 +16,11 @@ function Star({ tier, rarity }) {
     }
   }
   if (tier === 1) {
-    return (
-      <div style={{ color: colorRead() }}>★</div>
-    );
+    return <div style={{ color: colorRead() }}>★</div>;
   } else if (tier === 2) {
-    return (
-      <div style={{ color: colorRead() }}>★★</div>
-    );
+    return <div style={{ color: colorRead() }}>★★</div>;
   } else {
-    return (
-      <div style={{ color: colorRead() }}>★★★</div>
-    );
+    return <div style={{ color: colorRead() }}>★★★</div>;
   }
 }
 
