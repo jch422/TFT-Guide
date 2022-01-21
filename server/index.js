@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'development') {
 // });
 
 const app = express();
-// const usersRouter = require('./routes/user');
+const usersRouter = require('./routes/user');
 // const decksRouter = require('./routes/deck');
 // const matchesRouter = require('./routes/matches');
 // const championRouter = require('./routes/champion');
@@ -30,7 +30,7 @@ app.use(
   }),
 );
 app.get('/', (req, res) => res.send("hello world"));
-// app.use('/users', verifyAccessToken, usersRouter);
+app.use('/users', verifyAccessToken, usersRouter);
 // app.use('/decks', decksRouter);
 // app.use('/matches', matchesRouter);
 // app.use('/recommend', championRouter);
