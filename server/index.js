@@ -19,7 +19,7 @@ const usersRouter = require('./routes/user');
 // const decksRouter = require('./routes/deck');
 // const matchesRouter = require('./routes/matches');
 // const championRouter = require('./routes/champion');
-// const { verifyAccessToken } = require('./middelware/access-token');
+const { verifyAccessToken } = require('./middelware/access-token');
 
 app.use(express.json());
 app.use(
