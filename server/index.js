@@ -3,12 +3,17 @@ const path = require('path');
 const dotenv = require('dotenv');
 const cors = require('cors');
 
-dotenv.config({
-  path: path.resolve(
-    process.cwd(),
-    process.env.NODE_ENV == 'production' ? '.env' : '.env.development',
-  ),
-});
+if (process.env.NODE_ENV === 'development') {
+  require('dotenv').config({ path: './.env.dev' });
+}
+
+// dotenv.config({
+//   path: path.resolve(
+//     process.cwd(),
+//     process.env.NODE_ENV == 'production' ? '.env' : '.env.development',
+//   ),
+// });
+
 const app = express();
 const usersRouter = require('./routes/user');
 const decksRouter = require('./routes/deck');
