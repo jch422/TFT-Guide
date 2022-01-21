@@ -1,5 +1,5 @@
 # 🎮 `TFT-Guide`
-<img src="https://user-images.githubusercontent.com/80196999/131866159-b26e8ab4-8a74-4e15-b3e7-d9bb913d7ae5.png" width="300" height="300"/>
+<img src="https://user-images.githubusercontent.com/80196999/131866159-b26e8ab4-8a74-4e15-b3e7-d9bb913d7ae5.png" width="200" height="200"/>
 
 `TFT`를 시작하고 싶은데 어떻게 할지 모를 때.
 
