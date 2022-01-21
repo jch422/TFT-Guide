@@ -15,6 +15,7 @@ const Deck = styled.div`
   flex-direction: row;
   min-width: 500px;
   padding: 8px;
+  align-items: center;
 `;
 const Name = styled.span`
   flex: 0 1 10%;
@@ -34,8 +35,21 @@ const Champ = styled.span`
   align-items: flex-end;
 `;
 
-function DeckBox({ data, index, isDark }) {
-  const mydeck = data;
+const DeleteBtn = styled.button`
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+`;
+
+function DeckBox({ deck, index, id, isDark, deleteDeck }) {
+  const mydeck = deck.slice(0, deck.length - 1);
   let set = new Set(mydeck);
 
   let slimMydeck = [...set];
@@ -93,6 +107,7 @@ function DeckBox({ data, index, isDark }) {
           return <Unit key={index} el={el} />;
         })}
       </Champ>
+      <DeleteBtn onClick={() => deleteDeck(id)}>&times;</DeleteBtn>
     </Deck>
   );
 }

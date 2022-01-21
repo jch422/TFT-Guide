@@ -9,31 +9,23 @@ import Search from '../components/Search';
 import Spinner from '../components/Spinner';
 
 function HistorySearch() {
-  const [Name, setIsName] = useState('');
-  const [Data, setIsData] = useState(null);
+  const [name, setName] = useState('');
+  const [data, setData] = useState(null);
   const { isDark } = useSelector(state => state.themeReducer);
   const { isLoading } = useSelector(state => state.loaderReducer);
   const dispatch = useDispatch();
 
-  const onKeyPress = e => {
-    if (e.key === 'Enter') {
-      setIsName(e.target.value);
-    }
-  };
-  const searchButtonClick = e => {
-    setIsName(e.target.value);
-  };
   const getData = async () => {
     try {
-      setIsData(null);
+      setData(null);
       dispatch(setLoader(true));
-      const res = await axios.get(`${process.env.REACT_APP_SERVER_URI}/matches/${Name}`);
+      const res = await axios.get(`${process.env.REACT_APP_SERVER_URI}/matches/${name}`);
       dispatch(setLoader(false));
       let matchesData = res.data.data.matchesData;
       for (let i = 0; i < matchesData.length; i++) {
         delete matchesData[i].metadata;
       }
-      setIsData({ data: matchesData, puuid: res.data.data.puuid });
+      setData({ data: matchesData, puuid: res.data.data.puuid });
     } catch (error) {
       if (error.response) {
         alert('존재하지 않는 소환사명입니다.');
@@ -41,25 +33,19 @@ function HistorySearch() {
     }
   };
 
-  useEffect(() => {
-    if (Name) {
-      getData();
-    }
-  }, [Name]);
-
   return (
     <Div id="history-search-container" isDark={isDark}>
-      <Search onKeyPress={onKeyPress} searchButtonClick={searchButtonClick} isDark={isDark} />
+      <Search handleSearch={getData} setName={setName} isDark={isDark} />
       {isLoading && (
         <SpinnerContainer>
           <Spinner />
         </SpinnerContainer>
       )}
-      {Data?.data?.length > 0 && (
+      {data?.data?.length > 0 && (
         <div id="history-summary-body">
-          {Data.data.map((data, index) => {
-            if (data.info.game_datetime > 1626923221434) {
-              return <History data={data} key={index} puuid={Data.puuid} isDark={isDark} />;
+          {data.data.map((_data, index) => {
+            if (_data.info.game_datetime > 1626923221434) {
+              return <History data={_data} key={index} puuid={data.puuid} isDark={isDark} />;
             }
             return <></>;
           })}

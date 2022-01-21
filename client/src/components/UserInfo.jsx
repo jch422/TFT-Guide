@@ -47,29 +47,20 @@ const UserInfo = () => {
 };
 
 const UserInfoContainer = styled.div`
-  position: absolute;
-  right: 0;
   display: flex;
   align-items: center;
   &:hover {
     cursor: pointer;
   }
-  max-width: 4rem;
 `;
 
-const ImgWrapper = styled.div`
-  width: 15vw;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-`;
+const ImgWrapper = styled.div``;
 
 const Img = styled.img`
   width: 2.5rem;
   height: 2.5rem;
   border: 2px solid #fff;
   border-radius: 50%;
-  margin-right: 0.3rem;
 `;
 
 const Email = styled.div`

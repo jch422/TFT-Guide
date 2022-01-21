@@ -22,18 +22,18 @@ const Toggler = () => {
 };
 
 const TogglerContainer = styled.div`
-  margin-right: 4rem;
-  z-index: 5;
+  display: flex;
+  align-items: center;
 `;
 
 const CheckBoxWrapper = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 `;
 
 const CheckBoxLabel = styled.label`
-  position: absolute;
-  top: 3px;
-  left: 0;
   width: 42px;
   height: 26px;
   border-radius: 15px;
@@ -53,8 +53,7 @@ const CheckBoxLabel = styled.label`
 `;
 
 const CheckBox = styled.input`
-  opacity: 0;
-  z-index: 1;
+  display: none;
   border-radius: 15px;
   width: 42px;
   height: 26px;
