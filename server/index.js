@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const app = express();
 const usersRouter = require('./routes/user');
-// const decksRouter = require('./routes/deck');
+const decksRouter = require('./routes/deck');
 // const matchesRouter = require('./routes/matches');
 // const championRouter = require('./routes/champion');
 const { verifyAccessToken } = require('./middelware/access-token');
@@ -31,7 +31,7 @@ app.use(
 );
 app.get('/', (req, res) => res.send("hello world"));
 app.use('/users', verifyAccessToken, usersRouter);
-// app.use('/decks', decksRouter);
+app.use('/decks', decksRouter);
 // app.use('/matches', matchesRouter);
 // app.use('/recommend', championRouter);
 
