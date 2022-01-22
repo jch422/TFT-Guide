@@ -210,6 +210,7 @@ const MainPage = () => {
         alert('저장 완료');
       }
     } catch (err) {
+      console.log(err);
       alert('정상적이지 않은 접근입니다');
       dispatch(resetUserInfo());
       history.push('/login');

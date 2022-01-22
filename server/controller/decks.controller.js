@@ -36,7 +36,7 @@ module.exports = {
 
       res.status(201).json({ data: result, message: 'ok' });
     } catch (err) {
-      res.status(400).json({ data: null, message: 'invalid request' });
+      res.status(400).json({ data: null, message: 'invalid request', err });
     }
   },
   delete: async (req, res) => {
