@@ -47,7 +47,7 @@ const Navbar = () => {
 const Header = styled.header`
   height: 60px;
   font-size: 1rem;
-  background-color: ${({ isDark }) => (isDark ? '#1e2027' : '#0d2e41')};
+  background-color: ${({ isDark }) => (isDark ? '#1e2027' : '#D5CABD')};
   display: flex;
   justify-content: center;
   align-items: center;
