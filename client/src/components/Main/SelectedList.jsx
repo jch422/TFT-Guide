@@ -32,6 +32,15 @@ const SelectedContainer = styled.div`
   & > *:nth-child(odd) {
     margin-left: -45px;
   }
+  @media (max-width: 1200px) {
+    & > *:nth-child(even) {
+      margin-top: 61px;
+      margin-left: -23px;
+    }
+    & > *:nth-child(odd) {
+      margin-left: -23px;
+    }
+  }
 `;
 
 export default SelectedList;

@@ -64,6 +64,7 @@ const getTraitStyleAndMinCount = (sets, count) => {
 
 const TraitContainer = styled.div`
   width: 15rem;
+  height: 77px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -76,6 +77,13 @@ const TraitContainer = styled.div`
 
   & > * {
     margin-left: 0.5rem;
+  }
+
+  @media (max-width: 1200px) {
+    &:not(:first-of-type) {
+      margin-top: 0;
+    }
+    min-width: 15rem;
   }
 `;
 

@@ -25,6 +25,13 @@ const ChampionsContainer = styled.div`
   grid-template-columns: repeat(${({ colNum }) => colNum}, minmax(50px, 4vw));
   grid-template-rows: repeat(${({ rowNum }) => rowNum}, minmax(50px, 4vw));
   margin-top: 2rem;
+  @media (max-width: 1200px) {
+    margin-top: 1rem;
+  }
+  @media (max-width: 550px) {
+    grid-template-columns: repeat(${({ colNum }) => colNum}, 46px);
+    grid-template-rows: repeat(${({ rowNum }) => rowNum}, 46px);
+  }
 `;
 
 export default ChampionList;

@@ -257,6 +257,7 @@ const MainPage = () => {
       </Draggables>
       {!!recommendations.length && (
         <RecommendList
+          isDark={isDark}
           champions={recommendations}
           handleRecommendItemClick={handleRecommendItemClick}
         />
@@ -267,7 +268,7 @@ const MainPage = () => {
         </SpinnerContainer>
       )}
       {!recommendations.length && (
-        <Guide isDark={isDark} minWidth="12rem" height="10rem">
+        <Guide isDark={isDark} minWidth="16rem" height="10rem">
           <GuideIcon isDark={isDark}>ℹ</GuideIcon>
           <Text isDark={isDark}>챔피언을 배치하면</Text>
           <Text isDark={isDark}>추천목록이</Text>
@@ -283,14 +284,35 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: ${({ isDark }) => (isDark ? '#36393f' : '#fbed0b')};
-  & > * {
+  background-color: ${({ isDark }) => (isDark ? '#36393f' : '#FAF8FF')};
+  & > div {
     margin-top: 5rem;
+  }
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (max-width: 1200px) {
+    & > div {
+      margin-top: 0rem;
+    }
+    justify-content: space-evenly;
   }
 `;
 
 const TraitsList = styled.div`
   min-width: 15rem;
+  @media (max-width: 1200px) {
+    margin-top: 1rem;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 90%;
+    & > div {
+      margin-right: 0.5rem;
+    }
+  }
 `;
 
 const Guide = styled.div`
@@ -302,6 +324,10 @@ const Guide = styled.div`
   justify-content: space-evenly;
   padding: 1rem 0;
   align-items: center;
+  @media (max-width: 1200px) {
+    margin-top: 1rem;
+    min-height: 6rem;
+  }
 `;
 
 const GuideIcon = styled.div`
@@ -327,6 +353,9 @@ const Draggables = styled.div`
   align-items: center;
   margin-left: 4rem;
   margin-right: 4rem;
+  @media (max-width: 1200px) {
+    margin-top: 1rem;
+  }
 `;
 
 const SaveBtn = styled.div`
@@ -348,6 +377,9 @@ const SaveBtn = styled.div`
     cursor: pointer;
     background-color: #68cc66;
     transition: background-color 200ms linear;
+  }
+  @media (max-width: 1200px) {
+    top: 0;
   }
 `;
 

@@ -19,24 +19,27 @@ const UserInfo = () => {
   };
 
   return (
-    <UserInfoContainer onClick={handleUserInfoClick}>
+    <UserInfoContainer>
       {email ? (
         <>
-          <ImgWrapper>
+          <ImgWrapper onClick={handleUserInfoClick}>
             <Img src={picture} />
           </ImgWrapper>
           {modalShow && (
-            <LogoutModal>
-              <UserInfoWrapper>
-                <Img src={picture} />
-                <RiotId>{riotId ? riotId : '소환사명 미등록'}</RiotId>
-                <Email>{email}</Email>
-              </UserInfoWrapper>
-              <Hr />
-              <LogoutBtnWrapper>
-                <LogoutBtn onClick={handleLogout}>Logout</LogoutBtn>
-              </LogoutBtnWrapper>
-            </LogoutModal>
+            <ModalWrapper>
+              <Overlay onClick={handleUserInfoClick} />
+              <LogoutModal>
+                <UserInfoWrapper>
+                  <Img src={picture} />
+                  <RiotId>{riotId ? riotId : '소환사명 미등록'}</RiotId>
+                  <Email>{email}</Email>
+                </UserInfoWrapper>
+                <Hr />
+                <LogoutBtnWrapper>
+                  <LogoutBtn onClick={handleLogout}>Logout</LogoutBtn>
+                </LogoutBtnWrapper>
+              </LogoutModal>
+            </ModalWrapper>
           )}
         </>
       ) : (
@@ -49,18 +52,23 @@ const UserInfo = () => {
 const UserInfoContainer = styled.div`
   display: flex;
   align-items: center;
+`;
+
+const ImgWrapper = styled.div`
   &:hover {
     cursor: pointer;
   }
 `;
 
-const ImgWrapper = styled.div``;
-
 const Img = styled.img`
   width: 2.5rem;
   height: 2.5rem;
-  border: 2px solid #fff;
   border-radius: 50%;
+  padding: 2px;
+  &:hover {
+    border: 2px solid #fff;
+    padding: 0;
+  }
 `;
 
 const Email = styled.div`
@@ -73,6 +81,7 @@ const StyledLink = styled(Link)`
   font-size: 1.2rem;
   &:hover {
     color: yellow;
+    cursor: pointer;
   }
 `;
 
@@ -81,18 +90,34 @@ const LogoutBtn = styled.div`
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 0.5rem 1rem;
+  &:hover {
+    cursor: pointer;
+  }
 `;
+
+const ModalWrapper = styled.div``;
 
 const LogoutModal = styled.div`
   position: absolute;
-  right: 0;
-  top: 3rem;
+  right: 1rem;
+  top: 2.8rem;
   min-width: 15rem;
   background-color: #fff;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+  z-index: 5;
+`;
+
+const Overlay = styled.div`
+  position: fixed;
+  background-color: transparent;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
 `;
 
 const UserInfoWrapper = styled.div`

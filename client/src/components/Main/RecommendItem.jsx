@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 
-const RecommendItem = ({ kr_name, championId, cost, championData, handleRecommendItemClick }) => {
+import traitMapper from '../../utils/trait';
+
+const RecommendItem = ({
+  kr_name,
+  championId,
+  cost,
+  isDark,
+  championData,
+  handleRecommendItemClick,
+}) => {
   const color = costColorMapper[cost];
 
   return (
@@ -10,6 +19,11 @@ const RecommendItem = ({ kr_name, championId, cost, championData, handleRecommen
         <ChampionCost bgColor={color}>${cost}</ChampionCost>
         <ChampionName>{kr_name}</ChampionName>
       </ChampionContainer>
+      <Traits>
+        {championData.traits.map(trait => (
+          <Trait color={isDark ? 'white' : '#5F5C6D'}>{traitMapper[trait]}</Trait>
+        ))}
+      </Traits>
     </Wrapper>
   );
 };
@@ -23,8 +37,8 @@ const costColorMapper = {
 };
 
 const Wrapper = styled.div`
-  width: 100px;
-  height: 100px;
+  display: flex;
+  width: 16rem;
   margin-bottom: 1rem;
   padding: 1px;
   transition: transform 0.2s;
@@ -34,17 +48,24 @@ const Wrapper = styled.div`
   &:hover {
     transform: scale(1.1);
   }
+  @media (max-width: 1200px) {
+    width: 85px;
+    height: 85px;
+    margin: 0;
+  }
 `;
 
 const ChampionContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 100%;
   border: 2px solid ${({ borderColor }) => borderColor};
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1200px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const ChampionImg = styled.img`
@@ -72,6 +93,21 @@ const ChampionName = styled.div`
   font-size: 0.8rem;
   font-weight: bold;
   text-shadow: 2px 2px 1px black;
+`;
+
+const Traits = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 0.5rem;
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;
+
+const Trait = styled.div`
+  color: ${({ color }) => color};
+  font-weight: bold;
 `;
 
 export default RecommendItem;
