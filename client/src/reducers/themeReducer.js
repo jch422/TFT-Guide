@@ -1,6 +1,6 @@
 import { TOGGLE_MODE } from '../actions/index';
 
-const isDark = localStorage.getItem('isDark') ? JSON.parse(localStorage.getItem('isDark')) : false;
+const isDark = localStorage.getItem('isDark') ? JSON.parse(localStorage.getItem('isDark')) : true;
 const initialState = { isDark };
 
 const themeReducer = (state = initialState, action) => {
