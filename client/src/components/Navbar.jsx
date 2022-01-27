@@ -60,7 +60,7 @@ const Header = styled.header`
 const Aside = styled.div`
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 0;
   display: flex;
   align-items: center;
   & > div {
