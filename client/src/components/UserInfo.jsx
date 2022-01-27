@@ -100,7 +100,7 @@ const ModalWrapper = styled.div``;
 const LogoutModal = styled.div`
   position: absolute;
   right: 1rem;
-  top: 2.8rem;
+  top: 2.5rem;
   min-width: 15rem;
   background-color: #fff;
   font-size: 1rem;
