@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleMode } from '../actions';
+import svgToComponent from '../utils/svgs';
 import styled from 'styled-components';
 
 const Toggler = () => {
   const { isDark } = useSelector(state => state.themeReducer);
 
+  const props = { width: 30, height: 30 };
   const dispatch = useDispatch();
   const handleToggle = () => {
     localStorage.setItem('isDark', JSON.stringify(!isDark));
@@ -13,10 +15,9 @@ const Toggler = () => {
 
   return (
     <TogglerContainer>
-      <CheckBoxWrapper>
-        <CheckBox id="checkbox" type="checkbox" onClick={handleToggle} />
-        <CheckBoxLabel htmlFor="checkbox" />
-      </CheckBoxWrapper>
+      <ToggleIcon onClick={handleToggle}>
+        {svgToComponent({ svgName: isDark ? 'light' : 'night', props })}
+      </ToggleIcon>
     </TogglerContainer>
   );
 };
@@ -26,48 +27,16 @@ const TogglerContainer = styled.div`
   align-items: center;
 `;
 
-const CheckBoxWrapper = styled.div`
-  position: relative;
+const ToggleIcon = styled.div`
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  cursor: pointer;
-`;
-
-const CheckBoxLabel = styled.label`
-  width: 42px;
-  height: 26px;
-  border-radius: 15px;
-  background: #bebebe;
-  cursor: pointer;
-  &::after {
-    content: '';
-    display: block;
+  &:hover {
     border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    margin: 3px;
-    background: #ffffff;
-    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
-  }
-`;
-
-const CheckBox = styled.input`
-  display: none;
-  border-radius: 15px;
-  width: 42px;
-  height: 26px;
-  &:checked + ${CheckBoxLabel} {
-    background: #4fbe79;
-    &::after {
-      content: '';
-      display: block;
-      border-radius: 50%;
-      width: 18px;
-      height: 18px;
-      margin-left: 21px;
-      transition: 0.2s;
-    }
+    background-color: rgba(255, 255, 255, 0.2);
   }
 `;
 
