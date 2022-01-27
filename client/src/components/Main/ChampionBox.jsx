@@ -54,9 +54,8 @@ const ChampionImg = styled.img`
 const ChampionCost = styled.div`
   position: absolute;
   top: 0;
-  right: -2px;
+  right: 0;
   color: white;
-  width: 30%;
   background-color: ${({ bgColor }) => bgColor};
   text-align: center;
   font-size: 0.8rem;
@@ -66,9 +65,12 @@ const ChampionName = styled.div`
   position: absolute;
   color: white;
   bottom: 0.3rem;
-  font-size: 0.8rem;
+  font-size: 0.7vw;
   font-weight: bold;
   text-shadow: 2px 2px 1px black;
+  @media (max-width: 1200px) {
+    font-size: 8px;
+  }
 `;
 
 export default ChampionBox;
