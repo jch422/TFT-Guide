@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import ChampionBox from './ChampionBox.jsx';
 
-const ChampionList = ({ champions, handleDragStart, handleDragEnd }) => {
+const ChampionList = ({ champions, handleClick, handleDragStart, handleDragEnd }) => {
   const COL_NUM = 10;
   const ROW_NUM = Math.ceil(champions.length / COL_NUM);
 
@@ -12,6 +12,8 @@ const ChampionList = ({ champions, handleDragStart, handleDragEnd }) => {
         <ChampionBox
           key={idx}
           {...champion}
+          champion={champion}
+          handleClick={handleClick}
           handleDragStart={e => handleDragStart(e, idx)}
           handleDragEnd={handleDragEnd}
         />
