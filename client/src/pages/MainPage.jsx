@@ -76,43 +76,33 @@ const MainPage = () => {
     dispatch(loadDecks(data));
   };
 
-  const getRecommendations = async champions => {
-    if (!champions.length) {
-      setRecommendations([]);
-      return;
-    }
-    dispatch(setLoader(true));
-    const {
-      data: { data },
-    } = await axios.post(`${process.env.REACT_APP_SERVER_URI}/recommend`, {
-      champions,
-      level: champions.length,
-    });
-    dispatch(setLoader(false));
-    const championsInfo = data.reduce((acc, [championInfo]) => {
-      acc.push(championInfo);
-      return acc;
-    }, []);
-    setRecommendations(championsInfo);
-  };
-
   useEffect(() => {
-    if (userInfo.id) {
-      getDecks();
-    }
-    const filteredChampions = filterRedundantChampions(buildingDeck);
-    if (filteredChampions.length) {
-      setSlots(buildingDeck);
-    }
-  }, []);
+    const getRecommendations = async champions => {
+      if (!champions.length) {
+        setRecommendations([]);
+        return;
+      }
+      dispatch(setLoader(true));
+      const {
+        data: { data },
+      } = await axios.post(`${process.env.REACT_APP_SERVER_URI}/recommend`, {
+        champions,
+        level: champions.length,
+      });
+      dispatch(setLoader(false));
+      const championsInfo = data.reduce((acc, [championInfo]) => {
+        acc.push(championInfo);
+        return acc;
+      }, []);
+      setRecommendations(championsInfo);
+    };
 
-  useEffect(() => {
     const traitsObj = countByTrait(slots);
     setCurTraits(Object.entries(traitsObj));
     dispatch(saveDeck(slots));
     const filteredChampions = filterRedundantChampions(slots);
     getRecommendations(filteredChampions);
-  }, [slots]);
+  }, [slots, dispatch]);
 
   const handleDragStart = (e, idx) => (draggingChamp.current = idx);
   const handleSlotDragStart = (e, idx) => (draggingSlot.current = idx);
@@ -120,7 +110,7 @@ const MainPage = () => {
     e.stopPropagation();
     dragOverSlot.current = idx;
   };
-  const handleDragEnd = e => {
+  const handleDragEnd = () => {
     setSlots(prevSlots => {
       return prevSlots.map((slot, idx) => {
         if (idx !== dragOverSlot.current) {
@@ -129,6 +119,17 @@ const MainPage = () => {
         return { ...slot, ...champions[draggingChamp.current] };
       });
     });
+  };
+  const handleRemoveFromSlot = removingIdx => {
+    setSlots(prevSlots =>
+      prevSlots.map((slot, idx) => {
+        if (removingIdx === idx) {
+          return { ...emptySlot };
+        } else {
+          return { ...slot };
+        }
+      }),
+    );
   };
   const handleSlotDragEnd = e => {
     if (dragOverSlot.current === REMOVE_ZONE) {
@@ -248,11 +249,13 @@ const MainPage = () => {
           handleDragEnter={handleDragEnter}
           handleSlotDragStart={handleSlotDragStart}
           handleSlotDragEnd={handleSlotDragEnd}
+          handleRemoveFromSlot={handleRemoveFromSlot}
         />
         <ChampionList
           champions={champions}
           handleDragStart={handleDragStart}
           handleDragEnd={handleDragEnd}
+          handleClick={handleRecommendItemClick}
         />
       </Draggables>
       {!!recommendations.length && (
@@ -338,7 +341,7 @@ const GuideIcon = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: ${({ isDark }) => (isDark ? '#ffffff' : '#fbed0b')};
+  color: white;
 `;
 
 const Text = styled.div`

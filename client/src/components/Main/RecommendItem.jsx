@@ -20,8 +20,10 @@ const RecommendItem = ({
         <ChampionName>{kr_name}</ChampionName>
       </ChampionContainer>
       <Traits>
-        {championData.traits.map(trait => (
-          <Trait color={isDark ? 'white' : '#5F5C6D'}>{traitMapper[trait]}</Trait>
+        {championData.traits.map((trait, idx) => (
+          <Trait key={idx} color={isDark ? 'white' : '#5F5C6D'}>
+            {traitMapper[trait]}
+          </Trait>
         ))}
       </Traits>
     </Wrapper>

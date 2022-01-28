@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 
-const ChampionBox = ({ kr_name, championId, cost, handleDragStart, handleDragEnd }) => {
+const ChampionBox = ({
+  kr_name,
+  champion,
+  championId,
+  cost,
+  handleClick,
+  handleDragStart,
+  handleDragEnd,
+}) => {
   const color = costColorMapper[cost];
 
   return (
@@ -10,6 +18,7 @@ const ChampionBox = ({ kr_name, championId, cost, handleDragStart, handleDragEnd
         draggable
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
+        onClick={() => handleClick(champion)}
       >
         <ChampionImg src={`../TFTData/champions/${championId}.png`} />
         <ChampionCost bgColor={color}>${cost}</ChampionCost>

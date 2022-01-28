@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 const Slot = ({
+  idx,
   isDark,
   championId = null,
   kr_name,
   handleDragEnter,
   handleSlotDragStart,
   handleSlotDragEnd,
+  handleRemoveFromSlot,
 }) => {
   const url = `url(${process.env.REACT_APP_HOME}/TFTData/champions/${championId}.png)`;
 
@@ -17,6 +19,7 @@ const Slot = ({
       onDragStart={handleSlotDragStart}
       onDragEnter={handleDragEnter}
       onDragEnd={handleSlotDragEnd}
+      onClick={() => handleRemoveFromSlot(idx)}
     >
       <HexTop />
       <HexBottom />
