@@ -16,12 +16,39 @@ const Login = () => {
   const history = useHistory();
 
   useEffect(() => {
+    const getUserInfo = async accessToken => {
+      try {
+        const {
+          data: {
+            data: { id, email, picture, riotId, isRegistered },
+            message,
+          },
+        } = await axios.get(`${process.env.REACT_APP_SERVER_URI}/users/login`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+
+        if (message !== 'ok') {
+          throw Error('invalid acessToken');
+        }
+
+        dispatch(updateUserInfo({ id, email, picture, riotId, isRegistered }));
+        if (!isRegistered || !riotId) {
+          setModalShow(true);
+        } else {
+          history.push('/');
+        }
+      } catch (err) {
+        history.push('/login');
+      }
+    };
     const accessToken = extractAccessTokenFromURL();
     if (accessToken) {
       dispatch(updateUserInfo({ accessToken }));
       getUserInfo(accessToken);
     }
-  }, []);
+  }, [dispatch, history]);
 
   const extractAccessTokenFromURL = () => {
     const url = new URL(window.location.href);
@@ -33,34 +60,6 @@ const Login = () => {
         const accessToken = hashFragment.split('=')[1];
         return accessToken;
       }
-    }
-  };
-
-  const getUserInfo = async accessToken => {
-    try {
-      const {
-        data: {
-          data: { id, email, picture, riotId, isRegistered },
-          message,
-        },
-      } = await axios.get(`${process.env.REACT_APP_SERVER_URI}/users/login`, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
-
-      if (message !== 'ok') {
-        throw Error('invalid acessToken');
-      }
-
-      dispatch(updateUserInfo({ id, email, picture, riotId, isRegistered }));
-      if (!isRegistered || !riotId) {
-        setModalShow(true);
-      } else {
-        history.push('/');
-      }
-    } catch (err) {
-      history.push('/login');
     }
   };
 
