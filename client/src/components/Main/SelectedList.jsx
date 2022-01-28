@@ -8,15 +8,18 @@ const SelectedList = ({
   handleDragEnter,
   handleSlotDragStart,
   handleSlotDragEnd,
+  handleRemoveFromSlot,
 }) => {
   const mappedSlots = slots.map((champion, idx) => (
     <Slot
       key={idx}
+      idx={idx}
       isDark={isDark}
       {...champion}
       handleDragEnter={e => handleDragEnter(e, idx)}
       handleSlotDragStart={e => handleSlotDragStart(e, idx)}
       handleSlotDragEnd={handleSlotDragEnd}
+      handleRemoveFromSlot={handleRemoveFromSlot}
     />
   ));
 
