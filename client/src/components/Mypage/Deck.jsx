@@ -1,115 +1,142 @@
-import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import champions from '../../JSON/champions.json';
-import traits from '../../JSON/traits.json';
-import Trait from './MyTrait';
-import Unit from './Unit';
 
-const Deck = styled.div`
-  width: 80%;
-  margin: 10px;
-  list-style-type: none;
-  background: ${({ isDark }) => (isDark ? '#cccccc' : '#1b374a')};
-  border: solid ${({ isDark }) => (isDark ? 'transparent' : 'black')} 0.2rem;
-  display: flex;
-  flex-direction: row;
-  min-width: 500px;
-  padding: 8px;
-  align-items: center;
-`;
-const Name = styled.span`
-  flex: 0 1 10%;
-  color: ${({ isDark }) => (isDark ? '#36393f' : 'white')};
-  display: flex;
-  align-self: center;
-`;
-const Synergy = styled.span`
-  flex: 2 1 30%;
-  display: flex;
-  align-self: center;
-`;
-const Champ = styled.span`
-  flex: 3 1 60%;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-`;
+import Trait from '../../components/Mypage/Trait';
+import ChampionList from './ChampionList';
 
-const DeleteBtn = styled.button`
-  border: none;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-  font-size: 2rem;
-  cursor: pointer;
-  &:hover {
-    background-color: red;
-    color: white;
-  }
-`;
+import { saveDeck } from '../../actions';
+import { deckToSlots, countByTrait, getTraitDetails, traitCntSortOption } from '../../utils/trait';
+import { EMPTY_SLOT } from '../../utils/constants';
 
-function DeckBox({ deck, index, id, isDark, deleteDeck }) {
-  const mydeck = deck.slice(0, deck.length - 1);
-  let set = new Set(mydeck);
+import championsData from '../../JSON/set5_champions.json';
 
-  let slimMydeck = [...set];
-  let traitsAll = [];
-  for (let i in slimMydeck) {
-    for (let j = 0; j < Object.keys(champions).length; j++) {
-      if (slimMydeck[i] === champions[j].championId) {
-        traitsAll.push(champions[j].traits);
-      }
-    }
-  }
-  let traitsAllList = traitsAll.reduce(function (acc, cur) {
-    return acc.concat(cur);
+const Deck = ({ order, deck, deleteDeck, isDark }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const slots = deckToSlots(deck);
+  const traitsObj = countByTrait(slots);
+  const traits = Object.entries(traitsObj);
+  const traitItems = traits.sort(traitCntSortOption).map(([traitName, count]) => {
+    const trait = getTraitDetails(traitName);
+    return [trait, count];
   });
-  let traitsObj = {};
-  for (let i = 0; i < traitsAllList.length; i++) {
-    if (!traitsObj[traitsAllList[i]]) {
-      traitsObj[traitsAllList[i]] = 1;
-    } else {
-      traitsObj[traitsAllList[i]]++;
+  const hasSynergy = traitItems.some(([trait, count]) => count >= trait.sets[0].min);
+  const champions = deck.Champion.reduce((acc, cur) => {
+    const champ = championsData.find(c => c.championId === cur.id);
+    acc.push(champ);
+    return acc;
+  }, []);
+
+  const handleClick = async () => {
+    const champsToSlots = deck.Champion.map(champ => {
+      const champData = championsData.find(c => c.championId === champ.id);
+      return { ...champData };
+    });
+    while (champsToSlots.length < 10) {
+      champsToSlots.push(EMPTY_SLOT);
     }
-  }
-  let finalTraitsList = [];
-  for (let i in traitsObj) {
-    let color = '';
-    let traitKr = '';
-    let traitEn = '';
-    for (let j = 0; j < Object.keys(traits).length; j++) {
-      if (i === traits[j].key) {
-        for (let k = 0; k < traits[j].sets.length; k++) {
-          if (traitsObj[i] >= traits[j].sets[k].min) {
-            color = traits[j].sets[k].style;
-            traitKr = traits[j].kr_name;
-            traitEn = traits[j].key;
-          }
-        }
-      }
-    }
-    if (color) {
-      let str = traitEn + '+' + color + '+' + traitKr;
-      finalTraitsList.push(str);
-    }
-  }
+
+    dispatch(saveDeck(champsToSlots));
+    history.push('/');
+  };
+
+  const handleDelete = e => {
+    e.stopPropagation();
+    deleteDeck(deck.id);
+  };
 
   return (
-    <Deck isDark={isDark}>
-      <Name isDark={isDark}>{`${index + 1}번`}</Name>
-      <Synergy>
-        {finalTraitsList.map((data, index) => (
-          <Trait key={index} data={data} />
-        ))}
-      </Synergy>
-      <Champ>
-        {mydeck.map((el, index) => {
-          return <Unit key={index} el={el} />;
-        })}
-      </Champ>
-      <DeleteBtn onClick={() => deleteDeck(id)}>&times;</DeleteBtn>
-    </Deck>
+    <Wrapper isDark={isDark} onClick={handleClick}>
+      <Order isDark={isDark}>#{order + 1}</Order>
+      <IconsAndChampsWrapper>
+        <TraitIcons>
+          {traitItems.map(([trait, count], idx) => {
+            return <Trait key={idx} trait={trait} count={count} />;
+          })}
+          {!hasSynergy && <NoSynergy isDark={isDark}>시너지 없음</NoSynergy>}
+        </TraitIcons>
+        <ChampionList champions={champions} />
+      </IconsAndChampsWrapper>
+      <DeleteBtn isDark={isDark} onClick={handleDelete}>
+        &times;
+      </DeleteBtn>
+    </Wrapper>
   );
-}
+};
 
-export default DeckBox;
+export default Deck;
+
+const Wrapper = styled.div`
+  border: 1px solid ${({ isDark }) => (isDark ? '#535353' : '#d1d1d1')};
+  background-color: ${({ isDark }) => (isDark ? '#27282e' : '#dbdbdb')};
+  width: 1200px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  position: relative;
+  &:first-of-type {
+    margin-top: 3rem;
+  }
+  &:last-of-type {
+    margin-bottom: 3rem;
+  }
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+    background-color: ${({ isDark }) =>
+      isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)'};
+  }
+  @media (max-width: 1200px) {
+    width: 700px;
+    height: 120px;
+  }
+  @media (max-width: 700px) {
+    width: 480px;
+  }
+`;
+
+const Order = styled.div`
+  color: ${({ isDark }) => (isDark ? 'white' : '#292929')};
+  width: 30px;
+  padding-left: 0.5rem;
+`;
+
+const TraitIcons = styled.div`
+  display: flex;
+  width: 500px;
+  height: 56px;
+  align-items: center;
+  padding-left: 1.5rem;
+`;
+
+const NoSynergy = styled.div`
+  color: ${({ isDark }) => (isDark ? 'white' : '#292929')};
+`;
+
+const IconsAndChampsWrapper = styled.div`
+  display: flex;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+`;
+
+const DeleteBtn = styled.div`
+  font-size: 40px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: 1rem;
+  color: ${({ isDark }) => (isDark ? 'white' : 'black')};
+  &:hover {
+    color: crimson;
+  }
+  @media (max-width: 700px) {
+    position: absolute;
+    top: -3px;
+    right: 5px;
+    margin-right: 0;
+  }
+`;

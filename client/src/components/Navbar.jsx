@@ -15,11 +15,15 @@ const Navbar = () => {
   return (
     <Router>
       <Header isDark={isDark}>
-        <StyledLink exact to="/">
+        <StyledLink $isDark={isDark} exact to="/">
           Build
         </StyledLink>
-        <StyledLink to="/mypage">MyDeck</StyledLink>
-        <StyledLink to="/profile">Search</StyledLink>
+        <StyledLink $isDark={isDark} to="/mypage">
+          MyDeck
+        </StyledLink>
+        <StyledLink $isDark={isDark} to="/profile">
+          Search
+        </StyledLink>
       </Header>
       <Aside>
         <Toggler />
@@ -71,18 +75,20 @@ const Aside = styled.div`
 
 const StyledLink = styled(NavLink)`
   font-size: 2rem;
-  font-family: Impact;
-  color: #fbed0b;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000,
-    4px 2px 0px #00f0ff, 8px 4px 0px #80ff02;
-  padding: 1rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  color: white;
   align-content: center;
+  margin: 0 1.2rem;
   &:hover {
-    color: #dc44c3;
     cursor: pointer;
+    text-decoration: underline;
   }
   &.active {
-    color: #dc44c3;
+    color: ${({ $isDark }) => ($isDark ? '#009efa' : '#EF6C9C')};
+  }
+  @media (max-width: 800px) {
+    margin: 0 0.8rem;
   }
 `;
 

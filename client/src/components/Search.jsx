@@ -39,7 +39,7 @@ const Div = styled.div`
   height: 65px;
   margin: 0 auto;
   list-style-type: none;
-  background-color: ${({ isDark }) => (isDark ? '#36393f' : '#fbed0b')};
+  background-color: ${({ isDark }) => (isDark ? '#36393f' : '#faf8ff')};
   display: flex;
   flex-direction: row;
   align-items: center;

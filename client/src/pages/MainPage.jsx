@@ -10,48 +10,11 @@ import RecommendList from '../components/Main/RecommendList';
 import Spinner from '../components/Spinner';
 import { loadDecks, saveDeck, resetUserInfo, setLoader } from '../actions';
 import Trait from '../components/Main/Trait';
+
+import { countByTrait, getTraitDetails, traitCntSortOption } from '../utils/trait';
+import { REMOVE_ZONE, EMPTY_SLOT } from '../utils/constants';
+
 import champions from '../JSON/set5_champions.json';
-import traits from '../JSON/traits.json';
-
-const REMOVE_ZONE = -1;
-const emptySlot = {
-  name: '',
-  kr_name: '',
-  championId: '',
-  cost: 0,
-  traits: [],
-};
-
-const filterRedundantChampions = slots => {
-  return slots
-    .map(slot => slot.kr_name)
-    .filter((name, idx, names) => name && idx === names.indexOf(name));
-};
-
-const countByTrait = slots => {
-  const champSet = new Set();
-  return slots.reduce((acc, { championId, traits }) => {
-    if (!champSet.has(championId)) {
-      champSet.add(championId);
-      traits.forEach(trait => {
-        if (acc[trait]) {
-          ++acc[trait];
-        } else {
-          acc[trait] = 1;
-        }
-      });
-    }
-    return acc;
-  }, {});
-};
-
-const getTraitDetails = target => {
-  for (const traitDetail of traits) {
-    if (traitDetail.key === target) {
-      return traitDetail;
-    }
-  }
-};
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -96,7 +59,12 @@ const MainPage = () => {
       }, []);
       setRecommendations(championsInfo);
     };
-
+    const filterRedundantChampions = slots => {
+      return slots
+        .map(slot => slot.kr_name)
+        .filter((name, idx, names) => name && idx === names.indexOf(name));
+    };
+    console.log(slots);
     const traitsObj = countByTrait(slots);
     setCurTraits(Object.entries(traitsObj));
     dispatch(saveDeck(slots));
@@ -124,7 +92,7 @@ const MainPage = () => {
     setSlots(prevSlots =>
       prevSlots.map((slot, idx) => {
         if (removingIdx === idx) {
-          return { ...emptySlot };
+          return { ...EMPTY_SLOT };
         } else {
           return { ...slot };
         }
@@ -138,7 +106,7 @@ const MainPage = () => {
           if (idx !== draggingSlot.current) {
             return { ...slot };
           }
-          return { ...emptySlot };
+          return { ...EMPTY_SLOT };
         });
       });
     } else {
@@ -216,14 +184,6 @@ const MainPage = () => {
       dispatch(resetUserInfo());
       history.push('/login');
     }
-  };
-
-  const traitCntSortOption = (a, b) => {
-    const [aTrait, aCount] = a;
-    const [bTrait, bCount] = b;
-    const aTraitDetail = getTraitDetails(aTrait);
-    const bTraitDetail = getTraitDetails(bTrait);
-    return bCount / bTraitDetail.sets[0].min - aCount / aTraitDetail.sets[0].min;
   };
 
   const traitItems = curTraits.sort(traitCntSortOption).map(([traitName, count], idx) => {
@@ -316,6 +276,19 @@ const TraitsList = styled.div`
       margin-right: 0.5rem;
     }
   }
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #bcbcbc;
+    border-radius: 100px;
+  }
 `;
 
 const Guide = styled.div`
@@ -387,7 +360,9 @@ const SaveBtn = styled.div`
 `;
 
 const SpinnerContainer = styled.div`
+  top: 150px;
   position: absolute;
+  z-index: 100;
 `;
 
 export default MainPage;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import traitMapper from '../../utils/trait';
+import { traitMapper } from '../../utils/trait';
 
 const RecommendItem = ({
   kr_name,
