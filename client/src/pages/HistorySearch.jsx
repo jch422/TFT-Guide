@@ -59,8 +59,8 @@ export default HistorySearch;
 
 const Div = styled.div`
   margin: 0;
-  background-color: ${({ isDark }) => (isDark ? '#36393f' : '#fbed0b')};
-  height: 120vh;
+  background-color: ${({ isDark }) => (isDark ? '#36393f' : '#faf8ff')};
+  min-height: calc(100vh - 60px);
 `;
 
 const SpinnerContainer = styled.div`
