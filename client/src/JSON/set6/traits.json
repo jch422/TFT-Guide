@@ -1,0 +1,578 @@
+[
+  {
+    "key": "Set6_Academy",
+    "name": "Academy",
+    "kr_name": "아카데미",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 7
+      },
+      {
+        "style": "chromatic",
+        "min": 8
+      }
+    ]
+  },
+  {
+    "key": "Set6_Chemtech",
+    "name": "Chemtech",
+    "kr_name": "화학공학",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 3,
+        "max": 4
+      },
+      {
+        "style": "silver",
+        "min": 5,
+        "max": 6
+      },
+      {
+        "style": "gold",
+        "min": 7,
+        "max": 8
+      },
+      {
+        "style": "chromatic",
+        "min": 9
+      }
+    ]
+  },
+  {
+    "key": "Set6_Clockwork",
+    "name": "Clockwork",
+    "kr_name": "시계태엽",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set6_Cuddly",
+    "name": "Cuddly",
+    "kr_name": "포근",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 1
+      }
+    ]
+  },
+  {
+    "key": "Set6_Enforcer",
+    "name": "Enforcer",
+    "kr_name": "집행자",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4
+      }
+    ]
+  },
+  {
+    "key": "Set6_Glutton",
+    "name": "Glutton",
+    "kr_name": "대식가",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 1
+      }
+    ]
+  },
+  {
+    "key": "Set6_Imperial",
+    "name": "Imperial",
+    "kr_name": "제국",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 3,
+        "max": 4
+      },
+      {
+        "style": "chromatic",
+        "min": 5
+      }
+    ]
+  },
+  {
+    "key": "Set6_Mercenary",
+    "name": "Mercenary",
+    "kr_name": "용병",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 3,
+        "max": 4
+      },
+      {
+        "style": "gold",
+        "min": 5,
+        "max": 6
+      },
+      {
+        "style": "chromatic",
+        "min": 7
+      }
+    ]
+  },
+  {
+    "key": "Set6_Mutant",
+    "name": "Mutant",
+    "kr_name": "돌연변이",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 3,
+        "max": 4
+      },
+      {
+        "style": "gold",
+        "min": 5
+      }
+    ]
+  },
+  {
+    "key": "Set6_Scrap",
+    "name": "Scrap",
+    "kr_name": "고물상",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set6_Sister",
+    "name": "Sister",
+    "kr_name": "자매",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 2
+      }
+    ]
+  },
+  {
+    "key": "Set6_Socialite",
+    "name": "Socialite",
+    "kr_name": "사교계",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 1,
+        "max": 1
+      },
+      {
+        "style": "silver",
+        "min": 2,
+        "max": 2
+      },
+      {
+        "style": "gold",
+        "min": 3
+      }
+    ]
+  },
+  {
+    "key": "Set6_Syndicate",
+    "name": "Syndicate",
+    "kr_name": "범죄조직",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 3,
+        "max": 4
+      },
+      {
+        "style": "gold",
+        "min": 5,
+        "max": 6
+      },
+      {
+        "style": "chromatic",
+        "min": 7
+      }
+    ]
+  },
+  {
+    "key": "Set6_Yordle",
+    "name": "Yordle",
+    "kr_name": "요들",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 3,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set6_Yordle-Lord",
+    "name": "Yordle-Lord",
+    "kr_name": "요들군주",
+    "type": "origin",
+    "sets": [
+      {
+        "style": "chromatic",
+        "min": 1
+      }
+    ]
+  },
+  {
+    "key": "Set6_Arcanist",
+    "name": "Arcanist",
+    "kr_name": "비전마법사",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 7
+      },
+      {
+        "style": "chromatic",
+        "min": 8
+      }
+    ]
+  },
+  {
+    "key": "Set6_Assassin",
+    "name": "Assassin",
+    "kr_name": "암살자",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set6_Bodyguard",
+    "name": "Bodyguard",
+    "kr_name": "경호대",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 7
+      },
+      {
+        "style": "chromatic",
+        "min": 8
+      }
+    ]
+  },
+  {
+    "key": "Set6_Bruiser",
+    "name": "Bruiser",
+    "kr_name": "난동꾼",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 7
+      },
+      {
+        "style": "chromatic",
+        "min": 8
+      }
+    ]
+  },
+  {
+    "key": "Set6_Challenger",
+    "name": "Challenger",
+    "kr_name": "도전자",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "silver",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "gold",
+        "min": 6,
+        "max": 7
+      },
+      {
+        "style": "chromatic",
+        "min": 8
+      }
+    ]
+  },
+  {
+    "key": "Set6_Colossus",
+    "name": "Colossus",
+    "kr_name": "거신",
+    "type": "class",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 2
+      }
+    ]
+  },
+  {
+    "key": "Set6_Enchanter",
+    "name": "Enchanter",
+    "kr_name": "강화술사",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 2
+      },
+      {
+        "style": "silver",
+        "min": 3,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 4
+      },
+      {
+        "style": "chromatic",
+        "min": 5
+      }
+    ]
+  },
+  {
+    "key": "Set6_Innovator",
+    "name": "Innovator",
+    "kr_name": "혁신가",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 3,
+        "max": 4
+      },
+      {
+        "style": "gold",
+        "min": 5,
+        "max": 6
+      },
+      {
+        "style": "chromatic",
+        "min": 7
+      }
+    ]
+  },
+  {
+    "key": "Set6_Protector",
+    "name": "Protector",
+    "kr_name": "봉쇄자",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 2
+      },
+      {
+        "style": "silver",
+        "min": 3,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 4
+      },
+      {
+        "style": "chromatic",
+        "min": 5
+      }
+    ]
+  },
+  {
+    "key": "Set6_Scholar",
+    "name": "Scholar",
+    "kr_name": "학자",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "chromatic",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set6_Sniper",
+    "name": "Sniper",
+    "kr_name": "저격수",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "chromatic",
+        "min": 6
+      }
+    ]
+  },
+  {
+    "key": "Set6_Transformer",
+    "name": "Transformer",
+    "kr_name": "변형술사",
+    "type": "class",
+    "sets": [
+      {
+        "style": "gold",
+        "min": 1
+      }
+    ]
+  },
+  {
+    "key": "Set6_Twinshot",
+    "name": "Twinshot",
+    "kr_name": "쌍발총",
+    "type": "class",
+    "sets": [
+      {
+        "style": "bronze",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "style": "gold",
+        "min": 4,
+        "max": 5
+      },
+      {
+        "style": "chromatic",
+        "min": 6
+      }
+    ]
+  }
+]
