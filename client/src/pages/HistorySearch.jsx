@@ -1,71 +1,107 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import axios from 'axios';
 
 import { setLoader } from '../actions';
-import History from '../components/History/History';
+import MatchList from '../components/History/MatchList';
 import Search from '../components/Search';
-import Spinner from '../components/Spinner';
+import SpinnerPortal from '../components/SpinnerPortal';
+import useInfiniteScroll from '../hooks/useInfiniteScroll';
 
 function HistorySearch() {
-  const [name, setName] = useState('');
-  const [data, setData] = useState(null);
+  const dispatch = useDispatch();
   const { isDark } = useSelector(state => state.themeReducer);
   const { isLoading } = useSelector(state => state.loaderReducer);
-  const dispatch = useDispatch();
 
-  const getData = async () => {
-    try {
-      setData(null);
-      dispatch(setLoader(true));
-      const res = await axios.get(`${process.env.REACT_APP_SERVER_URI}/matches/${name}`);
-      dispatch(setLoader(false));
-      let matchesData = res.data.data.matchesData;
-      for (let i = 0; i < matchesData.length; i++) {
-        delete matchesData[i].metadata;
+  const offsetRef = useRef(0);
+  const fetchMoreRef = useRef();
+  const hasNextRef = useRef(false);
+  const puuidRef = useRef(null);
+  const inputRef = useRef();
+
+  const [intersecting] = useInfiniteScroll(fetchMoreRef);
+  const [matchesData, setMatchesData] = useState([]);
+
+  const getData = useCallback(
+    async (isNewSearch, summonerId) => {
+      try {
+        dispatch(setLoader(true));
+        const {
+          data: { data },
+        } = await axios.get(
+          `${process.env.REACT_APP_SERVER_URI}/matches/${
+            summonerId ? summonerId : inputRef.current.name
+          }/${offsetRef.current}`,
+        );
+
+        dispatch(setLoader(false));
+        hasNextRef.current = data.matchesData.length === 10;
+        offsetRef.current++;
+        if (isNewSearch) {
+          puuidRef.current = data.puuid;
+          setMatchesData(data.matchesData);
+        } else {
+          setMatchesData(prevMatchesData => [...prevMatchesData, ...data.matchesData]);
+        }
+      } catch ({ response: { status } }) {
+        if (status === 404) {
+          alert('존재하지 않는 소환사명입니다!');
+        }
+        if (status === 429) {
+          alert('잠시후에 다시 시도해주세요!');
+        }
+      } finally {
+        if (summonerId) {
+          inputRef.current.setName(summonerId);
+          window.scrollTo(0, 0);
+        }
+        dispatch(setLoader(false));
       }
-      setData({ data: matchesData, puuid: res.data.data.puuid });
-    } catch (error) {
-      if (error.response) {
-        alert('존재하지 않는 소환사명입니다.');
-      }
+    },
+    [dispatch],
+  );
+
+  const handleSearch = useCallback(
+    summonerId => {
+      offsetRef.current = 0;
+      getData(true, summonerId);
+    },
+    [getData],
+  );
+
+  useEffect(() => {
+    if (hasNextRef.current && intersecting) {
+      getData();
     }
-  };
+  }, [intersecting, getData]);
 
   return (
-    <Div id="history-search-container" isDark={isDark}>
-      <Search handleSearch={getData} setName={setName} isDark={isDark} />
-      {isLoading && (
-        <SpinnerContainer>
-          <Spinner />
-        </SpinnerContainer>
-      )}
-      {data?.data?.length > 0 && (
-        <div id="history-summary-body">
-          {data.data.map((_data, index) => {
-            if (_data.info.game_datetime > 1626923221434) {
-              return <History data={_data} key={index} puuid={data.puuid} isDark={isDark} />;
-            }
-            return <></>;
-          })}
-        </div>
-      )}
-    </Div>
+    <Wrapper id="history-search-container" isDark={isDark}>
+      {/* <Search ref={inputRef} handleSearch={handleSearch} name={name} setName={setName} isDark={isDark} /> */}
+      <Search ref={inputRef} handleSearch={handleSearch} isDark={isDark} />
+      {isLoading && <SpinnerPortal />}
+      <MatchList
+        isDark={isDark}
+        handleSearch={handleSearch}
+        matchesData={matchesData}
+        setMatchesData={setMatchesData}
+        puuid={puuidRef.current}
+      />
+      <FetchMoreDiv ref={fetchMoreRef} />
+    </Wrapper>
   );
 }
 
 export default HistorySearch;
 
-const Div = styled.div`
+const Wrapper = styled.div`
   margin: 0;
   background-color: ${({ isDark }) => (isDark ? '#36393f' : '#faf8ff')};
   min-height: calc(100vh - 60px);
+  padding-top: 1.5rem;
 `;
 
-const SpinnerContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8rem;
+const FetchMoreDiv = styled.div`
+  height: 1px;
 `;
