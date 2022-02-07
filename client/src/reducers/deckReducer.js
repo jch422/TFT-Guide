@@ -1,6 +1,6 @@
 import { SAVE_DECK } from '../actions/index';
 
-const SLOT_NUM = 10;
+const SLOT_NUM = 12;
 const emptySlot = {
   name: '',
   kr_name: '',
