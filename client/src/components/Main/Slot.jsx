@@ -5,16 +5,18 @@ const Slot = ({
   isDark,
   championId = null,
   kr_name,
+  name,
   handleDragEnter,
   handleSlotDragStart,
   handleSlotDragEnd,
   handleRemoveFromSlot,
 }) => {
-  const url = `url(${process.env.REACT_APP_HOME}/TFTData/champions/${championId}.png)`;
+  if (name === 'ChoGath') name = 'Chogath';
+  const champImgSrc = `url(${process.env.REACT_APP_CHAMP_IMG_SRC}/${name}.png)`;
 
   return championId ? (
     <Hexagon
-      url={url}
+      imgSrc={champImgSrc}
       draggable
       onDragStart={handleSlotDragStart}
       onDragEnter={handleDragEnter}
@@ -37,7 +39,7 @@ const Hexagon = styled.div`
   width: 100px;
   height: 57.74px;
   margin: 28.87px 0;
-  background-image: ${({ url }) => url};
+  background-image: ${({ imgSrc }) => imgSrc};
   background-size: auto 115.4701px;
   background-position: center;
   &:after {
@@ -168,17 +170,20 @@ const HexBottom = styled(Shared)`
 
 const ChampionName = styled.div`
   position: absolute;
-  top: 2rem;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  text-align: center;
   color: white;
   font-weight: bold;
   text-shadow: 2px 2px 1px black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0 auto;
+
   @media (max-width: 1200px) {
     top: 1.2rem;
     font-size: 0.6rem;

@@ -1,25 +1,22 @@
 import styled from 'styled-components';
-import svgToComponent from '../../utils/svgs';
+
+import { getTraitStyleAndMinCount } from '../../utils/trait';
 
 const Trait = ({ trait, count }) => {
-  const { name } = trait;
-  const props = { width: 30, height: 30 };
+  let { name } = trait;
+  if (name === 'Yordle-Lord') name = 'Yordlelord';
   const [traitStyle, minCount] = getTraitStyleAndMinCount(trait.sets, count);
   const intervals = trait.sets.map(set => set.min);
-  const traitSrc =
-    traitStyle === 'none'
-      ? `../TFTData/traits/${name.toLowerCase()}.png`
-      : `../TFTData/traits/${traitStyle}.png`;
+  const traitImgSrc = `${process.env.REACT_APP_TRAIT_IMG_SRC}/${name}.svg`;
+  const backgroundSrc = `../TFTData/traits/${traitStyle}.png`;
 
   return (
     <TraitContainer>
       <TraitImgContainer>
-        <TraitBackground isNone={traitStyle === 'none'} src={traitSrc} />
-        {traitStyle !== 'none' && (
-          <TraitSvgWrapper>
-            {svgToComponent({ svgName: name.toLowerCase(), props })}
-          </TraitSvgWrapper>
-        )}
+        <TraitBackground isNone={traitStyle === 'none'} src={backgroundSrc} />
+        <TraitSvgWrapper>
+          <img src={traitImgSrc} width="30" height="30" alt={trait.name} />
+        </TraitSvgWrapper>
       </TraitImgContainer>
       {traitStyle !== 'none' && <TraitCount>{count}</TraitCount>}
       <TraitDetail>
@@ -44,23 +41,6 @@ const Trait = ({ trait, count }) => {
 };
 
 export default Trait;
-
-const getTraitStyleAndMinCount = (sets, count) => {
-  const firstSet = sets[0];
-  const lastSet = sets[sets.length - 1];
-
-  if (count < firstSet.min) {
-    return ['none', firstSet.min];
-  }
-  if (count >= lastSet.min) {
-    return [lastSet.style, lastSet.min];
-  }
-  for (const set of sets) {
-    if (count >= set.min && count <= set.max) {
-      return [set.style, set.min];
-    }
-  }
-};
 
 const TraitContainer = styled.div`
   width: 15rem;

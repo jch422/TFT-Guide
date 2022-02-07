@@ -2,13 +2,15 @@ import styled from 'styled-components';
 
 import { costColorMapper } from '../../utils/constants';
 
-const ChampionBox = ({ kr_name, championId, cost }) => {
+const ChampionBox = ({ name, kr_name, cost, scrollable }) => {
+  if (name === 'ChoGath') name = 'Chogath';
+  const champImgSrc = `${process.env.REACT_APP_CHAMP_IMG_SRC}/${name}.png`;
   const color = costColorMapper[cost];
 
   return (
-    <Wrapper>
+    <Wrapper scrollable={scrollable}>
       <ChampionContainer borderColor={color}>
-        <ChampionImg src={`../TFTData/champions/${championId}.png`} />
+        <ChampionImg src={champImgSrc} />
         <ChampionCost bgColor={color}>${cost}</ChampionCost>
         <ChampionName>{kr_name}</ChampionName>
       </ChampionContainer>
@@ -18,10 +20,12 @@ const ChampionBox = ({ kr_name, championId, cost }) => {
 
 const Wrapper = styled.div`
   width: 100%;
+  min-width: ${({ scrollable }) => (scrollable ? '52px' : '56px')};
   height: 100%;
   padding: 1px;
   @media (max-width: 1200px) {
     width: 40px;
+    min-width: 40px;
     height: 40px;
   }
 `;
