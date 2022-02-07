@@ -16,7 +16,7 @@
   {
     "name": "Braum",
     "kr_name": "브라움",
-    "championId": "Braum",
+    "championId": "TFT6_Braum",
     "cost": 4,
     "traits": ["Syndicate", "Bodyguard"]
   },
