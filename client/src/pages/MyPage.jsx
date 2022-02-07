@@ -23,10 +23,13 @@ function MyPage() {
     dispatch(loadDecks(data));
   }, [dispatch, userInfo.id]);
 
-  const deleteDeck = useCallback(async id => {
-    await axios.delete(`${process.env.REACT_APP_SERVER_URI}/decks/${id}`);
-    await getDecks();
-  }, []);
+  const deleteDeck = useCallback(
+    async id => {
+      await axios.delete(`${process.env.REACT_APP_SERVER_URI}/decks/${id}`);
+      await getDecks();
+    },
+    [getDecks],
+  );
 
   useEffect(() => {
     if (userInfo.id) {
@@ -34,7 +37,7 @@ function MyPage() {
     } else {
       history.push('/login');
     }
-  }, [getDecks, userInfo.id]);
+  }, [getDecks, userInfo.id, history]);
 
   return (
     <Container isDark={isDark}>
