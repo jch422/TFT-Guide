@@ -1,68 +1,82 @@
-import React from 'react';
+import React, { useState, forwardRef, useImperativeHandle } from 'react';
 import styled from 'styled-components';
+import { BsSearch } from 'react-icons/bs';
 
-function Search({ handleSearch, setName, isDark }) {
-  const handleEnter = ({ key }) => {
-    if (key === 'Enter') {
-      //handleSearch();
-      alert('TFT 시즌5 전적은 현재 검색할 수 없습니다. \n업데이트를 기다려주세요!');
-    }
+const Search = ({ handleSearch, isDark }, ref) => {
+  const [name, setName] = useState('');
+
+  const handleInputChange = ({ target }) => setName(target.value);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    handleSearch(name);
   };
-  const searchButtonClickSearch = e => {
-    //handleSearch();
-    alert('TFT 시즌5 전적은 현재 검색할 수 없습니다. \n업데이트를 기다려주세요!');
-  };
+
+  useImperativeHandle(ref, () => ({ name, setName }));
 
   return (
-    <Div isDark={isDark}>
-      <input
+    <Form onSubmit={handleSubmit} isDark={isDark}>
+      <Country>KR</Country>
+      <Input
         id="search-id"
         type="text"
-        name="name"
         placeholder="소환사명"
-        onKeyDown={handleEnter}
-        onChange={e => setName(e.target.value)}
-      ></input>
-      <Button onClick={searchButtonClickSearch}>
-        <Img src={'https://svgsilh.com/svg/1093183.svg'}></Img>
-      </Button>
-    </Div>
+        onChange={handleInputChange}
+        value={name}
+        ref={ref}
+      />
+      <SearchButton>
+        <BsSearch color="#ed6767" size="16" />
+      </SearchButton>
+    </Form>
   );
-}
+};
 
-export default Search;
+export default forwardRef(Search);
 
-const Div = styled.div`
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  width: 100%;
-  height: 65px;
-  margin: 0 auto;
-  list-style-type: none;
-  background-color: ${({ isDark }) => (isDark ? '#36393f' : '#faf8ff')};
+const Form = styled.form`
+  background-color: ${({ isDark }) => (isDark ? '#eaeaea' : '#eee9e4')};
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  max-width: 800px;
-  min-width: 500px;
-  input {
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-    text-align: center;
-    font-size: 1.6rem;
-  }
-  input::placeholder {
-    text-align: center;
+  height: 40px;
+  width: fit-content;
+  margin: 0 auto;
+`;
+
+const Input = styled.input`
+  height: 100%;
+  font-size: 1.1rem;
+  padding-left: 5px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  &:-webkit-autofill,
+  &:-webkit-autofill,
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #eaeaea inset !important;
+    -webkit-text-fill-color: black !important;
   }
 `;
 
-const Button = styled.button`
-  width: 30px;
-  height: 30px;
+const Country = styled.div`
+  color: #ed6767;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  font-size: 0.8rem;
 `;
 
-const Img = styled.img`
-  width: 15px;
-  height: 15px;
+const SearchButton = styled.button`
+  height: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 2rem;
+  cursor: pointer;
+  margin-right: 5px;
 `;

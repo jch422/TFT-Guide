@@ -3,6 +3,7 @@ const router = express.Router();
 
 const matchesController = require('../controller/matches.controller');
 
-router.get('/:riotId', matchesController.get);
+router.get('/player/:puuid', matchesController.getPlayerInfo);
+router.get('/:riotId/:offset', matchesController.get);
 
 module.exports = router;

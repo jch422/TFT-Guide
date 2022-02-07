@@ -8,13 +8,14 @@ import SelectedList from '../components/Main/SelectedList';
 import ChampionList from '../components/Main/ChampionList';
 import RecommendList from '../components/Main/RecommendList';
 import Spinner from '../components/Spinner';
-import { loadDecks, saveDeck, resetUserInfo, setLoader } from '../actions';
+import { loadDecks, saveDeck, resetUserInfo } from '../actions';
 import Trait from '../components/Main/Trait';
 
 import { countByTrait, getTraitDetails, traitCntSortOption } from '../utils/trait';
 import { REMOVE_ZONE, EMPTY_SLOT } from '../utils/constants';
+import { getRecommendation } from '../utils/gameHelper';
 
-import champions from '../JSON/set5_champions.json';
+import championsData from '../JSON/set6/champions.json';
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,9 @@ const MainPage = () => {
   const { isDark } = useSelector(state => state.themeReducer);
   const { isLoading } = useSelector(state => state.loaderReducer);
 
+  const [champions, setChampions] = useState(championsData);
   const [slots, setSlots] = useState([...buildingDeck]);
+  const [sortOption, setSortOption] = useState('kr_name'); // kr_name or cost
   const [curTraits, setCurTraits] = useState([]);
   const [recommendations, setRecommendations] = useState([]);
 
@@ -40,37 +43,32 @@ const MainPage = () => {
   };
 
   useEffect(() => {
-    const getRecommendations = async champions => {
-      if (!champions.length) {
-        setRecommendations([]);
-        return;
-      }
-      dispatch(setLoader(true));
-      const {
-        data: { data },
-      } = await axios.post(`${process.env.REACT_APP_SERVER_URI}/recommend`, {
-        champions,
-        level: champions.length,
-      });
-      dispatch(setLoader(false));
-      const championsInfo = data.reduce((acc, [championInfo]) => {
-        acc.push(championInfo);
-        return acc;
-      }, []);
-      setRecommendations(championsInfo);
-    };
-    const filterRedundantChampions = slots => {
-      return slots
-        .map(slot => slot.kr_name)
-        .filter((name, idx, names) => name && idx === names.indexOf(name));
-    };
-    console.log(slots);
     const traitsObj = countByTrait(slots);
     setCurTraits(Object.entries(traitsObj));
     dispatch(saveDeck(slots));
-    const filteredChampions = filterRedundantChampions(slots);
-    getRecommendations(filteredChampions);
+
+    const candidates = getRecommendation(slots);
+    setRecommendations(candidates);
   }, [slots, dispatch]);
+
+  useEffect(() => {
+    if (sortOption === 'kr_name') {
+      setChampions(prevChampions => {
+        return [
+          ...prevChampions.sort((a, b) => {
+            if (a.kr_name < b.kr_name) return -1;
+            if (a.kr_name > b.kr_name) return 1;
+            return 0;
+          }),
+        ];
+      });
+    }
+    if (sortOption === 'cost') {
+      setChampions(prevChampions => {
+        return [...prevChampions.sort((a, b) => a.cost - b.cost)];
+      });
+    }
+  }, [sortOption]);
 
   const handleDragStart = (e, idx) => (draggingChamp.current = idx);
   const handleSlotDragStart = (e, idx) => (draggingSlot.current = idx);
@@ -179,7 +177,6 @@ const MainPage = () => {
         alert('저장 완료');
       }
     } catch (err) {
-      console.log(err);
       alert('정상적이지 않은 접근입니다');
       dispatch(resetUserInfo());
       history.push('/login');
@@ -211,7 +208,11 @@ const MainPage = () => {
           handleSlotDragEnd={handleSlotDragEnd}
           handleRemoveFromSlot={handleRemoveFromSlot}
         />
+
         <ChampionList
+          isDark={isDark}
+          sortOption={sortOption}
+          setSortOption={setSortOption}
           champions={champions}
           handleDragStart={handleDragStart}
           handleDragEnd={handleDragEnd}
@@ -277,7 +278,7 @@ const TraitsList = styled.div`
     }
   }
   &::-webkit-scrollbar {
-    width: 16px;
+    height: 8px;
   }
 
   &::-webkit-scrollbar-track {
@@ -314,7 +315,7 @@ const GuideIcon = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: white;
+  color: ${({ isDark }) => (isDark ? '#36393f' : '#FAF8FF')};
 `;
 
 const Text = styled.div`
@@ -347,7 +348,6 @@ const SaveBtn = styled.div`
   border-radius: 5px;
   color: white;
   font-weight: bold;
-  text-shadow: 2px 2px 1px black;
   transition: background-color 200ms linear;
   &:hover {
     cursor: pointer;

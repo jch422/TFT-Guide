@@ -13,3 +13,15 @@ export const costColorMapper = {
   4: '#c440da',
   5: '#ffb93b',
 };
+export const rankColorMapper = rank => {
+  switch (rank) {
+    case 1:
+      return '#11b288';
+    case 2:
+    case 3:
+    case 4:
+      return '#207ac7';
+    default:
+      return '#a0a0a0';
+  }
+};

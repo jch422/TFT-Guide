@@ -1,14 +1,9 @@
 import styled from 'styled-components';
 
-const ChampionBox = ({
-  kr_name,
-  champion,
-  championId,
-  cost,
-  handleClick,
-  handleDragStart,
-  handleDragEnd,
-}) => {
+const ChampionBox = ({ kr_name, champion, cost, handleClick, handleDragStart, handleDragEnd }) => {
+  const champName = champion.name === 'ChoGath' ? 'Chogath' : champion.name;
+  const champImgSrc = `${process.env.REACT_APP_CHAMP_IMG_SRC}/${champName}.png`;
+
   const color = costColorMapper[cost];
 
   return (
@@ -20,7 +15,7 @@ const ChampionBox = ({
         onDragEnd={handleDragEnd}
         onClick={() => handleClick(champion)}
       >
-        <ChampionImg src={`../TFTData/champions/${championId}.png`} />
+        <ChampionImg src={champImgSrc} />
         <ChampionCost bgColor={color}>${cost}</ChampionCost>
         <ChampionName>{kr_name}</ChampionName>
       </ChampionContainer>
@@ -68,15 +63,22 @@ const ChampionCost = styled.div`
   background-color: ${({ bgColor }) => bgColor};
   text-align: center;
   font-size: 0.8rem;
+  padding: 1px 1px 1px 3px;
 `;
 
 const ChampionName = styled.div`
   position: absolute;
-  color: white;
+  left: 0;
+  right: 0;
   bottom: 0.3rem;
+  color: white;
+  text-align: center;
   font-size: 0.7vw;
   font-weight: bold;
   text-shadow: 2px 2px 1px black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   @media (max-width: 1200px) {
     font-size: 8px;
   }

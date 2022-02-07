@@ -5,7 +5,7 @@ const Empty = ({ isDark }) => {
   return (
     <Wrapper>
       <Msg isDark={isDark}>저장된 덱이 없습니다!</Msg>
-      <Nav isDark={isDark} to="/">
+      <Nav $isDark={isDark} to="/">
         👉나만의 덱 만들기👈
       </Nav>
     </Wrapper>
@@ -27,7 +27,7 @@ const Msg = styled.div`
 
 const Nav = styled(Link)`
   font-size: 2rem;
-  color: ${({ isDark }) => (isDark ? '#eaeaea' : '#3d3d3d')};
+  color: ${({ $isDark }) => ($isDark ? '#eaeaea' : '#3d3d3d')};
   &:hover {
     color: #00c9a7;
   }

@@ -18,10 +18,10 @@ const Navbar = () => {
         <StyledLink $isDark={isDark} exact to="/">
           Build
         </StyledLink>
-        <StyledLink $isDark={isDark} to="/mypage">
+        <StyledLink $isDark={isDark} to="/mydeck">
           MyDeck
         </StyledLink>
-        <StyledLink $isDark={isDark} to="/profile">
+        <StyledLink $isDark={isDark} to="/history">
           Search
         </StyledLink>
       </Header>
@@ -31,10 +31,10 @@ const Navbar = () => {
       </Aside>
 
       <Switch>
-        <Route path="/mypage">
+        <Route path="/mydeck">
           <MyPage />
         </Route>
-        <Route path="/profile">
+        <Route path="/history">
           <HistorySearch />
         </Route>
         <Route path="/login">

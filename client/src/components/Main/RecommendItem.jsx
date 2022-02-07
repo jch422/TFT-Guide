@@ -2,20 +2,15 @@ import styled from 'styled-components';
 
 import { traitMapper } from '../../utils/trait';
 
-const RecommendItem = ({
-  kr_name,
-  championId,
-  cost,
-  isDark,
-  championData,
-  handleRecommendItemClick,
-}) => {
+const RecommendItem = ({ kr_name, name, cost, isDark, championData, handleRecommendItemClick }) => {
+  if (name === 'ChoGath') name = 'Chogath';
+  const champImgSrc = `${process.env.REACT_APP_CHAMP_IMG_SRC}/${name}.png`;
   const color = costColorMapper[cost];
 
   return (
-    <Wrapper onClick={() => handleRecommendItemClick(championData)}>
-      <ChampionContainer borderColor={color}>
-        <ChampionImg src={`../TFTData/champions/${championId}.png`} />
+    <Wrapper>
+      <ChampionContainer borderColor={color} onClick={() => handleRecommendItemClick(championData)}>
+        <ChampionImg src={champImgSrc} />
         <ChampionCost bgColor={color}>${cost}</ChampionCost>
         <ChampionName>{kr_name}</ChampionName>
       </ChampionContainer>
@@ -43,13 +38,6 @@ const Wrapper = styled.div`
   width: 16rem;
   margin-bottom: 1rem;
   padding: 1px;
-  transition: transform 0.2s;
-  & {
-    cursor: pointer;
-  }
-  &:hover {
-    transform: scale(1.1);
-  }
   @media (max-width: 1200px) {
     width: 85px;
     height: 85px;
@@ -64,6 +52,11 @@ const ChampionContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.2s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
   @media (max-width: 1200px) {
     width: 100%;
     height: 100%;

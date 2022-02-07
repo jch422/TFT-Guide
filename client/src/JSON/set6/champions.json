@@ -1,80 +1,10 @@
 [
   {
-    "name": "Akali",
-    "kr_name": "아칼리",
-    "championId": "TFT6_Akali",
-    "cost": 5,
-    "traits": ["Syndicate", "Assassin"]
-  },
-  {
-    "name": "Blitzcrank",
-    "kr_name": "블리츠크랭크",
-    "championId": "TFT6_Blitzcrank",
-    "cost": 2,
-    "traits": ["Scrap", "Bodyguard", "Protector"]
-  },
-  {
-    "name": "Braum",
-    "kr_name": "브라움",
-    "championId": "Braum",
-    "cost": 4,
-    "traits": ["Syndicate", "Bodyguard"]
-  },
-  {
-    "name": "Caitlyn",
-    "kr_name": "케이틀린",
-    "championId": "TFT6_Caitlyn",
+    "name": "Garen",
+    "kr_name": "가렌",
+    "championId": "TFT6_Garen",
     "cost": 1,
-    "traits": ["Enforcer", "Sniper"]
-  },
-  {
-    "name": "Camille",
-    "kr_name": "카밀",
-    "championId": "TFT6_Camille",
-    "cost": 1,
-    "traits": ["Clockwork", "Challenger"]
-  },
-  {
-    "name": "Chogath",
-    "kr_name": "초가스",
-    "championId": "TFT6_Chogath",
-    "cost": 3,
-    "traits": ["Mutant", "Bruiser", "Colossus"]
-  },
-  {
-    "name": "Darius",
-    "kr_name": "다리우스",
-    "championId": "TFT6_Darius",
-    "cost": 1,
-    "traits": ["Syndicate", "Bodyguard"]
-  },
-  {
-    "name": "DrMundo",
-    "kr_name": "문도박사",
-    "championId": "TFT6_DrMundo",
-    "cost": 4,
-    "traits": ["Chemtech", "Mutant", "Bruiser"]
-  },
-  {
-    "name": "Ekko",
-    "kr_name": "에코",
-    "championId": "TFT6_Ekko",
-    "cost": 3,
-    "traits": ["Scrap", "Assassin"]
-  },
-  {
-    "name": "Ezreal",
-    "kr_name": "이즈리얼",
-    "championId": "TFT6_Ezreal",
-    "cost": 1,
-    "traits": ["Scrap", "Innovator"]
-  },
-  {
-    "name": "Fiora",
-    "kr_name": "피오라",
-    "championId": "TFT6_Fiora",
-    "cost": 4,
-    "traits": ["Enforcer", "Challenger"]
+    "traits": ["Academy", "Protector"]
   },
   {
     "name": "Galio",
@@ -91,13 +21,6 @@
     "traits": ["Mercenary", "Twinshot"]
   },
   {
-    "name": "Garen",
-    "kr_name": "가렌",
-    "championId": "TFT6_Garen",
-    "cost": 1,
-    "traits": ["Academy", "Protector"]
-  },
-  {
     "name": "Graves",
     "kr_name": "그레이브즈",
     "championId": "TFT6_Graves",
@@ -105,95 +28,11 @@
     "traits": ["Academy", "Twinshot"]
   },
   {
-    "name": "Heimerdinger",
-    "kr_name": "하이머딩거",
-    "championId": "TFT6_Heimerdinger",
-    "cost": 3,
-    "traits": ["Yordle", "Innovator", "Scholar"]
-  },
-  {
-    "name": "Illaoi",
-    "kr_name": "일라오이",
-    "championId": "TFT6_Illaoi",
+    "name": "Darius",
+    "kr_name": "다리우스",
+    "championId": "TFT6_Darius",
     "cost": 1,
-    "traits": ["Mercenary", "Bruiser"]
-  },
-  {
-    "name": "Janna",
-    "kr_name": "잔나",
-    "championId": "TFT6_Janna",
-    "cost": 4,
-    "traits": ["Scrap", "Enchanter", "Scholar"]
-  },
-  {
-    "name": "Jayce",
-    "kr_name": "제이스",
-    "championId": "TFT6_Jayce",
-    "cost": 5,
-    "traits": ["Enforcer", "Innovator", "Transformer"]
-  },
-  {
-    "name": "Jhin",
-    "kr_name": "진",
-    "championId": "TFT6_Jhin",
-    "cost": 4,
-    "traits": ["Clockwork", "Sniper"]
-  },
-  {
-    "name": "Jinx",
-    "kr_name": "징크스",
-    "championId": "TFT6_Jinx",
-    "cost": 5,
-    "traits": ["Scrap", "Sister", "Twinshot"]
-  },
-  {
-    "name": "Kaisa",
-    "kr_name": "카이사",
-    "championId": "TFT6_Kaisa",
-    "cost": 5,
-    "traits": ["Mutant", "Challenger"]
-  },
-  {
-    "name": "Kassadin",
-    "kr_name": "카사딘",
-    "championId": "TFT6_Kassadin",
-    "cost": 1,
-    "traits": ["Mutant", "Protector"]
-  },
-  {
-    "name": "Katarina",
-    "kr_name": "카타리나",
-    "championId": "TFT6_Katarina",
-    "cost": 2,
-    "traits": ["Academy", "Assassin"]
-  },
-  {
-    "name": "KogMaw",
-    "kr_name": "코그모",
-    "championId": "TFT6_KogMaw",
-    "cost": 2,
-    "traits": ["Mutant", "Sniper", "Twinshot"]
-  },
-  {
-    "name": "Leona",
-    "kr_name": "레오나",
-    "championId": "TFT6_Leona",
-    "cost": 3,
-    "traits": ["Academy", "Bodyguard"]
-  },
-  {
-    "name": "Lissandra",
-    "kr_name": "리산드라",
-    "championId": "TFT6_Lissandra",
-    "cost": 3,
-    "traits": ["Chemtech", "Scholar"]
-  },
-  {
-    "name": "Lulu",
-    "kr_name": "룰루",
-    "championId": "TFT6_Lulu",
-    "cost": 2,
-    "traits": ["Yordle", "Enchanter"]
+    "traits": ["Syndicate", "Bodyguard"]
   },
   {
     "name": "Lux",
@@ -203,11 +42,39 @@
     "traits": ["Academy", "Arcanist"]
   },
   {
+    "name": "Leona",
+    "kr_name": "레오나",
+    "championId": "TFT6_Leona",
+    "cost": 3,
+    "traits": ["Academy", "Bodyguard"]
+  },
+  {
+    "name": "Lulu",
+    "kr_name": "룰루",
+    "championId": "TFT6_Lulu",
+    "cost": 2,
+    "traits": ["Yordle", "Enchanter"]
+  },
+  {
+    "name": "Lissandra",
+    "kr_name": "리산드라",
+    "championId": "TFT6_Lissandra",
+    "cost": 3,
+    "traits": ["Chemtech", "Scholar"]
+  },
+  {
     "name": "Malzahar",
     "kr_name": "말자하",
     "championId": "TFT6_Malzahar",
     "cost": 3,
     "traits": ["Mutant", "Arcanist"]
+  },
+  {
+    "name": "DrMundo",
+    "kr_name": "문도박사",
+    "championId": "TFT6_DrMundo",
+    "cost": 4,
+    "traits": ["Chemtech", "Mutant", "Bruiser"]
   },
   {
     "name": "MissFortune",
@@ -217,123 +84,11 @@
     "traits": ["Mercenary", "Sniper"]
   },
   {
-    "name": "Orianna",
-    "kr_name": "오리아나",
-    "championId": "TFT6_Orianna",
-    "cost": 4,
-    "traits": ["Clockwork", "Enchanter"]
-  },
-  {
-    "name": "Poppy",
-    "kr_name": "뽀삐",
-    "championId": "TFT6_Poppy",
-    "cost": 1,
-    "traits": ["Yordle", "Bodyguard"]
-  },
-  {
-    "name": "Quinn",
-    "kr_name": "퀸",
-    "championId": "TFT6_Quinn",
+    "name": "Vi",
+    "kr_name": "바이",
+    "championId": "TFT6_Vi",
     "cost": 2,
-    "traits": ["Mercenary", "Challenger"]
-  },
-  {
-    "name": "Samira",
-    "kr_name": "사미라",
-    "championId": "TFT6_Samira",
-    "cost": 3,
-    "traits": ["Imperial", "Challenger"]
-  },
-  {
-    "name": "Seraphine",
-    "kr_name": "세라핀",
-    "championId": "TFT6_Seraphine",
-    "cost": 4,
-    "traits": ["Socialite", "Innovator"]
-  },
-  {
-    "name": "Shaco",
-    "kr_name": "샤코",
-    "championId": "TFT6_Shaco",
-    "cost": 3,
-    "traits": ["Syndicate", "Assassin"]
-  },
-  {
-    "name": "Singed",
-    "kr_name": "신지드",
-    "championId": "TFT6_Singed",
-    "cost": 1,
-    "traits": ["Chemtech", "Innovator"]
-  },
-  {
-    "name": "Sion",
-    "kr_name": "사이온",
-    "championId": "TFT6_Sion",
-    "cost": 4,
-    "traits": ["Imperial", "Colossus"]
-  },
-  {
-    "name": "Swain",
-    "kr_name": "스웨인",
-    "championId": "TFT6_Swain",
-    "cost": 2,
-    "traits": ["Imperial", "Arcanist"]
-  },
-  {
-    "name": "TahmKench",
-    "kr_name": "탐켄치",
-    "championId": "TFT6_TahmKench",
-    "cost": 5,
-    "traits": ["Glutton", "Mercenary", "Bruiser"]
-  },
-  {
-    "name": "Talon",
-    "kr_name": "탈론",
-    "championId": "TFT6_Talon",
-    "cost": 2,
-    "traits": ["Imperial", "Assassin"]
-  },
-  {
-    "name": "Taric",
-    "kr_name": "타릭",
-    "championId": "TFT6_Taric",
-    "cost": 3,
-    "traits": ["Socialite", "Enchanter"]
-  },
-  {
-    "name": "Tristana",
-    "kr_name": "트리스타나",
-    "championId": "TFT6_Tristana",
-    "cost": 2,
-    "traits": ["Yordle", "Sniper"]
-  },
-  {
-    "name": "Trundle",
-    "kr_name": "트런들",
-    "championId": "TFT6_Trundle",
-    "cost": 2,
-    "traits": ["Scrap", "Bruiser"]
-  },
-  {
-    "name": "TwistedFate",
-    "kr_name": "트위스티드페이트",
-    "championId": "TFT6_TwistedFate",
-    "cost": 1,
-    "traits": ["Syndicate", "Arcanist"]
-  },
-  {
-    "name": "Twitch",
-    "kr_name": "트위치",
-    "championId": "TFT6_Twitch",
-    "cost": 1,
-    "traits": ["Chemtech", "Assassin"]
-  },
-  {
-    "name": "Urgot",
-    "kr_name": "우르곳",
-    "championId": "TFT6_Urgot",
-    "cost": 4,
-    "traits": ["Chemtech", "Twinshot"]
+    "traits": ["Enforcer", "Sister", "Bruiser"]
   },
   {
     "name": "Veigar",
@@ -350,11 +105,18 @@
     "traits": ["Yordle", "Arcanist"]
   },
   {
-    "name": "Vi",
-    "kr_name": "바이",
-    "championId": "TFT6_Vi",
+    "name": "Braum",
+    "kr_name": "브라움",
+    "championId": "TFT6_Braum",
+    "cost": 4,
+    "traits": ["Syndicate", "Bodyguard"]
+  },
+  {
+    "name": "Blitzcrank",
+    "kr_name": "블리츠크랭크",
+    "championId": "TFT6_Blitzcrank",
     "cost": 2,
-    "traits": ["Enforcer", "Sister", "Bruiser"]
+    "traits": ["Scrap", "Bodyguard", "Protector"]
   },
   {
     "name": "Viktor",
@@ -364,11 +126,74 @@
     "traits": ["Chemtech", "Arcanist"]
   },
   {
-    "name": "Warwick",
-    "kr_name": "워윅",
-    "championId": "TFT6_Warwick",
+    "name": "Poppy",
+    "kr_name": "뽀삐",
+    "championId": "TFT6_Poppy",
+    "cost": 1,
+    "traits": ["Yordle", "Bodyguard"]
+  },
+  {
+    "name": "Samira",
+    "kr_name": "사미라",
+    "championId": "TFT6_Samira",
+    "cost": 3,
+    "traits": ["Imperial", "Challenger"]
+  },
+  {
+    "name": "Sion",
+    "kr_name": "사이온",
+    "championId": "TFT6_Sion",
+    "cost": 4,
+    "traits": ["Imperial", "Colossus"]
+  },
+  {
+    "name": "Shaco",
+    "kr_name": "샤코",
+    "championId": "TFT6_Shaco",
+    "cost": 3,
+    "traits": ["Syndicate", "Assassin"]
+  },
+  {
+    "name": "Seraphine",
+    "kr_name": "세라핀",
+    "championId": "TFT6_Seraphine",
+    "cost": 4,
+    "traits": ["Socialite", "Innovator"]
+  },
+  {
+    "name": "Swain",
+    "kr_name": "스웨인",
+    "championId": "TFT6_Swain",
     "cost": 2,
-    "traits": ["Chemtech", "Challenger"]
+    "traits": ["Imperial", "Arcanist"]
+  },
+  {
+    "name": "Singed",
+    "kr_name": "신지드",
+    "championId": "TFT6_Singed",
+    "cost": 1,
+    "traits": ["Chemtech", "Innovator"]
+  },
+  {
+    "name": "Akali",
+    "kr_name": "아칼리",
+    "championId": "TFT6_Akali",
+    "cost": 5,
+    "traits": ["Syndicate", "Assassin"]
+  },
+  {
+    "name": "Ekko",
+    "kr_name": "에코",
+    "championId": "TFT6_Ekko",
+    "cost": 3,
+    "traits": ["Scrap", "Assassin"]
+  },
+  {
+    "name": "Orianna",
+    "kr_name": "오리아나",
+    "championId": "TFT6_Orianna",
+    "cost": 4,
+    "traits": ["Clockwork", "Enchanter"]
   },
   {
     "name": "Yone",
@@ -378,11 +203,46 @@
     "traits": ["Academy", "Challenger"]
   },
   {
+    "name": "Urgot",
+    "kr_name": "우르곳",
+    "championId": "TFT6_Urgot",
+    "cost": 4,
+    "traits": ["Chemtech", "Twinshot"]
+  },
+  {
+    "name": "Warwick",
+    "kr_name": "워윅",
+    "championId": "TFT6_Warwick",
+    "cost": 2,
+    "traits": ["Chemtech", "Challenger"]
+  },
+  {
     "name": "Yuumi",
     "kr_name": "유미",
     "championId": "TFT6_Yuumi",
     "cost": 5,
     "traits": ["Academy", "Cuddly", "Scholar"]
+  },
+  {
+    "name": "Ezreal",
+    "kr_name": "이즈리얼",
+    "championId": "TFT6_Ezreal",
+    "cost": 1,
+    "traits": ["Scrap", "Innovator"]
+  },
+  {
+    "name": "Illaoi",
+    "kr_name": "일라오이",
+    "championId": "TFT6_Illaoi",
+    "cost": 1,
+    "traits": ["Mercenary", "Bruiser"]
+  },
+  {
+    "name": "Zyra",
+    "kr_name": "자이라",
+    "championId": "TFT6_Zyra",
+    "cost": 2,
+    "traits": ["Syndicate", "Scholar"]
   },
   {
     "name": "Zac",
@@ -392,11 +252,32 @@
     "traits": ["Chemtech", "Bruiser"]
   },
   {
+    "name": "Janna",
+    "kr_name": "잔나",
+    "championId": "TFT6_Janna",
+    "cost": 4,
+    "traits": ["Scrap", "Enchanter", "Scholar"]
+  },
+  {
+    "name": "Jayce",
+    "kr_name": "제이스",
+    "championId": "TFT6_Jayce",
+    "cost": 5,
+    "traits": ["Enforcer", "Innovator", "Transformer"]
+  },
+  {
     "name": "Ziggs",
     "kr_name": "직스",
     "championId": "TFT6_Ziggs",
     "cost": 1,
     "traits": ["Scrap", "Yordle", "Arcanist"]
+  },
+  {
+    "name": "Jhin",
+    "kr_name": "진",
+    "championId": "TFT6_Jhin",
+    "cost": 4,
+    "traits": ["Clockwork", "Sniper"]
   },
   {
     "name": "Zilean",
@@ -406,10 +287,129 @@
     "traits": ["Clockwork", "Innovator"]
   },
   {
-    "name": "Zyra",
-    "kr_name": "자이라",
-    "championId": "TFT6_Zyra",
+    "name": "Jinx",
+    "kr_name": "징크스",
+    "championId": "TFT6_Jinx",
+    "cost": 5,
+    "traits": ["Scrap", "Sister", "Twinshot"]
+  },
+  {
+    "name": "Chogath",
+    "kr_name": "초가스",
+    "championId": "TFT6_Chogath",
+    "cost": 3,
+    "traits": ["Mutant", "Bruiser", "Colossus"]
+  },
+  {
+    "name": "Camille",
+    "kr_name": "카밀",
+    "championId": "TFT6_Camille",
+    "cost": 1,
+    "traits": ["Clockwork", "Challenger"]
+  },
+  {
+    "name": "Kassadin",
+    "kr_name": "카사딘",
+    "championId": "TFT6_Kassadin",
+    "cost": 1,
+    "traits": ["Mutant", "Protector"]
+  },
+  {
+    "name": "Kaisa",
+    "kr_name": "카이사",
+    "championId": "TFT6_Kaisa",
+    "cost": 5,
+    "traits": ["Mutant", "Challenger"]
+  },
+  {
+    "name": "Katarina",
+    "kr_name": "카타리나",
+    "championId": "TFT6_Katarina",
     "cost": 2,
-    "traits": ["Syndicate", "Scholar"]
+    "traits": ["Academy", "Assassin"]
+  },
+  {
+    "name": "Caitlyn",
+    "kr_name": "케이틀린",
+    "championId": "TFT6_Caitlyn",
+    "cost": 1,
+    "traits": ["Enforcer", "Sniper"]
+  },
+  {
+    "name": "KogMaw",
+    "kr_name": "코그모",
+    "championId": "TFT6_KogMaw",
+    "cost": 2,
+    "traits": ["Mutant", "Sniper", "Twinshot"]
+  },
+  {
+    "name": "Quinn",
+    "kr_name": "퀸",
+    "championId": "TFT6_Quinn",
+    "cost": 2,
+    "traits": ["Mercenary", "Challenger"]
+  },
+  {
+    "name": "Taric",
+    "kr_name": "타릭",
+    "championId": "TFT6_Taric",
+    "cost": 3,
+    "traits": ["Socialite", "Enchanter"]
+  },
+  {
+    "name": "Talon",
+    "kr_name": "탈론",
+    "championId": "TFT6_Talon",
+    "cost": 2,
+    "traits": ["Imperial", "Assassin"]
+  },
+  {
+    "name": "TahmKench",
+    "kr_name": "탐켄치",
+    "championId": "TFT6_TahmKench",
+    "cost": 5,
+    "traits": ["Glutton", "Mercenary", "Bruiser"]
+  },
+  {
+    "name": "Trundle",
+    "kr_name": "트런들",
+    "championId": "TFT6_Trundle",
+    "cost": 2,
+    "traits": ["Scrap", "Bruiser"]
+  },
+  {
+    "name": "Tristana",
+    "kr_name": "트리스타나",
+    "championId": "TFT6_Tristana",
+    "cost": 2,
+    "traits": ["Yordle", "Sniper"]
+  },
+  {
+    "name": "TwistedFate",
+    "kr_name": "트위스티드페이트",
+    "championId": "TFT6_TwistedFate",
+    "cost": 1,
+    "traits": ["Syndicate", "Arcanist"]
+  },
+  {
+    "name": "Twitch",
+    "kr_name": "트위치",
+    "championId": "TFT6_Twitch",
+    "cost": 1,
+    "traits": ["Chemtech", "Assassin"]
+  },
+  {
+    "name": "Fiora",
+    "kr_name": "피오라",
+    "championId": "TFT6_Fiora",
+    "cost": 4,
+    "traits": ["Enforcer", "Challenger"]
+  },
+  {
+    "name": "Heimerdinger",
+    "kr_name": "하이머딩거",
+    "championId": "TFT6_Heimerdinger",
+    "cost": 3,
+    "traits": ["Yordle", "Innovator", "Scholar"]
   }
 ]

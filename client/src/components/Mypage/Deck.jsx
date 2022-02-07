@@ -9,7 +9,7 @@ import { saveDeck } from '../../actions';
 import { deckToSlots, countByTrait, getTraitDetails, traitCntSortOption } from '../../utils/trait';
 import { EMPTY_SLOT } from '../../utils/constants';
 
-import championsData from '../../JSON/set5_champions.json';
+import championsData from '../../JSON/set6/champions.json';
 
 const Deck = ({ order, deck, deleteDeck, isDark }) => {
   const dispatch = useDispatch();
@@ -23,12 +23,14 @@ const Deck = ({ order, deck, deleteDeck, isDark }) => {
   });
   const hasSynergy = traitItems.some(([trait, count]) => count >= trait.sets[0].min);
   const champions = deck.Champion.reduce((acc, cur) => {
-    const champ = championsData.find(c => c.championId === cur.id);
+    const champ = championsData.find(c => c.championId.toLowerCase() === cur.id.toLowerCase());
     acc.push(champ);
     return acc;
   }, []);
 
-  const handleClick = async () => {
+  const handleClick = () => {
+    const proceed = window.confirm('빌드 페이지로 불러오시겠습니까?');
+    if (!proceed) return;
     const champsToSlots = deck.Champion.map(champ => {
       const champData = championsData.find(c => c.championId === champ.id);
       return { ...champData };
@@ -43,6 +45,8 @@ const Deck = ({ order, deck, deleteDeck, isDark }) => {
 
   const handleDelete = e => {
     e.stopPropagation();
+    const proceed = window.confirm('덱을 삭제하시겠습니까?');
+    if (!proceed) return;
     deleteDeck(deck.id);
   };
 

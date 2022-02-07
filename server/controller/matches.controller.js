@@ -2,6 +2,7 @@ const axios = require('axios');
 
 module.exports = {
   get: async (req, res) => {
+    const offset = Number(req.params.offset);
     try {
       const {
         data: { puuid },
@@ -14,15 +15,13 @@ module.exports = {
         },
       );
 
-      const { data: matchIds } = await axios.get(
-        `${process.env.MATCH_ID_SEARCH_URI}/${puuid}/ids`,
-        {
-          params: {
-            count: 10,
-            api_key: process.env.RIOT_API_KEY,
-          },
+      let { data: matchIds } = await axios.get(`${process.env.MATCH_ID_SEARCH_URI}/${puuid}/ids`, {
+        params: {
+          count: 100,
+          api_key: process.env.RIOT_API_KEY,
         },
-      );
+      });
+      matchIds = matchIds.slice(offset * 10, (offset + 1) * 10);
 
       const result = await Promise.all(
         matchIds.map(matchId =>
@@ -34,14 +33,33 @@ module.exports = {
         ),
       );
 
-      const matchesData = result.reduce((acc, matchData) => {
+      let matchesData = result.reduce((acc, matchData) => {
         acc.push(matchData.data);
         return acc;
       }, []);
 
       res.status(200).json({ data: { matchesData, puuid }, message: 'ok' });
     } catch (err) {
-      res.status(400).json({ data: null, message: 'invalid request' });
+      const {
+        response: { status, statusText },
+      } = err;
+      res.status(status).json({ data: null, message: statusText });
+    }
+  },
+  getPlayerInfo: async (req, res) => {
+    const { puuid } = req.params;
+    try {
+      const { data } = await axios.get(`${process.env.SUMMONER_SEARCH_BY_PUUID_URI}/${puuid}`, {
+        params: {
+          api_key: process.env.RIOT_API_KEY,
+        },
+      });
+      res.status(200).json({ data });
+    } catch (err) {
+      const {
+        response: { status, statusText },
+      } = err;
+      res.status(status).json({ data: null, message: statusText });
     }
   },
 };

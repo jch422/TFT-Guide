@@ -5,20 +5,31 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="description" content="Web site created using create-react-app" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-   
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
+    <style>
+      #spinner-portal {
+        position: fixed;
+        width: 300px;
+        height: 300px;
+        top: 50%;
+        left: 50%;
+        margin-top: -150px; /* Negative half of height. */
+        margin-left: -150px; /* Negative half of width. */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+      }
+    </style>
+
     <title>TFT Guide</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    
+    <div id="spinner-portal"></div>
   </body>
 </html>
