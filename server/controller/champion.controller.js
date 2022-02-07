@@ -1,4 +1,4 @@
-const champions = require('../static/champions.json');
+const champions = require('../static/champions_set5.json');
 const traits = require('../static/traits.json');
 
 module.exports = {
@@ -76,7 +76,6 @@ module.exports = {
         return b[1] - a[1];
       });
       const lastData = sortArr.slice(1, 6);
-
       res.status(200).json({ data: lastData, message: 'ok' });
     } catch (err) {
       res.status(400).json({ data: null, message: 'invalid request' });
