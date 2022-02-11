@@ -4,18 +4,23 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 
-import { updateUserInfo } from '../actions';
+import { updateUserInfo, saveDeck } from '../actions';
 import AuthButton from '../components/Login/AuthButton';
 import Modal from '../components/Login/Modal';
 import { makeGoogleOAuthRequestURL } from '../utils/url';
+import { saveState, loadState } from '../utils/localStorage';
 
 const Login = () => {
   const userInfo = useSelector(state => state.userInfoReducer);
+  const { deck } = useSelector(state => state.deckReducer);
   const [modalShow, setModalShow] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
 
   useEffect(() => {
+    if (deck.some(champ => champ.name)) {
+      saveState(deck);
+    }
     const getUserInfo = async accessToken => {
       try {
         const {
@@ -34,6 +39,11 @@ const Login = () => {
         }
 
         dispatch(updateUserInfo({ id, email, picture, riotId, isRegistered }));
+        const localStorageDeck = loadState();
+        if (localStorageDeck.some(champ => champ.name)) {
+          dispatch(saveDeck(localStorageDeck));
+          saveState([]);
+        }
         if (!isRegistered || !riotId) {
           setModalShow(true);
         } else {

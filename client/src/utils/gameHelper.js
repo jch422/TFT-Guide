@@ -48,24 +48,17 @@ const calcTraitsScore = traits => {
     for (const { style, min, max } of sets) {
       if (max) {
         if (cnt >= min && cnt <= max) {
-          return acc + scoreMapper[style];
+          return acc + cnt;
         }
       } else {
         // only min
         if (cnt >= min) {
-          return acc + scoreMapper[style];
+          return acc + min;
         }
       }
     }
     return acc;
   }, 0);
-};
-
-const scoreMapper = {
-  bronze: 1,
-  silver: 3,
-  gold: 5,
-  chromatic: 7,
 };
 
 const levelCostMapper = {
