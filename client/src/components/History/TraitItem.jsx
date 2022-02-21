@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const TraitItem = ({ trait, style, size }) => {
   let traitName = trait.replace('Set6_', '');
+  if (traitName === 'Rivals') traitName = 'Rival';
   if (traitName === 'Yordle-Lord' || traitName === 'YordleLord') traitName = 'Yordlelord';
   const traitImgSrc = `${process.env.REACT_APP_TRAIT_IMG_SRC}/${traitName}.svg`;
   const styleMapper = {
