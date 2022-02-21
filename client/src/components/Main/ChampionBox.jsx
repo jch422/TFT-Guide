@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ChampionBox = ({ kr_name, champion, cost, handleClick, handleDragStart, handleDragEnd }) => {
-  const champName = champion.name === 'ChoGath' ? 'Chogath' : champion.name;
+  const champName = handleChampNameException(champion);
   const champImgSrc = `${process.env.REACT_APP_CHAMP_IMG_SRC}/${champName}.png`;
 
   const color = costColorMapper[cost];
@@ -21,6 +21,16 @@ const ChampionBox = ({ kr_name, champion, cost, handleClick, handleDragStart, ha
       </ChampionContainer>
     </Wrapper>
   );
+};
+
+const handleChampNameException = champion => {
+  if (champion.name === 'ChoGath') {
+    return 'Chogath';
+  } else if (champion.name === 'RenataGlasc') {
+    return 'Renata';
+  } else {
+    return champion.name;
+  }
 };
 
 const costColorMapper = {
