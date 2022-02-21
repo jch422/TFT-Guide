@@ -15,7 +15,7 @@ import { countByTrait, getTraitDetails, traitCntSortOption } from '../utils/trai
 import { REMOVE_ZONE, EMPTY_SLOT } from '../utils/constants';
 import { getRecommendation } from '../utils/gameHelper';
 
-import championsData from '../JSON/set6/champions.json';
+import championsData from '../JSON/set6.5/champions.json';
 
 const MainPage = () => {
   const dispatch = useDispatch();

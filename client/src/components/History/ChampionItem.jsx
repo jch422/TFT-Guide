@@ -5,8 +5,7 @@ import styled from 'styled-components';
 import { costColorMapper } from '../../utils/constants';
 
 const ChampionItem = ({ championData, size }) => {
-  let champName = championData.character_id.replace('TFT6_', '');
-  if (champName === 'ChoGath') champName = 'Chogath';
+  const champName = handleChampNameException(championData);
   const champImgSrc = `${process.env.REACT_APP_CHAMP_IMG_SRC}/${champName}.png`;
   const color = costColorMapper[championData.rarity + 1];
 
@@ -27,6 +26,14 @@ const ChampionItem = ({ championData, size }) => {
 };
 
 export default ChampionItem;
+
+const handleChampNameException = championData => {
+  if (!championData) return '';
+  const champName = championData.character_id.replace('TFT6_', '').replace('TFT6b_', '');
+  if (champName === 'ChoGath') return 'Chogath';
+  else if (champName === 'KhaZix') return 'Khazix';
+  return champName;
+};
 
 const Wrapper = styled.div`
   margin: 0 3px;

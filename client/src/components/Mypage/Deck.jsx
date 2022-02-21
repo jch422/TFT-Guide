@@ -9,7 +9,7 @@ import { saveDeck } from '../../actions';
 import { deckToSlots, countByTrait, getTraitDetails, traitCntSortOption } from '../../utils/trait';
 import { EMPTY_SLOT } from '../../utils/constants';
 
-import championsData from '../../JSON/set6/champions.json';
+import championsData from '../../JSON/set6.5/champions.json';
 
 const Deck = ({ order, deck, deleteDeck, isDark }) => {
   const dispatch = useDispatch();

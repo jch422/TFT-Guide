@@ -1,5 +1,5 @@
-import traitsData from '../JSON/set6/traits.json';
-import championsData from '../JSON/set6/champions.json';
+import traitsData from '../JSON/set6.5/traits.json';
+import championsData from '../JSON/set6.5/champions.json';
 
 export const getRecommendation = slots => {
   const filteredSlots = slots.filter(removeEmpty);

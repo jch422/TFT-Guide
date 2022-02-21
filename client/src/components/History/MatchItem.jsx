@@ -10,7 +10,7 @@ import TraitList from './TraitList';
 import MatchDetail from './MatchDetail';
 import { saveDeck } from '../../actions';
 import { EMPTY_SLOT } from '../../utils/constants';
-import championsData from '../../JSON/set6/champions.json';
+import championsData from '../../JSON/set6.5/champions.json';
 
 import { rankColorMapper } from '../../utils/constants';
 

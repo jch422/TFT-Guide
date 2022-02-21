@@ -1,6 +1,6 @@
-import traits from '../JSON/set6/traits.json';
+import traits from '../JSON/set6.5/traits.json';
 //import champions from '../JSON/set5_champions.json';
-import champions from '../JSON/set6/champions.json';
+import champions from '../JSON/set6.5/champions.json';
 
 export const traitMapper = traits.reduce((acc, cur) => {
   acc[cur.key] = cur.kr_name;
